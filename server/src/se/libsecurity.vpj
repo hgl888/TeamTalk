@@ -10,7 +10,7 @@
         Type="gnuc"
         DebugCallbackName="gdb"
         Version="1"
-        OutputFile="%bdbase"
+        OutputFile="%bdlibsecurity"
         CompilerConfigName="Latest Version">
         <Menu>
             <Target
@@ -105,7 +105,7 @@
         Type="gnuc"
         DebugCallbackName="gdb"
         Version="1"
-        OutputFile="%bdbase"
+        OutputFile="%bdlibsecurity"
         CompilerConfigName="Latest Version">
         <Menu>
             <Target
@@ -199,112 +199,15 @@
         <Folder
             Name="Source Files"
             Filters="*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.c++;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.cs;*.sc;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl;*.d;*.m;*.mm;*.go">
-            <F N="../base/atomic.h"/>
-            <F N="../base/Base64.cpp"/>
-            <F N="../base/Base64.h"/>
-            <F N="../base/BaseSocket.cpp"/>
-            <F N="../base/BaseSocket.h"/>
-            <F N="../base/Condition.cpp"/>
-            <F N="../base/Condition.h"/>
-            <F N="../base/ConfigFileReader.cpp"/>
-            <F N="../base/ConfigFileReader.h"/>
-            <F N="../base/EncDec.cpp"/>
-            <F N="../base/EncDec.h"/>
-            <F N="../base/EventDispatch.cpp"/>
-            <F N="../base/EventDispatch.h"/>
-            <F N="../base/http_parser.cpp"/>
-            <F N="../base/http_parser.h"/>
-            <F N="../base/HttpClient.cpp"/>
-            <F N="../base/HttpClient.h"/>
-            <F N="../base/HttpParserWrapper.cpp"/>
-            <F N="../base/HttpParserWrapper.h"/>
-            <F N="../base/im_conn_util.cpp"/>
-            <F N="../base/im_conn_util.h"/>
-            <F N="../base/imconn.cpp"/>
-            <F N="../base/imconn.h"/>
-            <F N="../base/impdu.h"/>
-            <F N="../base/ImPduBase.cpp"/>
-            <F N="../base/ImPduBase.h"/>
-            <F N="../base/Lock.cpp"/>
-            <F N="../base/Lock.h"/>
-            <F N="../base/log4z.cpp"/>
-            <F N="../base/log4z.h"/>
-            <F N="../base/netlib.cpp"/>
-            <F N="../base/netlib.h"/>
-            <F N="../base/ostype.h"/>
-            <F N="../base/public_define.h"/>
-            <F N="../base/ServInfo.cpp"/>
-            <F N="../base/ServInfo.h"/>
-            <F N="../base/singleton.h"/>
-            <F N="../base/Task.h"/>
-            <F N="../base/Thread.cpp"/>
-            <F N="../base/Thread.h"/>
-            <F N="../base/ThreadPool.cpp"/>
-            <F N="../base/ThreadPool.h"/>
-            <F N="../base/TokenValidator.cpp"/>
-            <F N="../base/TokenValidator.h"/>
-            <F N="../base/util.cpp"/>
-            <F N="../base/util.h"/>
-            <F N="../base/UtilPdu.cpp"/>
-            <F N="../base/UtilPdu.h"/>
-            <F N="../base/version.h"/>
-        </Folder>
-        <Folder
-            Name="jsoncpp"
-            Filters="">
-            <Folder
-                Name="json"
-                Filters="">
-                <F N="../base/jsoncpp/json/assertions.h"/>
-                <F N="../base/jsoncpp/json/autolink.h"/>
-                <F N="../base/jsoncpp/json/config.h"/>
-                <F N="../base/jsoncpp/json/features.h"/>
-                <F N="../base/jsoncpp/json/forwards.h"/>
-                <F N="../base/jsoncpp/json/json.h"/>
-                <F N="../base/jsoncpp/json/reader.h"/>
-                <F N="../base/jsoncpp/json/value.h"/>
-                <F N="../base/jsoncpp/json/writer.h"/>
-            </Folder>
-            <F N="../base/jsoncpp/json_batchallocator.h"/>
-            <F N="../base/jsoncpp/json_internalarray.inl"/>
-            <F N="../base/jsoncpp/json_internalmap.inl"/>
-            <F N="../base/jsoncpp/json_reader.cpp"/>
-            <F N="../base/jsoncpp/json_tool.h"/>
-            <F N="../base/jsoncpp/json_value.cpp"/>
-            <F N="../base/jsoncpp/json_valueiterator.inl"/>
-            <F N="../base/jsoncpp/json_writer.cpp"/>
-        </Folder>
-        <Folder
-            Name="slog"
-            Filters="">
-            <F N="../base/slog/slog_api.h"/>
-        </Folder>
-        <Folder
-            Name="pb"
-            Filters="">
-            <F N="../base/pb/protocol/IM.BaseDefine.pb.cc"/>
-            <F N="../base/pb/protocol/IM.BaseDefine.pb.h"/>
-            <F N="../base/pb/protocol/IM.Buddy.pb.cc"/>
-            <F N="../base/pb/protocol/IM.Buddy.pb.h"/>
-            <F N="../base/pb/protocol/IM.File.pb.cc"/>
-            <F N="../base/pb/protocol/IM.File.pb.h"/>
-            <F N="../base/pb/protocol/IM.Group.pb.cc"/>
-            <F N="../base/pb/protocol/IM.Group.pb.h"/>
-            <F N="../base/pb/protocol/IM.Login.pb.cc"/>
-            <F N="../base/pb/protocol/IM.Login.pb.h"/>
-            <F N="../base/pb/protocol/IM.Message.pb.cc"/>
-            <F N="../base/pb/protocol/IM.Message.pb.h"/>
-            <F N="../base/pb/protocol/IM.Other.pb.cc"/>
-            <F N="../base/pb/protocol/IM.Other.pb.h"/>
-            <F N="../base/pb/protocol/IM.Server.pb.cc"/>
-            <F N="../base/pb/protocol/IM.Server.pb.h"/>
-            <F N="../base/pb/protocol/IM.SwitchService.pb.cc"/>
-            <F N="../base/pb/protocol/IM.SwitchService.pb.h"/>
-        </Folder>
-        <Folder
-            Name="security"
-            Filters="">
-            <F N="../base/security/security.h"/>
+            <F N="../libsecurity/src/aes.h"/>
+            <F N="../libsecurity/src/aes_core.cpp"/>
+            <F N="../libsecurity/src/aes_locl.h"/>
+            <F N="../libsecurity/src/base64.cpp"/>
+            <F N="../libsecurity/src/base64.h"/>
+            <F N="../libsecurity/src/md5.cpp"/>
+            <F N="../libsecurity/src/md5.h"/>
+            <F N="../libsecurity/src/security.cpp"/>
+            <F N="../libsecurity/include/security.h"/>
         </Folder>
     </Files>
 </Project>

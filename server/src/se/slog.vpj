@@ -10,7 +10,7 @@
 		Type="gnuc"
 		DebugCallbackName="gdb"
 		Version="1"
-		OutputFile="%bdteamtalk-server"
+		OutputFile="%bdslog"
 		CompilerConfigName="Latest Version">
 		<Menu>
 			<Target
@@ -105,7 +105,7 @@
 		Type="gnuc"
 		DebugCallbackName="gdb"
 		Version="1"
-		OutputFile="%bdteamtalk-server"
+		OutputFile="%bdslog"
 		CompilerConfigName="Latest Version">
 		<Menu>
 			<Target
@@ -199,16 +199,8 @@
 		<Folder
 			Name="Source Files"
 			Filters="*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.c++;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.cs;*.sc;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl;*.d;*.m;*.mm;*.go">
-			<F N="../test/Client.cpp"/>
-			<F N="../test/Client.h"/>
-			<F N="../test/ClientConn.cpp"/>
-			<F N="../test/ClientConn.h"/>
-			<F N="../test/Common.h"/>
-			<F N="../test/IPacketCallback.h"/>
-			<F N="../test/playsound.h"/>
-			<F N="../test/SeqAlloctor.cpp"/>
-			<F N="../test/SeqAlloctor.h"/>
-			<F N="../test/test_client.cpp"/>
+			<F N="../slog/slog_api.cpp"/>
+			<F N="../slog/slog_api.h"/>
 		</Folder>
 	</Files>
 </Project>

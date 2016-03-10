@@ -10,7 +10,7 @@
 		Type="gnuc"
 		DebugCallbackName="gdb"
 		Version="1"
-		OutputFile="%bdteamtalk-server"
+		OutputFile="%bdmsg_server"
 		CompilerConfigName="Latest Version">
 		<Menu>
 			<Target
@@ -105,7 +105,7 @@
 		Type="gnuc"
 		DebugCallbackName="gdb"
 		Version="1"
-		OutputFile="%bdteamtalk-server"
+		OutputFile="%bdmsg_server"
 		CompilerConfigName="Latest Version">
 		<Menu>
 			<Target
@@ -199,16 +199,30 @@
 		<Folder
 			Name="Source Files"
 			Filters="*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.c++;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.cs;*.sc;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl;*.d;*.m;*.mm;*.go">
-			<F N="../test/Client.cpp"/>
-			<F N="../test/Client.h"/>
-			<F N="../test/ClientConn.cpp"/>
-			<F N="../test/ClientConn.h"/>
-			<F N="../test/Common.h"/>
-			<F N="../test/IPacketCallback.h"/>
-			<F N="../test/playsound.h"/>
-			<F N="../test/SeqAlloctor.cpp"/>
-			<F N="../test/SeqAlloctor.h"/>
-			<F N="../test/test_client.cpp"/>
+			<F N="../msg_server/AttachData.cpp"/>
+			<F N="../msg_server/AttachData.h"/>
+			<F N="../msg_server/DBServConn.cpp"/>
+			<F N="../msg_server/DBServConn.h"/>
+			<F N="../msg_server/FileHandler.cpp"/>
+			<F N="../msg_server/FileHandler.h"/>
+			<F N="../msg_server/FileServConn.cpp"/>
+			<F N="../msg_server/FileServConn.h"/>
+			<F N="../msg_server/GroupChat.cpp"/>
+			<F N="../msg_server/GroupChat.h"/>
+			<F N="../msg_server/ImUser.cpp"/>
+			<F N="../msg_server/ImUser.h"/>
+			<F N="../msg_server/jsonxx.cpp"/>
+			<F N="../msg_server/jsonxx.h"/>
+			<F N="../msg_server/LoginServConn.cpp"/>
+			<F N="../msg_server/LoginServConn.h"/>
+			<F N="../msg_server/msg_server.cpp"/>
+			<F N="../msg_server/MsgConn.cpp"/>
+			<F N="../msg_server/MsgConn.h"/>
+			<F N="../msg_server/msgserver.conf"/>
+			<F N="../msg_server/PushServConn.cpp"/>
+			<F N="../msg_server/PushServConn.h"/>
+			<F N="../msg_server/RouteServConn.cpp"/>
+			<F N="../msg_server/RouteServConn.h"/>
 		</Folder>
 	</Files>
 </Project>

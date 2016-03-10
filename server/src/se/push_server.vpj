@@ -10,7 +10,7 @@
 		Type="gnuc"
 		DebugCallbackName="gdb"
 		Version="1"
-		OutputFile="%bdteamtalk-server"
+		OutputFile="%bdpush_server"
 		CompilerConfigName="Latest Version">
 		<Menu>
 			<Target
@@ -105,7 +105,7 @@
 		Type="gnuc"
 		DebugCallbackName="gdb"
 		Version="1"
-		OutputFile="%bdteamtalk-server"
+		OutputFile="%bdpush_server"
 		CompilerConfigName="Latest Version">
 		<Menu>
 			<Target
@@ -199,16 +199,87 @@
 		<Folder
 			Name="Source Files"
 			Filters="*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.c++;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.cs;*.sc;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl;*.d;*.m;*.mm;*.go">
-			<F N="../test/Client.cpp"/>
-			<F N="../test/Client.h"/>
-			<F N="../test/ClientConn.cpp"/>
-			<F N="../test/ClientConn.h"/>
-			<F N="../test/Common.h"/>
-			<F N="../test/IPacketCallback.h"/>
-			<F N="../test/playsound.h"/>
-			<F N="../test/SeqAlloctor.cpp"/>
-			<F N="../test/SeqAlloctor.h"/>
-			<F N="../test/test_client.cpp"/>
+			<Folder
+				Name="bufferloop"
+				Filters="">
+				<F N="../push_server/bufferloop/buffer_loop.hpp"/>
+			</Folder>
+			<Folder
+				Name="sigslot"
+				Filters="">
+				<F N="../push_server/sigslot/sigslot.h"/>
+			</Folder>
+			<Folder
+				Name="socket"
+				Filters="">
+				<F N="../push_server/socket/base_handler.hpp"/>
+				<F N="../push_server/socket/base_io_stream.cpp"/>
+				<F N="../push_server/socket/base_io_stream.h"/>
+				<F N="../push_server/socket/base_msg.h"/>
+				<F N="../push_server/socket/base_socket.hpp"/>
+				<F N="../push_server/socket/base_thread.hpp"/>
+				<F N="../push_server/socket/epoll_io_loop.cpp"/>
+				<F N="../push_server/socket/epoll_io_loop.h"/>
+				<F N="../push_server/socket/io_loop.cpp"/>
+				<F N="../push_server/socket/io_loop.h"/>
+				<F N="../push_server/socket/socket_io.h"/>
+				<F N="../push_server/socket/socket_io_define.h"/>
+				<F N="../push_server/socket/ssl_client_async.cpp"/>
+				<F N="../push_server/socket/ssl_client_async.h"/>
+				<F N="../push_server/socket/tcp_client_async.cpp"/>
+				<F N="../push_server/socket/tcp_client_async.h"/>
+				<F N="../push_server/socket/tcp_server.cpp"/>
+				<F N="../push_server/socket/tcp_server.h"/>
+				<F N="../push_server/socket/tcp_session_async.cpp"/>
+				<F N="../push_server/socket/tcp_session_async.h"/>
+			</Folder>
+			<Folder
+				Name="thread"
+				Filters="">
+				<F N="../push_server/thread/base_thread.hpp"/>
+			</Folder>
+			<Folder
+				Name="timer"
+				Filters="">
+				<F N="../push_server/timer/Timer.hpp"/>
+			</Folder>
+			<Folder
+				Name="type"
+				Filters="">
+				<F N="../push_server/type/base_type.h"/>
+			</Folder>
+			<F N="../push_server/apns_client.cpp"/>
+			<F N="../push_server/apns_client.h"/>
+			<F N="../push_server/apns_client_handler.cpp"/>
+			<F N="../push_server/apns_client_handler.h"/>
+			<F N="../push_server/apns_feedback_handler.cpp"/>
+			<F N="../push_server/apns_feedback_handler.h"/>
+			<F N="../push_server/apns_msg.cpp"/>
+			<F N="../push_server/apns_msg.h"/>
+			<F N="../push_server/byte_stream.cpp"/>
+			<F N="../push_server/byte_stream.h"/>
+			<F N="../push_server/ConfigFileReader.cpp"/>
+			<F N="../push_server/ConfigFileReader.h"/>
+			<F N="../push_server/jsonxx.cpp"/>
+			<F N="../push_server/jsonxx.h"/>
+			<F N="../push_server/main.cpp"/>
+			<F N="../push_server/pdu_msg.cpp"/>
+			<F N="../push_server/pdu_msg.h"/>
+			<F N="../push_server/push_app.cpp"/>
+			<F N="../push_server/push_app.h"/>
+			<F N="../push_server/push_app_define.h"/>
+			<F N="../push_server/push_define.h"/>
+			<F N="../push_server/push_server.cpp"/>
+			<F N="../push_server/push_server.h"/>
+			<F N="../push_server/push_server_handler.cpp"/>
+			<F N="../push_server/push_server_handler.h"/>
+			<F N="../push_server/push_session.cpp"/>
+			<F N="../push_server/push_session.h"/>
+			<F N="../push_server/push_session_handler.cpp"/>
+			<F N="../push_server/push_session_handler.h"/>
+			<F N="../push_server/pushserver.conf"/>
+			<F N="../push_server/session_manager.cpp"/>
+			<F N="../push_server/session_manager.h"/>
 		</Folder>
 	</Files>
 </Project>
