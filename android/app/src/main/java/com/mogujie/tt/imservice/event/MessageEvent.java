@@ -30,20 +30,20 @@ public class MessageEvent {
     }
 
     public enum Event{
-      NONE,
-      HISTORY_MSG_OBTAIN,
+        NONE,
+        HISTORY_MSG_OBTAIN,
 
-      SENDING_MESSAGE,
+        SENDING_MESSAGE,
 
-      ACK_SEND_MESSAGE_OK,
-       ACK_SEND_MESSAGE_TIME_OUT,
-      ACK_SEND_MESSAGE_FAILURE,
+        ACK_SEND_MESSAGE_OK,
+        ACK_SEND_MESSAGE_TIME_OUT,
+        ACK_SEND_MESSAGE_FAILURE,
 
-      HANDLER_IMAGE_UPLOAD_FAILD,
+        HANDLER_IMAGE_UPLOAD_FAILD,
         IMAGE_UPLOAD_FAILD,
         HANDLER_IMAGE_UPLOAD_SUCCESS,
         IMAGE_UPLOAD_SUCCESS
-     }
+    }
 
     public MessageEntity getMessageEntity() {
         if(msgList == null || msgList.size() <=0){

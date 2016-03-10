@@ -11,7 +11,7 @@ public class Logger {
 	/**
 	 * log tag
 	 */
-	private String tagName = "MoGuLogger";// tag name
+	private String tagName = "Toon";// tag name
 	private static int logLevel = Log.ERROR;
 	//private static int logLevel = Log.DEBUG;
 

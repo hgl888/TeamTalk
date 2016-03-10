@@ -693,6 +693,7 @@ public class MessageActivity extends TTBaseActivity
      * 2.本地消息不全，也会触发
      */
     private void reqHistoryMsg() {
+        //req
         historyTimes++;
         List<MessageEntity> msgList = imService.getMessageManager().loadHistoryMsg(historyTimes,currentSessionKey,peerEntity);
         pushList(msgList);
