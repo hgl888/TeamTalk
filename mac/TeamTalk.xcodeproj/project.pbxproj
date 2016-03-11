@@ -4442,12 +4442,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 573847601820CDA000443653 /* Build configuration list for PBXNativeTarget "TeamTalk" */;
 			buildPhases = (
-				5B4EB9AF98993B8F2DA57993 /* Check Pods Manifest.lock */,
 				5738472B1820CDA000443653 /* Sources */,
 				5738472C1820CDA000443653 /* Frameworks */,
 				5738472D1820CDA000443653 /* Resources */,
 				5700BF0618A8A4880060092F /* Copy Files */,
-				4339E9449C259D1050E09245 /* Copy Pods Resources */,
 			);
 			buildRules = (
 				C407F20B19604CFD00ED6ED8 /* PBXBuildRule */,
@@ -5066,39 +5064,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		4339E9449C259D1050E09245 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5B4EB9AF98993B8F2DA57993 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5738472B1820CDA000443653 /* Sources */ = {
