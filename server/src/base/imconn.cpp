@@ -77,6 +77,11 @@ CImConn::~CImConn()
 	//log("CImConn::~CImConn, handle=%d ", m_handle);
 }
 
+int CImConn::SendPdu(CImPdu* pPdu)
+{
+	 return Send(pPdu->GetBuffer(), pPdu->GetLength()); 
+}
+
 int CImConn::Send(void* data, int len)
 {
 	m_last_send_tick = get_tick_count();

@@ -56,6 +56,7 @@ import de.greenrobot.event.EventBus;
  * @date 2014-7-24
  *
  */
+
 public class ChatFragment extends MainFragment
         implements
         OnItemSelectedListener,

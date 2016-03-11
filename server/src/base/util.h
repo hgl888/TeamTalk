@@ -30,6 +30,7 @@
 #define NOTUSED_ARG(v) ((void)v)		// used this to remove warning C4100, unreferenced parameter
 
 /// yunfan modify end 
+
 class CRefObject
 {
 public:
@@ -40,7 +41,7 @@ public:
 	void AddRef();
 	void ReleaseRef();
 private:
-	int				m_refCount;
+	int         m_refCount;
 	CLock*	m_lock;
 };
 
@@ -68,7 +69,7 @@ public:
 	CStrExplode(char* str, char seperator);
 	virtual ~CStrExplode();
 
-	uint32_t GetItemCnt() { return m_item_cnt; }
+	uint32_t GetItemCnt() { return m_item_ct; }
 	char* GetItem(uint32_t idx) { return m_item_list[idx]; }
 private:
 	uint32_t	m_item_cnt;

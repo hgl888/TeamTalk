@@ -191,7 +191,6 @@ void CBaseSocket::OnWrite()
 		int error = 0;
 		socklen_t len = sizeof(error);
 #ifdef _WIN32
-
 		getsockopt(m_socket, SOL_SOCKET, SO_ERROR, (char*)&error, &len);
 #else
 		getsockopt(m_socket, SOL_SOCKET, SO_ERROR, (void*)&error, &len);
@@ -310,6 +309,7 @@ void CBaseSocket::_SetAddr(const char* ip, const uint16_t port, sockaddr_in* pAd
 
 		pAddr->sin_addr.s_addr = *(uint32_t*)host->h_addr;
 	}
+    return;
 }
 
 void CBaseSocket::_AcceptNewSocket()
