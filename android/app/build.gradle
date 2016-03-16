@@ -42,6 +42,7 @@ android {
 
 dependencies {
     compile project(':mgimlibs')
+    compile project(':magicfilter')
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:19.+'
     compile 'com.google.protobuf:protobuf-java:2.6.1'
