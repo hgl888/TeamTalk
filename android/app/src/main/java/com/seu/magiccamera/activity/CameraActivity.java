@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.Animator.AnimatorListener;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
+import android.graphics.Point;
 import android.hardware.Camera.Face;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
@@ -56,7 +57,8 @@ public class CameraActivity extends Activity{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_camera);
-		
+		initConstants();
+
 		faceView = (FaceView)findViewById(R.id.face_view );
 		initMagicPreview();
 		initFilterLayout();
@@ -193,4 +195,11 @@ public class CameraActivity extends Activity{
 			animator.start();
 		}
 	};
+
+	private void initConstants() {
+		Point outSize = new Point();
+		getWindowManager().getDefaultDisplay().getRealSize(outSize);
+		Constants.mScreenWidth = outSize.x;
+		Constants.mScreenHeight = outSize.y;
+	}
 }

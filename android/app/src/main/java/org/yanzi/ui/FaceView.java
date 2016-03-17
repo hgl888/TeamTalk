@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
+import android.graphics.PointF;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.hardware.Camera.CameraInfo;
@@ -24,6 +25,7 @@ public class FaceView extends ImageView {
 	private Face[] mFaces;
 	private Matrix mMatrix = new Matrix();
 	private RectF mRect = new RectF();
+	private float[] mPoint = new float[3];
 	private Drawable mFaceIndicator = null;
 	public FaceView(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -64,10 +66,21 @@ public class FaceView extends ImageView {
 		for(int i = 0; i< mFaces.length; i++){
 			mRect.set(mFaces[i].rect);
 			mMatrix.mapRect(mRect);
-            mFaceIndicator.setBounds(Math.round(mRect.left), Math.round(mRect.top),
-                    Math.round(mRect.right), Math.round(mRect.bottom));
-            mFaceIndicator.draw(canvas);
-//			canvas.drawRect(mRect, mLinePaint);
+            //mFaceIndicator.setBounds(Math.round(mRect.left), Math.round(mRect.top),
+            //        Math.round(mRect.right), Math.round(mRect.bottom));
+            //mFaceIndicator.draw(canvas);
+			canvas.drawRect(mRect, mLinePaint);
+			//mPoint[0] = mFaces[i].rightEye.x;
+			//mPoint[1] = mFaces[i].rightEye.y;
+			//mMatrix.mapPoints(mPoint);
+			canvas.drawCircle( mRect.centerX(), mRect.centerY(), 10, mLinePaint);
+			canvas.drawCircle( mRect.left + mRect.width() / 4,
+					mRect.top + mRect.height() / 4, 10, mLinePaint );
+			canvas.drawCircle( mRect.right - mRect.width()/ 4,
+					mRect.top + mRect.height() / 4, 10, mLinePaint );
+			canvas.drawCircle( mRect.centerX(), mRect.bottom - mRect.height() / 4,
+					10, mLinePaint );
+			return;
 		}
 		canvas.restore();
 		super.onDraw(canvas);
