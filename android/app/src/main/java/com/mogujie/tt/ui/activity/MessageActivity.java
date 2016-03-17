@@ -90,6 +90,7 @@ import com.mogujie.tt.utils.IMUIHelper;
 import com.mogujie.tt.utils.Logger;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.listener.PauseOnScrollListener;
+import com.seu.magiccamera.activity.CameraActivity;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -883,16 +884,22 @@ public class MessageActivity extends TTBaseActivity
                 scrollToBottomListItem();
             }
             break;
-            case R.id.take_camera_btn: {
-                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                takePhotoSavePath = CommonUtil.getImageSavePath(String.valueOf(System
-                        .currentTimeMillis())
-                        + ".jpg");
-                intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(new File(takePhotoSavePath)));
-                startActivityForResult(intent, SysConstant.CAMERA_WITH_DATA);
-                //addOthersPanelView.setVisibility(View.GONE);
-                messageEdt.clearFocus();//切记清除焦点
-                scrollToBottomListItem();
+//            case R.id.take_camera_btn: {
+//                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//                takePhotoSavePath = CommonUtil.getImageSavePath(String.valueOf(System
+//                        .currentTimeMillis())
+//                        + ".jpg");
+//                intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(new File(takePhotoSavePath)));
+//                startActivityForResult(intent, SysConstant.CAMERA_WITH_DATA);
+//                //addOthersPanelView.setVisibility(View.GONE);
+//                messageEdt.clearFocus();//切记清除焦点
+//                scrollToBottomListItem();
+//            }
+//            break;
+            case R.id.take_camera_btn:{
+                Intent intent = new Intent(MessageActivity.this, CameraActivity.class);
+                intent.putExtra(IntentConstant.KEY_SESSION_KEY, currentSessionKey);
+                startActivity(intent);
             }
             break;
             case R.id.show_emo_btn: {

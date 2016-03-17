@@ -22,7 +22,7 @@ public class GoogleFaceDetect implements FaceDetectionListener {
 	public void onFaceDetection(Face[] faces, Camera camera) {
 		// TODO Auto-generated method stub
 		
-		Log.i(TAG, "onFaceDetection...");
+		//Log.i(TAG, "onFaceDetection...");
 		if(faces != null){
 		
 			Message m = mHander.obtainMessage();

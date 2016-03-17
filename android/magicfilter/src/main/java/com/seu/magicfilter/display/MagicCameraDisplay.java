@@ -36,14 +36,10 @@ import com.seu.magicfilter.utils.SaveTask.onPictureSaveListener;
  */
 public class MagicCameraDisplay extends MagicDisplay{	
 	/**
-	 * ���ڻ������Ԥ�����ݣ������˾���mFiltersΪNull���ߴ�СΪ0ʱ�����Ƶ���Ļ�У�
-	 * ���򣬻��Ƶ�FrameBuffer������
 	 */
 	private final MagicCameraInputFilter mCameraInputFilter;
 	
 	/**
-	 * CameraԤ�����ݽ��ղ㣬�����OpenGL��
-	 * ���̼�{@link OpenGLUtils.getExternalOESTextureID()};
 	 */
 	private SurfaceTexture mSurfaceTexture;
 

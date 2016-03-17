@@ -83,7 +83,7 @@ public class FilterLayoutUtils{
 			else
 				btn_Favourite.setVisibility(View.INVISIBLE);
 			btn_Favourite.setSelected(filterInfos.get(position).isFavourite());
-			if(position <= favouriteFilterInfos.size()){//���Favourite�б�
+			if(position <= favouriteFilterInfos.size()){
 				for(int i = favouriteFilterInfos.size() + 2; i < filterInfos.size(); i++){
 					if(filterInfos.get(i).getFilterType() == Type){
 						filterInfos.get(i).setSelected(true);
