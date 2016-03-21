@@ -16,7 +16,7 @@ public class MagicCoolFilter extends GPUImageFilter{
 	public MagicCoolFilter(Context context){
 		super(NO_FILTER_VERTEX_SHADER,OpenGLUtils.readShaderFromRawResource(context, R.raw.cool));
 	}
-	
+
 	public void onDestroy(){
 		super.onDestroy();
 	    GLES20.glDeleteTextures(1, mToneCurveTexture, 0);

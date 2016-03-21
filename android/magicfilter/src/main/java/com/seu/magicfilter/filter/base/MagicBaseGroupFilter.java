@@ -75,6 +75,7 @@ public class MagicBaseGroupFilter extends GPUImageFilter{
                 GLES20.glBindFramebuffer(GLES20.GL_FRAMEBUFFER, 0);
             }
         }
+        return;
     }
     
     @Override

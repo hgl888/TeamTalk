@@ -144,4 +144,4 @@ void main()
     textureColor = (textureColor - base) * 0.05098 + base; 
 
 	gl_FragColor = vec4(textureColor.r, textureColor.g, textureColor.b, 1.0);
-} 
+}
