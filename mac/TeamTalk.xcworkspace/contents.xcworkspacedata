@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../protobuf-objc/src/runtime/ProtocolBuffers.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:TeamTalk.xcodeproj">
    </FileRef>
    <FileRef

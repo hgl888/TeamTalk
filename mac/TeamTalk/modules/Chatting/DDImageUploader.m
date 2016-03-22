@@ -7,7 +7,7 @@
 //
 
 #import "DDImageUploader.h"
-#import <AFNetworking/AFNetworking.h>
+#import "AFNetworking/AFNetworking.h"
 #import "NSImage+Addition.h"
 #import "MTImageCache.h"
 #import "DDLoginManager.h"

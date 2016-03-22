@@ -7,7 +7,7 @@
 //
 
 #import "MTImageDownload.h"
-#import <AFNetworking.h>
+#import "AFNetworking.h"
 #import "DDPathHelp.h"
 #import "MTImageCache.h"
 @interface MTImageDownload(PrivateAPI)

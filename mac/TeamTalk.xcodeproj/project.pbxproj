@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04681E001CA12A3500A70191 /* libProtocolBuffers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04681DFF1CA12A3500A70191 /* libProtocolBuffers.a */; };
 		183B534218695FBA009073EC /* DDTaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 183B534118695FBA009073EC /* DDTaskManager.m */; };
 		183B536B186AFB27009073EC /* FileTransferEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 183B536A186AFB27009073EC /* FileTransferEntity.m */; };
 		183B5371186D58C2009073EC /* TcpProtocolHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 183B5370186D58C2009073EC /* TcpProtocolHeader.m */; };
@@ -944,6 +945,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		04681DFD1CA1292B00A70191 /* ProtocolBuffers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProtocolBuffers.framework; path = "../../thirdparty/protobuf-objc/src/runtime/Build/Products/Debug-iphoneos/ProtocolBuffers.framework"; sourceTree = "<group>"; };
+		04681DFF1CA12A3500A70191 /* libProtocolBuffers.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libProtocolBuffers.a; path = "../protobuf-objc/src/runtime/Build/Products/Debug/libProtocolBuffers.a"; sourceTree = "<group>"; };
 		183B534018695FBA009073EC /* DDTaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDTaskManager.h; path = DDLogic/task/DDTaskManager.h; sourceTree = "<group>"; };
 		183B534118695FBA009073EC /* DDTaskManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDTaskManager.m; path = DDLogic/task/DDTaskManager.m; sourceTree = "<group>"; };
 		183B5369186AFB27009073EC /* FileTransferEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileTransferEntity.h; sourceTree = "<group>"; };
@@ -2227,6 +2230,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04681E001CA12A3500A70191 /* libProtocolBuffers.a in Frameworks */,
 				5E8EB9DD1934713A008B1890 /* ImageIO.framework in Frameworks */,
 				57DF183B18DFD0E4003A19F6 /* libsqlite3.dylib in Frameworks */,
 				C48B104918D1B18500DEF8C6 /* IOKit.framework in Frameworks */,
@@ -2601,6 +2605,8 @@
 		573847311820CDA000443653 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04681DFF1CA12A3500A70191 /* libProtocolBuffers.a */,
+				04681DFD1CA1292B00A70191 /* ProtocolBuffers.framework */,
 				57DEB6901A7F75F500961C6F /* libsecurity.a */,
 				5E8EB9DC1934713A008B1890 /* ImageIO.framework */,
 				57DF183A18DFD0E4003A19F6 /* libsqlite3.dylib */,
@@ -5516,7 +5522,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					"/Users/mac/MyWorks/TeamTalk/thirdparty/protobuf-objc/src/runtime/Build/Products/Debug-iphoneos",
+					"/Users/mac/MyWorks/TeamTalk/TeamTalkSrc/protobuf-objc/src/runtime/Classes",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TeamTalk/TeamTalk-Prefix.pch";
 				INFOPLIST_FILE = "TeamTalk/TeamTalk-Info.plist";
@@ -5527,12 +5537,13 @@
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Duoduo-ecacnztivbkeggegyktnermxjnpy/Build/Products/Debug",
 					/Users/golastroom/Downloads,
 					"$(PROJECT_DIR)",
+					"/Users/mac/MyWorks/TeamTalk/TeamTalkSrc/protobuf-objc/src/runtime/Build/Products/Debug",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_NAME = TeamTalk;
 				SDKROOT = macosx10.9;
-				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)";
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT) /Users/mac/MyWorks/TeamTalk/TeamTalkSrc/protobuf-objc/src/runtime/Classes /Users/mac/MyWorks/TeamTalk/TeamTalkSrc/mac/Pods/FMDB/src/fmdb /Users/mac/MyWorks/TeamTalk/TeamTalkSrc/mac/Pods/AFNetworking/AFNetworking /Users/mac/MyWorks/TeamTalk/TeamTalkSrc/mac/Pods/AFNetworking";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -5543,7 +5554,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					"/Users/mac/MyWorks/TeamTalk/thirdparty/protobuf-objc/src/runtime/Build/Products/Debug-iphoneos",
+					"/Users/mac/MyWorks/TeamTalk/TeamTalkSrc/protobuf-objc/src/runtime/Classes",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TeamTalk/TeamTalk-Prefix.pch";
 				INFOPLIST_FILE = "TeamTalk/TeamTalk-Info.plist";
@@ -5554,12 +5569,13 @@
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Duoduo-ecacnztivbkeggegyktnermxjnpy/Build/Products/Debug",
 					/Users/golastroom/Downloads,
 					"$(PROJECT_DIR)",
+					"/Users/mac/MyWorks/TeamTalk/TeamTalkSrc/protobuf-objc/src/runtime/Build/Products/Debug",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_NAME = TeamTalk;
 				SDKROOT = macosx10.9;
-				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)";
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT) /Users/mac/MyWorks/TeamTalk/TeamTalkSrc/protobuf-objc/src/runtime/Classes /Users/mac/MyWorks/TeamTalk/TeamTalkSrc/mac/Pods/FMDB/src/fmdb /Users/mac/MyWorks/TeamTalk/TeamTalkSrc/mac/Pods/AFNetworking/AFNetworking /Users/mac/MyWorks/TeamTalk/TeamTalkSrc/mac/Pods/AFNetworking";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

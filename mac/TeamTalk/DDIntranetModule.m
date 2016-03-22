@@ -11,7 +11,7 @@
 #import "MD5.h"
 #import "MTUserEntity.h"
 #import "MTUserModule.h"
-#import <AFNetworking/AFNetworking.h>
+#import "AFNetworking/AFNetworking.h"
 @interface DDIntranetModule(PrivateAPI)
 
 - (void)p_sortIntranet;

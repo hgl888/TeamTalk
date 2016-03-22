@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
@@ -34,6 +35,7 @@ import com.mogujie.tt.imservice.service.IMService;
 import com.mogujie.tt.ui.base.TTBaseActivity;
 import com.mogujie.tt.imservice.support.IMServiceConnector;
 import com.mogujie.tt.utils.Logger;
+import com.seu.magiccamera.common.utils.Constants;
 
 import de.greenrobot.event.EventBus;
 
@@ -174,6 +176,7 @@ public class LoginActivity extends TTBaseActivity {
         EventBus.getDefault().register(this);
 
         setContentView(R.layout.tt_activity_login);
+        initConstants();
         mSwitchLoginServer = (TextView)findViewById(R.id.sign_switch_login_server);
         mSwitchLoginServer.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -411,5 +414,12 @@ public class LoginActivity extends TTBaseActivity {
         logger.d("login#errorTip:%s", errorTip);
         mLoginStatusView.setVisibility(View.GONE);
         Toast.makeText(this, errorTip, Toast.LENGTH_SHORT).show();
+    }
+
+    private void initConstants() {
+        Point outSize = new Point();
+        getWindowManager().getDefaultDisplay().getRealSize(outSize);
+        Constants.mScreenWidth = outSize.x;
+        Constants.mScreenHeight = outSize.y;
     }
 }
