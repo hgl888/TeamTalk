@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6802F6EF490DEE71C0552E98 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7C945FDB2D00B8D439C777 /* libPods.a */; };
+		04113E9C1CA0F1F40060CC46 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04113E9B1CA0F1F40060CC46 /* libPods.a */; };
 		810D52181B50ECFA004DF7B4 /* bgImage_HL@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 810D52141B50ECFA004DF7B4 /* bgImage_HL@2x.png */; };
 		810D52191B50ECFA004DF7B4 /* cellLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 810D52151B50ECFA004DF7B4 /* cellLine@2x.png */; };
 		810D521A1B50ECFA004DF7B4 /* LCActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 810D52171B50ECFA004DF7B4 /* LCActionSheet.m */; };
@@ -413,6 +413,7 @@
 
 /* Begin PBXFileReference section */
 		03A854D4EB4F75C40944178C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		04113E9B1CA0F1F40060CC46 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		810D52141B50ECFA004DF7B4 /* bgImage_HL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bgImage_HL@2x.png"; sourceTree = "<group>"; };
 		810D52151B50ECFA004DF7B4 /* cellLine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellLine@2x.png"; sourceTree = "<group>"; };
 		810D52161B50ECFA004DF7B4 /* LCActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCActionSheet.h; sourceTree = "<group>"; };
@@ -1079,11 +1080,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04113E9C1CA0F1F40060CC46 /* libPods.a in Frameworks */,
 				C0AE3A1B1B32C95A00B67232 /* libz.dylib in Frameworks */,
 				817CB3B01B3BC6E80004AFEA /* Fabric.framework in Frameworks */,
 				C054EC851B3274E200078809 /* libsecurity.a in Frameworks */,
 				817CB3B11B3BC6E80004AFEA /* Crashlytics.framework in Frameworks */,
-				6802F6EF490DEE71C0552E98 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1109,6 +1110,7 @@
 		527B2E51021DC51A46265D31 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04113E9B1CA0F1F40060CC46 /* libPods.a */,
 				817CB3AE1B3BC6E80004AFEA /* Fabric.framework */,
 				817CB3AF1B3BC6E80004AFEA /* Crashlytics.framework */,
 				C0AE3A1A1B32C95A00B67232 /* libz.dylib */,
@@ -2790,7 +2792,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "
+";
 			showEnvVarsInLog = 0;
 		};
 		D9431D98FDF906055AA1F60D /* Copy Pods Resources */ = {
@@ -3192,6 +3195,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/TeamTalk/Exist/Security",
 					"$(PROJECT_DIR)/TeamTalk/Exist/MobClick",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -3219,6 +3223,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/TeamTalk/Exist/Security",
 					"$(PROJECT_DIR)/TeamTalk/Exist/MobClick",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
