@@ -15,7 +15,7 @@ import android.view.View.OnClickListener;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.mogujie.tt.R;
+import com.show.tt.R;
 
 
 public class FilterAdapter extends RecyclerView.Adapter<FilterAdapter.FilterHolder>{

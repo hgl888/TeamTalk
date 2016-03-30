@@ -1,7 +1,6 @@
 package com.seu.magiccamera.common.view.edit.filter;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +10,7 @@ import com.seu.magiccamera.common.view.FilterLayoutUtils;
 import com.seu.magiccamera.common.view.edit.ImageEditFragment;
 import com.seu.magicfilter.display.MagicImageDisplay;
 import com.seu.magicfilter.filter.helper.MagicFilterType;
-import com.mogujie.tt.R;
+import com.show.tt.R;
 
 
 public class ImageEditFilterView extends ImageEditFragment{

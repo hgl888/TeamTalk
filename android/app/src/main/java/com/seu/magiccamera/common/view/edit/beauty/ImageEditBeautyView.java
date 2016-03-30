@@ -18,7 +18,7 @@ import com.seu.magicfilter.display.MagicImageDisplay;
 import com.seu.magicfilter.utils.MagicSDK;
 import com.seu.magicfilter.utils.MagicSDK.MagicSDKListener;
 
-import com.mogujie.tt.R;
+import com.show.tt.R;
 
 
 public class ImageEditBeautyView extends ImageEditFragment{

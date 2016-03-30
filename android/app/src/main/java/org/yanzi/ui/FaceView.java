@@ -3,7 +3,7 @@ package org.yanzi.ui;
 import org.yanzi.camera.CameraInterface;
 import org.yanzi.util.Util;
 
-import com.mogujie.tt.R;
+import com.show.tt.R;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -12,13 +12,11 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.graphics.PixelFormat;
-import android.graphics.PointF;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.hardware.Camera.CameraInfo;
 import android.hardware.Camera.Face;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.widget.ImageView;
 
 public class FaceView extends ImageView {

@@ -16,7 +16,7 @@ import com.seu.magiccamera.widget.TwoLineSeekBar;
 import com.seu.magiccamera.widget.TwoLineSeekBar.OnSeekChangeListener;
 import com.seu.magicfilter.display.MagicImageDisplay;
 import com.seu.magicfilter.filter.helper.MagicFilterType;
-import com.mogujie.tt.R;
+import com.show.tt.R;
 
 
 public class ImageEditAdjustView extends ImageEditFragment{

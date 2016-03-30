@@ -13,7 +13,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.graphics.Color;
 import android.graphics.Canvas;
-import com.mogujie.tt.R;
+import com.show.tt.R;
 
 
 import java.util.TreeMap;

@@ -25,7 +25,7 @@ import android.util.FloatMath;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 
-import com.mogujie.im.libs.R;
+import com.show.im.libs.R;
 
 public class PullToRefreshWebView extends PullToRefreshBase<WebView> {
 

@@ -18,7 +18,7 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import com.mogujie.tt.R;
+import com.show.tt.R;
 
 
 public class BubbleSeekBar extends SeekBar{

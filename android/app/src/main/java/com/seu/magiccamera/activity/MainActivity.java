@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import com.seu.magiccamera.common.utils.Constants;
-import com.mogujie.tt.R;
+import com.show.tt.R;
 
 public class MainActivity extends Activity {
 

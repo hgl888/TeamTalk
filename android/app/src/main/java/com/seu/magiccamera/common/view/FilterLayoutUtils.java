@@ -16,7 +16,7 @@ import com.seu.magiccamera.common.adapter.FilterAdapter;
 import com.seu.magiccamera.common.bean.FilterInfo;
 import com.seu.magicfilter.display.MagicDisplay;
 import com.seu.magicfilter.filter.helper.MagicFilterType;
-import com.mogujie.tt.R;
+import com.show.tt.R;
 
 public class FilterLayoutUtils{
 	private Context mContext;

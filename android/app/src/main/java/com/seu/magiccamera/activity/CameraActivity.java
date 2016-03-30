@@ -10,7 +10,6 @@ import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.FrameLayout;
@@ -21,7 +20,7 @@ import org.yanzi.mode.GoogleFaceDetect;
 import org.yanzi.ui.FaceView;
 import org.yanzi.util.EventUtil;
 
-import com.mogujie.tt.R;
+import com.show.tt.R;
 import com.seu.magiccamera.common.utils.Constants;
 import com.seu.magiccamera.common.view.FilterLayoutUtils;
 import com.seu.magicfilter.display.MagicCameraDisplay;

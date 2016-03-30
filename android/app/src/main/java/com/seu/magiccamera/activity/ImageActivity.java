@@ -28,7 +28,7 @@ import com.seu.magiccamera.common.view.edit.frame.ImageEditFrameView;
 import com.seu.magicfilter.display.MagicImageDisplay;
 import com.seu.magicfilter.utils.SaveTask.onPictureSaveListener;
 
-import com.mogujie.tt.R;
+import com.show.tt.R;
 
 public class ImageActivity extends Activity{
 	private RadioGroup mRadioGroup;

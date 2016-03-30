@@ -1,7 +1,7 @@
 package com.seu.magiccamera.common.utils;
 
 import com.seu.magicfilter.filter.helper.MagicFilterType;
-import com.mogujie.tt.R;
+import com.show.tt.R;
 
 public class FilterTypeHelper {
 	

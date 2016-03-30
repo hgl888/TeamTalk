@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import com.mogujie.tt.R;
+import com.show.tt.R;
 import com.seu.magiccamera.common.view.edit.ImageEditFragment;
 import com.seu.magicfilter.display.MagicImageDisplay;
 

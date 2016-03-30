@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mogujie.tt">
+    package="com.show.tt">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -30,13 +30,13 @@
         android:smallScreens="true" />
 
     <application
-        android:name=".app.IMApplication"
+        android:name="com.show.tt.app.IMApplication"
         android:icon="@drawable/tt_logo"
         android:largeHeap="true"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.NoTitleBar" >
         <activity
-            android:name=".ui.activity.MessageActivity"
+            android:name="com.show.tt.ui.activity.MessageActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name"
             android:launchMode="singleTask"
@@ -44,80 +44,80 @@
         </activity>
 
         <activity
-            android:name=".ui.activity.ContactFragmentActivity"
+            android:name="com.show.tt.ui.activity.ContactFragmentActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/contact_name"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".ui.activity.MainActivity"
+            android:name="com.show.tt.ui.activity.MainActivity"
             android:configChanges="orientation|keyboardHidden"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
         </activity>
 
         <service
-            android:name=".imservice.service.IMService"
+            android:name="com.show.tt.imservice.service.IMService"
             android:exported="false" >
         </service>
-        <service android:name=".imservice.service.LoadImageService" />
+        <service android:name="com.show.tt.imservice.service.LoadImageService" />
 
         <activity
-            android:name=".ui.activity.PickPhotoActivity"
+            android:name="com.show.tt.ui.activity.PickPhotoActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
         <activity
-            android:name=".ui.activity.ImageGridActivity"
+            android:name="com.show.tt.ui.activity.ImageGridActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
         <activity
-            android:name=".ui.activity.PreviewActivity"
+            android:name="com.show.tt.ui.activity.PreviewActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
         <activity
-            android:name=".ui.activity.PreviewTextActivity"
+            android:name="com.show.tt.ui.activity.PreviewTextActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
         <activity
-            android:name=".ui.activity.PreviewGifActivity"
+            android:name="com.show.tt.ui.activity.PreviewGifActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
         <activity
-            android:name=".ui.activity.UserInfoActivity"
+            android:name="com.show.tt.ui.activity.UserInfoActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
         <activity
-            android:name=".ui.activity.GroupManagermentActivity"
+            android:name="com.show.tt.ui.activity.GroupManagermentActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
         <activity
-            android:name=".ui.activity.GroupMemberSelectActivity"
+            android:name="com.show.tt.ui.activity.GroupMemberSelectActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="adjustNothing" >
         </activity>
         <activity
-            android:name=".ui.activity.SettingActivity"
+            android:name="com.show.tt.ui.activity.SettingActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
         <activity
-            android:name=".ui.activity.SearchActivity"
+            android:name="com.show.tt.ui.activity.SearchActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
         <activity
-            android:name=".ui.activity.WebViewFragmentActivity"
+            android:name="com.show.tt.ui.activity.WebViewFragmentActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
             <intent-filter>
@@ -129,17 +129,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.activity.DetailPortraitActivity"
+            android:name="com.show.tt.ui.activity.DetailPortraitActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
         <activity
-            android:name=".ui.activity.PreviewMessageImagesActivity"
+            android:name="com.show.tt.ui.activity.PreviewMessageImagesActivity"
             android:screenOrientation="portrait"
             >
         </activity>
         <activity
-            android:name=".ui.activity.LoginActivity"
+            android:name="com.show.tt.ui.activity.LoginActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
