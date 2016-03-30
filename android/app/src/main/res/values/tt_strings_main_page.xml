@@ -1,7 +1,7 @@
 <resources>
 
     <string name="main_chat">聊天</string>
-    <string name="main_contact">通讯录</string>
+    <string name="main_contact">好友</string>
     <string name="main_innernet">发现</string>
     <string name="main_me_tab">我的</string>
     <string name="page_me">我</string>
