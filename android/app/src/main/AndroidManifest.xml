@@ -125,7 +125,7 @@
 
                 <action android:name="android.intent.action.VIEW" />
 
-                <data android:scheme="com.mogujie.tt" />
+                <data android:scheme="com.show.tt" />
             </intent-filter>
         </activity>
         <activity

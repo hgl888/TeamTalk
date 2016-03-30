@@ -11,6 +11,7 @@ import com.show.tt.config.IntentConstant;
 import com.show.tt.imservice.event.LoginEvent;
 import com.show.tt.imservice.event.UnreadEvent;
 import com.show.tt.imservice.service.IMService;
+import com.show.tt.ui.CircleButton;
 import com.show.tt.ui.fragment.ChatFragment;
 import com.show.tt.ui.fragment.ContactFragment;
 import com.show.tt.imservice.support.IMServiceConnector;
@@ -23,6 +24,7 @@ import de.greenrobot.event.EventBus;
 public class MainActivity extends FragmentActivity{
 	private Fragment[] mFragments;
 	private NaviTabButton[] mTabButtons;
+	private CircleButton mCircleButton;
 	private Logger logger = Logger.getLogger(MainActivity.class);
     private IMService imService;
 	private IMServiceConnector imServiceConnector = new IMServiceConnector(){
@@ -104,6 +106,9 @@ public class MainActivity extends FragmentActivity{
 		mTabButtons[1].setSelectedImage(getResources().getDrawable(R.drawable.tt_tab_contact_sel));
 		mTabButtons[1].setUnselectedImage(getResources().getDrawable(R.drawable.tt_tab_contact_nor));
 
+		//mCircleButton = (CircleButton)findViewById(R.id.tabbtnCamera);
+		//mCircleButton.bringToFront();
+
 		mTabButtons[2].setTitle(getString(R.string.main_innernet));
 		mTabButtons[2].setIndex(2);
 		mTabButtons[2].setSelectedImage(getResources().getDrawable(R.drawable.tt_tab_internal_select));
@@ -113,6 +118,7 @@ public class MainActivity extends FragmentActivity{
 		mTabButtons[3].setIndex(3);
 		mTabButtons[3].setSelectedImage(getResources().getDrawable(R.drawable.tt_tab_me_sel));
 		mTabButtons[3].setUnselectedImage(getResources().getDrawable(R.drawable.tt_tab_me_nor));
+
 	}
 
 	public void setFragmentIndicator(int which) {

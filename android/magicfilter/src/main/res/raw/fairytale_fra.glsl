@@ -29,7 +29,7 @@ void main()
 	p.y *= uResolution;
 	p.y -= 0.25;
 
-    p -= vec2(sin(uGlobalTime), cos(uGlobalTime));
+    //p -= vec2(sin(uGlobalTime), cos(uGlobalTime));
 
 	// background color
     //vec3 bcol = vec3(1.0,0.8,0.7-0.07*p.y)*(1.0-0.25*length(p));
@@ -45,7 +45,7 @@ void main()
     float r = length(p);
     float h = abs(a);
     float d = (13.0*h - 22.0*h*h + 10.0*h*h*h)/(6.0-5.0*h);
-    d /=4.0;
+    d /=2.0;
 
     // color
     float s = 1.0-0.5*clamp(r/d,0.0,1.0);
