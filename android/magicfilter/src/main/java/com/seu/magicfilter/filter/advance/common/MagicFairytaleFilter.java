@@ -15,6 +15,8 @@ public class MagicFairytaleFilter extends GPUImageFilter {
 	protected Context mContext;
 	public int mLookupTextureUniform;
 	public int mUniGlobalTime;
+	public int mUniResolution;
+	public int mUniRandPos;
 	public int mLookupSourceTexture = OpenGLUtils.NO_TEXTURE;
 
 	public MagicFairytaleFilter(Context context) {
@@ -34,6 +36,8 @@ public class MagicFairytaleFilter extends GPUImageFilter {
 		super.onInit();
 		mLookupTextureUniform = GLES20.glGetUniformLocation(getProgram(), "inputImageTexture2");
 		mUniGlobalTime = GLES20.glGetUniformLocation( getProgram(), "uGlobalTime");
+		mUniResolution = GLES20.glGetUniformLocation( getProgram(), "uResolution");
+		mUniRandPos = GLES20.glGetUniformLocation(getProgram(), "uRandPos");
 		return;
 	}
 
@@ -42,6 +46,8 @@ public class MagicFairytaleFilter extends GPUImageFilter {
 		runOnDraw(new Runnable(){
 			public void run(){
 				mLookupSourceTexture = OpenGLUtils.loadTexture(mContext, table);
+				float resolution = (float)mSurfaceHeight / (float)mSurfaceWidth;
+				GLES20.glUniform1f(mUniResolution, resolution);
 			}
 		});
 	}
@@ -63,11 +69,14 @@ public class MagicFairytaleFilter extends GPUImageFilter {
 
 	static float time = (float) 0.0;
 	protected void onDrawArraysPre(){
-		if( time > 3.0 )
-			time = (float) 0.0;
+		if( time > 3.14159 )
+			time = (float) -3.14159;
 		time += 0.07;
 		Log.e("Fairytale", "time=" + time );
 		GLES20.glUniform1f(mUniGlobalTime, time);
+		//float x = ;
+		//float y = ;
+		//GLES20.glUniform2f( mUniRandPos, x, y );
 		if (mLookupSourceTexture != -1){
 			GLES20.glActiveTexture(GLES20.GL_TEXTURE3);
 			GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, mLookupSourceTexture);

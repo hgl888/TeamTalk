@@ -4,6 +4,8 @@ varying vec2 vposition;
 uniform sampler2D inputImageTexture;
 uniform sampler2D inputImageTexture2;
 uniform float uGlobalTime;
+uniform float uResolution;
+uniform float uRandPos[2];
 
 
 float smoothstepmy( float x, float y, float a )
@@ -24,9 +26,10 @@ void main()
 {
 	vec4 layer1 = texture2D(inputImageTexture, textureCoordinate);
 	vec2 p = vposition;
-	p.y *= 1.78;
+	p.y *= uResolution;
 	p.y -= 0.25;
 
+    p -= vec2(sin(uGlobalTime), cos(uGlobalTime));
 
 	// background color
     //vec3 bcol = vec3(1.0,0.8,0.7-0.07*p.y)*(1.0-0.25*length(p));
@@ -37,11 +40,12 @@ void main()
      ss = 1.0 + ss*0.5*sin(tt*6.2831*3.0 + p.y*0.5)*exp(-tt*4.0);
      p *= vec2(0.5,1.5) + ss*vec2(0.5,-0.5);
 
- // shape
-    float a = atan(p.x,p.y)/3.141593;
+    // shape
+    float a = atan(p.x, p.y)/3.141593;
     float r = length(p);
     float h = abs(a);
     float d = (13.0*h - 22.0*h*h + 10.0*h*h*h)/(6.0-5.0*h);
+    d /=4.0;
 
     // color
     float s = 1.0-0.5*clamp(r/d,0.0,1.0);
@@ -49,7 +53,7 @@ void main()
     s *= 1.0-0.25*r;
     s = 0.5 + 0.6*s;
     s *= 0.5+0.5*pow( 1.0-clamp(r/d, 0.0, 1.0 ), 0.1 );
-    vec3 hcol = vec3(1.0,0.5*r,0.3)*s;
+    vec3 hcol = vec3(1.0, 0.5*r,0.3)*s;
 
     vec3 col = mix( bcol, hcol, smoothstep( -0.01, 0.01, d-r) );
 
