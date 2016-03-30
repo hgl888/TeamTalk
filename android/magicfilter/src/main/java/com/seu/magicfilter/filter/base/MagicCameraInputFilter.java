@@ -52,6 +52,7 @@ public class MagicCameraInputFilter extends GPUImageFilter{
 	
 	public void setTextureTransformMatrix(float[] mtx){
 		mTextureTransformMatrix = mtx;
+        //mTextureTransformMatrix[5] = (float)1.0;
     }
 	
 	@Override

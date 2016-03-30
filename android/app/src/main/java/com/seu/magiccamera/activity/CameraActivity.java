@@ -25,6 +25,11 @@ import com.mogujie.tt.R;
 import com.seu.magiccamera.common.utils.Constants;
 import com.seu.magiccamera.common.view.FilterLayoutUtils;
 import com.seu.magicfilter.display.MagicCameraDisplay;
+import com.seu.magicfilter.utils.TextureRotationUtil;
+
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.FloatBuffer;
 
 public class CameraActivity extends Activity{
 	private MagicCameraDisplay mMagicCameraDisplay;
@@ -32,7 +37,7 @@ public class CameraActivity extends Activity{
 	private GoogleFaceDetect googleFaceDetect = null;
 	private MainHandler mMainHandler = null;
 	private FaceView faceView;
-	
+
 	private class MainHandler extends Handler{
 		@Override
 		public void handleMessage( Message msg ){
@@ -51,18 +56,27 @@ public class CameraActivity extends Activity{
 			
 		}
 	}
-	
+
+	private  void TestCode(){
+		final FloatBuffer mGLCubeBuffer;
+		mGLCubeBuffer = ByteBuffer.allocateDirect(TextureRotationUtil.CUBE.length * 4 )
+				.order(ByteOrder.nativeOrder())
+				.asFloatBuffer();
+		mGLCubeBuffer.put(TextureRotationUtil.CUBE).position(0);
+		return;
+	}
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_camera);
 		initConstants();
-
+		TestCode();
 		faceView = (FaceView)findViewById(R.id.face_view );
 		initMagicPreview();
 		initFilterLayout();
-		
+		String name = this.getClass().getName();
+		int hashcode = this.hashCode();
 		mMainHandler = new MainHandler();
 	    googleFaceDetect = new GoogleFaceDetect( this.getApplicationContext(), mMainHandler );
 	}

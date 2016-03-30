@@ -2,6 +2,7 @@ package com.seu.magicfilter.filter.advance.common;
 
 import android.content.Context;
 import android.opengl.GLES20;
+import android.util.Log;
 
 import com.seu.magicfilter.R;
 import com.seu.magicfilter.filter.base.MagicLookupFilter;
@@ -13,6 +14,7 @@ public class MagicFairytaleFilter extends GPUImageFilter {
 	protected String table;
 	protected Context mContext;
 	public int mLookupTextureUniform;
+	public int mUniGlobalTime;
 	public int mLookupSourceTexture = OpenGLUtils.NO_TEXTURE;
 
 	public MagicFairytaleFilter(Context context) {
@@ -31,6 +33,8 @@ public class MagicFairytaleFilter extends GPUImageFilter {
 	protected void onInit(){
 		super.onInit();
 		mLookupTextureUniform = GLES20.glGetUniformLocation(getProgram(), "inputImageTexture2");
+		mUniGlobalTime = GLES20.glGetUniformLocation( getProgram(), "uGlobalTime");
+		return;
 	}
 
 	protected void onInitialized(){
@@ -57,7 +61,13 @@ public class MagicFairytaleFilter extends GPUImageFilter {
 		}
 	}
 
+	static float time = (float) 0.0;
 	protected void onDrawArraysPre(){
+		if( time > 3.0 )
+			time = (float) 0.0;
+		time += 0.07;
+		Log.e("Fairytale", "time=" + time );
+		GLES20.glUniform1f(mUniGlobalTime, time);
 		if (mLookupSourceTexture != -1){
 			GLES20.glActiveTexture(GLES20.GL_TEXTURE3);
 			GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, mLookupSourceTexture);
