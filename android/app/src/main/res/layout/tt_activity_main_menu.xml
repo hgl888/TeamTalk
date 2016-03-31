@@ -14,21 +14,21 @@
         android:orientation="horizontal"
         android:gravity="center_horizontal"
         android:background="@drawable/tt_tab_bk"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
 
        >
 
         <com.show.tt.ui.widget.NaviTabButton
             android:id="@+id/tabbutton_chat"
             android:layout_width="fill_parent"
-            android:layout_height="48dp"
+            android:layout_height="50dp"
             android:layout_weight="1" />
 
         <com.show.tt.ui.widget.NaviTabButton
             android:id="@+id/tabbutton_contact"
             android:layout_width="fill_parent"
-            android:layout_height="48dp"
+            android:layout_height="50dp"
             android:layout_weight="1" />
 
         <FrameLayout
@@ -39,13 +39,13 @@
         <com.show.tt.ui.widget.NaviTabButton
             android:id="@+id/tabbutton_internal"
             android:layout_width="fill_parent"
-            android:layout_height="48dp"
+            android:layout_height="50dp"
             android:layout_weight="1" />
 
         <com.show.tt.ui.widget.NaviTabButton
             android:id="@+id/tabbutton_my"
             android:layout_width="fill_parent"
-            android:layout_height="48dp"
+            android:layout_height="50dp"
             android:layout_weight="1" />
     </LinearLayout>
     <FrameLayout
@@ -60,7 +60,7 @@
         android:layout_gravity="center"
         android:scaleType="fitCenter"
         android:src="@drawable/ic_action_tick"
-        app:cb_color="#FFBB33" />
+        app:cb_color="#AABB33" />
     </FrameLayout>
 
 </FrameLayout>
