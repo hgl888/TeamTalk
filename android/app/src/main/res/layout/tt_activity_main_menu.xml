@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="52dp"
+    android:layout_alignParentBottom="true"
+    >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:background="@drawable/tt_tab_bk"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+
+       >
+
+        <com.show.tt.ui.widget.NaviTabButton
+            android:id="@+id/tabbutton_chat"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:layout_weight="1" />
+
+        <com.show.tt.ui.widget.NaviTabButton
+            android:id="@+id/tabbutton_contact"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:layout_weight="1" />
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.show.tt.ui.widget.NaviTabButton
+            android:id="@+id/tabbutton_internal"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:layout_weight="1" />
+
+        <com.show.tt.ui.widget.NaviTabButton
+            android:id="@+id/tabbutton_my"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1">
+    <com.show.tt.ui.CircleButton
+        android:id="@+id/tabbtnCamera"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_gravity="center"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_action_tick"
+        app:cb_color="#FFBB33" />
+    </FrameLayout>
+
+</FrameLayout>
+

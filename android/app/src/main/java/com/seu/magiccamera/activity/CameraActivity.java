@@ -4,12 +4,14 @@ import android.animation.Animator;
 import android.animation.Animator.AnimatorListener;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Point;
 import android.hardware.Camera.Face;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.FrameLayout;
@@ -214,5 +216,14 @@ public class CameraActivity extends Activity{
 		getWindowManager().getDefaultDisplay().getRealSize(outSize);
 		Constants.mScreenWidth = outSize.x;
 		Constants.mScreenHeight = outSize.y;
+	}
+	public boolean onKeyDown( int keyCode, KeyEvent event ){
+		if( keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0 )
+		{
+			Intent intern = new Intent();
+			setResult( RESULT_OK, intern );
+			finish();
+		}
+		return false;
 	}
 }

@@ -4,8 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.view.View;
 import android.view.Window;
 
+import com.seu.magiccamera.activity.CameraActivity;
+import com.show.tt.CommonCode;
 import com.show.tt.R;
 import com.show.tt.config.IntentConstant;
 import com.show.tt.imservice.event.LoginEvent;
@@ -27,6 +30,8 @@ public class MainActivity extends FragmentActivity{
 	private CircleButton mCircleButton;
 	private Logger logger = Logger.getLogger(MainActivity.class);
     private IMService imService;
+	private boolean mbOpenCamera = false;
+
 	private IMServiceConnector imServiceConnector = new IMServiceConnector(){
         @Override
         public void onIMServiceConnected() {
@@ -106,8 +111,18 @@ public class MainActivity extends FragmentActivity{
 		mTabButtons[1].setSelectedImage(getResources().getDrawable(R.drawable.tt_tab_contact_sel));
 		mTabButtons[1].setUnselectedImage(getResources().getDrawable(R.drawable.tt_tab_contact_nor));
 
-		//mCircleButton = (CircleButton)findViewById(R.id.tabbtnCamera);
-		//mCircleButton.bringToFront();
+		mCircleButton = (CircleButton)findViewById(R.id.tabbtnCamera);
+		mCircleButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if( ! mbOpenCamera) {
+					Intent intent = new Intent(MainActivity.this, CameraActivity.class);
+					intent.putExtra(IntentConstant.KEY_SESSION_KEY, getIntent().getStringExtra(IntentConstant.KEY_SESSION_KEY));
+					startActivityForResult(intent, CommonCode.CAMERAACTIVITY_ID);
+					mbOpenCamera = true;
+				}
+			}
+		});
 
 		mTabButtons[2].setTitle(getString(R.string.main_innernet));
 		mTabButtons[2].setIndex(2);
@@ -136,9 +151,20 @@ public class MainActivity extends FragmentActivity{
 		mTabButtons[0].setUnreadNotify(unreadCnt);
 	}
 
+	protected void onActivityResult(int requestCode, int resultCode,
+									Intent data){
+		switch ( requestCode  )
+		{
+			case CommonCode.CAMERAACTIVITY_ID:
+				if( resultCode == RESULT_OK )
+					mbOpenCamera =false;
+				break;
+			default:
+				break;
+		}
+	}
 
-
-    /**双击事件*/
+	/**双击事件*/
 	public void chatDoubleListener() {
         setFragmentIndicator(0);
         ((ChatFragment) mFragments[0]).scrollToUnreadPosition();
