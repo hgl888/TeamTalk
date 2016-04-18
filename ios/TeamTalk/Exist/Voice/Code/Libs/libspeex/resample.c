@@ -256,7 +256,7 @@ static double compute_func(float x, struct FuncDef *func)
 
 #if 0
 #include <stdio.h>
-int main(int argc, char **argv)
+int main_3(int argc, char **argv)
 {
    int i;
    for (i=0;i<256;i++)

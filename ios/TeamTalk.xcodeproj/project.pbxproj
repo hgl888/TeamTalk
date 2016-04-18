@@ -57,7 +57,6 @@
 		04510EFD1CAD2C4400E59AE6 /* MWTapDetectingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04510EF41CAD2C4400E59AE6 /* MWTapDetectingView.m */; };
 		04510EFE1CAD2C4400E59AE6 /* MWZoomingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04510EF61CAD2C4400E59AE6 /* MWZoomingScrollView.m */; };
 		04D28C331CC48E110016BE8C /* MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D28C2F1CC48E110016BE8C /* MD5.m */; };
-		04D28C341CC48E110016BE8C /* std.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D28C311CC48E110016BE8C /* std.m */; };
 		04D28C381CC48E590016BE8C /* NSObject+Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D28C371CC48E590016BE8C /* NSObject+Property.m */; };
 		04D28C841CC4BF790016BE8C /* ZXingObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = 04D28C831CC4BF790016BE8C /* ZXingObjC.h */; };
 		04D28C961CC4BFC80016BE8C /* NSString+XHMD5.h in Headers */ = {isa = PBXBuildFile; fileRef = 04D28C851CC4BFC80016BE8C /* NSString+XHMD5.h */; };
@@ -729,7 +728,7 @@
 		04D293741CC4C4DE0016BE8C /* SVWebViewControllerActivitySafari@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04D293631CC4C4DE0016BE8C /* SVWebViewControllerActivitySafari@2x.png */; };
 		04D293751CC4C4DE0016BE8C /* SVWebViewControllerActivity.h in Headers */ = {isa = PBXBuildFile; fileRef = 04D293641CC4C4DE0016BE8C /* SVWebViewControllerActivity.h */; };
 		04D293761CC4C4DE0016BE8C /* SVWebViewControllerActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D293651CC4C4DE0016BE8C /* SVWebViewControllerActivity.m */; };
-		04D293781CC4C5180016BE8C /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D293771CC4C5180016BE8C /* libsqlite3.dylib */; };
+		04D2937A1CC4C6A20016BE8C /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D293791CC4C6A20016BE8C /* libsqlite3.0.dylib */; };
 		810D52611B523E42004DF7B4 /* search_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 810D52601B523E42004DF7B4 /* search_back@2x.png */; };
 		810D52641B52592A004DF7B4 /* MTTSearchDetailViewControll.m in Sources */ = {isa = PBXBuildFile; fileRef = 810D52631B52592A004DF7B4 /* MTTSearchDetailViewControll.m */; };
 		810D874F1B456BE10089CEA1 /* MTTBubbleModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 810D874E1B456BE10089CEA1 /* MTTBubbleModule.m */; };
@@ -1172,8 +1171,6 @@
 		04510EF61CAD2C4400E59AE6 /* MWZoomingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MWZoomingScrollView.m; path = TeamTalk/MW/MWZoomingScrollView.m; sourceTree = "<group>"; };
 		04D28C2E1CC48E110016BE8C /* MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MD5.h; path = TeamTalk/Duoduo/MD5.h; sourceTree = "<group>"; };
 		04D28C2F1CC48E110016BE8C /* MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MD5.m; path = TeamTalk/Duoduo/MD5.m; sourceTree = "<group>"; };
-		04D28C301CC48E110016BE8C /* std.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = std.h; path = TeamTalk/Duoduo/std.h; sourceTree = "<group>"; };
-		04D28C311CC48E110016BE8C /* std.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = std.m; path = TeamTalk/Duoduo/std.m; sourceTree = "<group>"; };
 		04D28C321CC48E110016BE8C /* XLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XLog.h; path = TeamTalk/Duoduo/XLog.h; sourceTree = "<group>"; };
 		04D28C361CC48E590016BE8C /* NSObject+Property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+Property.h"; path = "TeamTalk/Duoduo/Category/NSObject+Property.h"; sourceTree = "<group>"; };
 		04D28C371CC48E590016BE8C /* NSObject+Property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Property.m"; path = "TeamTalk/Duoduo/Category/NSObject+Property.m"; sourceTree = "<group>"; };
@@ -1848,6 +1845,7 @@
 		04D293641CC4C4DE0016BE8C /* SVWebViewControllerActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVWebViewControllerActivity.h; sourceTree = "<group>"; };
 		04D293651CC4C4DE0016BE8C /* SVWebViewControllerActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVWebViewControllerActivity.m; sourceTree = "<group>"; };
 		04D293771CC4C5180016BE8C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		04D293791CC4C6A20016BE8C /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		810D52601B523E42004DF7B4 /* search_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search_back@2x.png"; sourceTree = "<group>"; };
 		810D52621B52592A004DF7B4 /* MTTSearchDetailViewControll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTSearchDetailViewControll.h; sourceTree = "<group>"; };
 		810D52631B52592A004DF7B4 /* MTTSearchDetailViewControll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTSearchDetailViewControll.m; sourceTree = "<group>"; };
@@ -2340,7 +2338,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04D293781CC4C5180016BE8C /* libsqlite3.dylib in Frameworks */,
+				04D2937A1CC4C6A20016BE8C /* libsqlite3.0.dylib in Frameworks */,
 				04D293501CC4C4950016BE8C /* libPods.a in Frameworks */,
 				C0AE3A1B1B32C95A00B67232 /* libz.dylib in Frameworks */,
 				04D292CE1CC4C2D10016BE8C /* libsecurity.a in Frameworks */,
@@ -2511,8 +2509,6 @@
 				04D28C351CC48E400016BE8C /* Category */,
 				04D28C2E1CC48E110016BE8C /* MD5.h */,
 				04D28C2F1CC48E110016BE8C /* MD5.m */,
-				04D28C301CC48E110016BE8C /* std.h */,
-				04D28C311CC48E110016BE8C /* std.m */,
 				04D28C321CC48E110016BE8C /* XLog.h */,
 			);
 			name = Duoduo;
@@ -3670,6 +3666,7 @@
 		527B2E51021DC51A46265D31 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04D293791CC4C6A20016BE8C /* libsqlite3.0.dylib */,
 				04D293771CC4C5180016BE8C /* libsqlite3.dylib */,
 				04D2934F1CC4C4950016BE8C /* libPods.a */,
 				04113E9B1CA0F1F40060CC46 /* libPods.a */,
@@ -5114,13 +5111,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C054EC521B3270D900078809 /* Build configuration list for PBXNativeTarget "TeamTalk" */;
 			buildPhases = (
-				C737AEAC57352C980D83E347 /* Check Pods Manifest.lock */,
-				468A16201B3937150093C314 /* ShellScript */,
 				C054EC2B1B3270D900078809 /* Sources */,
 				C054EC2C1B3270D900078809 /* Frameworks */,
 				C054EC2D1B3270D900078809 /* Resources */,
-				D9431D98FDF906055AA1F60D /* Copy Pods Resources */,
-				817CB3AD1B3BC68D0004AFEA /* Run Script */,
 				04D28C641CC4B1670016BE8C /* Headers */,
 			);
 			buildRules = (
@@ -5365,67 +5358,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		468A16201B3937150093C314 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" = \"Release\" ] || [ \"${CONFIGURATION}\" = \"CI\" ]; then\n\nBUILD_NUMBER=`curl http://www.mogujie.com/mobile/build/increase -F \"identifier=im.teamtalk.tt\" -F \"sign=f41b3c980d33d9d51a0a0df685b20bb9\"`\n\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $BUILD_NUMBER\" \"${INFOPLIST_FILE}\"\nfi";
-		};
-		817CB3AD1B3BC68D0004AFEA /* Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run c85ad901eb0173a488b631e90f5913415f7424d1 bcd847cf6b15b2605cfff9400a4da335ce5ea3a0ac481dd143db404b55a09e73";
-		};
-		C737AEAC57352C980D83E347 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "
-";
-			showEnvVarsInLog = 0;
-		};
-		D9431D98FDF906055AA1F60D /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C054EC2B1B3270D900078809 /* Sources */ = {
@@ -5768,7 +5700,6 @@
 				C054EC671B32737300078809 /* MTTUtil.m in Sources */,
 				04D292CB1CC4C2D10016BE8C /* IMSwitchService.pb.m in Sources */,
 				04D28DF81CC4C0290016BE8C /* ZXGenericGF.m in Sources */,
-				04D28C341CC48E110016BE8C /* std.m in Sources */,
 				C07E66731B3292E200A5102C /* DDTcpClientManager.m in Sources */,
 				04D28FEC1CC4C0460016BE8C /* ZXModulusPoly.m in Sources */,
 				04D293481CC4C2D20016BE8C /* CAXException.cpp in Sources */,
@@ -6098,11 +6029,6 @@
 					./Pods/Headers/MBProgressHUD,
 					./TeamTalk,
 					./Pods/Headers,
-					./TeamTalk/XHImageViewer,
-					./TeamTalk/SVModalWebViewController,
-					./TeamTalk/SVWebViewController/UIActivities/Chrome,
-					./TeamTalk/SVWebViewController/UIActivities,
-					./TeamTalk/SVWebViewController/UIActivities/Safari,
 					"./Pods//Headers/DACircularProgress",
 					./Pods/Headers/PSTCollectionView,
 					./Pods/Headers/AFNetworking,
@@ -6145,11 +6071,6 @@
 					./Pods/Headers/MBProgressHUD,
 					./TeamTalk,
 					./Pods/Headers,
-					./TeamTalk/XHImageViewer,
-					./TeamTalk/SVModalWebViewController,
-					./TeamTalk/SVWebViewController/UIActivities/Chrome,
-					./TeamTalk/SVWebViewController/UIActivities,
-					./TeamTalk/SVWebViewController/UIActivities/Safari,
 					"./Pods//Headers/DACircularProgress",
 					./Pods/Headers/PSTCollectionView,
 					./Pods/Headers/AFNetworking,
