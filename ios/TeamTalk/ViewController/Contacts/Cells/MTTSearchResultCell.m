@@ -7,7 +7,7 @@
 //
 
 #import "MTTSearchResultCell.h"
-#import <Masonry.h>
+#import "Masonry.h"
 #import "UIImageView+WebCache.h"
 #import "MTTGroupEntity.h"
 #import "DDUserModule.h"

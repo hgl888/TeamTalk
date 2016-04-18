@@ -8,7 +8,7 @@
 
 #import "ScanQRCodePage.h"
 #import "LCActionSheet.h"
-#import <SVWebViewController.h>
+#import "SVWebViewController.h"
 
 @interface ScanQRCodePage ()
 

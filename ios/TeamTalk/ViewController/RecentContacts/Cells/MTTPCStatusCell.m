@@ -7,7 +7,7 @@
 //
 
 #import "MTTPCStatusCell.h"
-#import <Masonry.h>
+#import "Masonry.h"
 
 @implementation MTTPCStatusCell
 

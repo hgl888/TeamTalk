@@ -13,7 +13,7 @@
 #import "UIView+Addition.h"
 #import "DDGroupModule.h"
 #import "MTTAvatarImageView.h"
-#import <Masonry.h>
+#import "Masonry.h"
 @implementation DDContactsCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier

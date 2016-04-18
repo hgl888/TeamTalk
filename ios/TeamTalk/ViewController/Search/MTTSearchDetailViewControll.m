@@ -14,7 +14,7 @@
 #import "MTTMessageEntity.h"
 #import "MTTUserEntity.h"
 #import "ChattingMainViewController.h"
-#import <Masonry.h>
+#import "Masonry.h"
 
 @implementation MTTSearchDetailViewControll
 #pragma mark - 初始化

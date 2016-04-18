@@ -8,7 +8,7 @@
 
 #import "MTTDetailSearchViewControll.h"
 #import "MTTSearchResultCell.h"
-#import <Masonry.h>
+#import "Masonry.h"
 #import "SearchContentViewController.h"
 
 @interface MTTDetailSearchViewControll()
