@@ -134,6 +134,8 @@
     [self.userLoginBtn setEnabled:NO];
     NSString* userName = _userNameTextField.text ;
     NSString* password = _userPassTextField.text ;
+    userName = @"test001";
+    password = @"test";
     if (userName.length ==0 || password.length == 0) {
         [self.userLoginBtn setEnabled:YES];
         return;
@@ -145,8 +147,7 @@
     HUD.labelText = @"正在登录";
     
     SCLAlertView *alert = [SCLAlertView new];
-    userName = @"铸剑";
-    password = @"123456";
+
     [[LoginModule instance] loginWithUsername:userName password:password success:^(MTTUserEntity *user) {
         
         [HUD removeFromSuperview];
