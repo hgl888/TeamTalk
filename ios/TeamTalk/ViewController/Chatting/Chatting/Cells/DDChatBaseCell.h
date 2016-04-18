@@ -12,7 +12,7 @@
 #import "MenuImageView.h"
 #import "MTTSessionEntity.h"
 #import "MTTBubbleModule.h"
-#import <TTTAttributedLabel.h>
+#import "TTTAttributedLabel.h"
 extern CGFloat const dd_avatarEdge;                 //头像到边缘的距离
 extern CGFloat const dd_avatarBubbleGap;             //头像和气泡之间的距离
 extern CGFloat const dd_bubbleUpDown;                //气泡到上下边缘的距离

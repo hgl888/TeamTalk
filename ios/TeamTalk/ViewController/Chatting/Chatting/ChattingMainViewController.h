@@ -15,7 +15,7 @@
 #import "ChattingModule.h"
 #import "EmotionsViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
-#import <TTTAttributedLabel.h>
+#import "TTTAttributedLabel.h"
 #import "MTTPhotosCache.h"
 #import "LCActionSheet.h"
 #import "DDChatImagePreviewViewController.h"
