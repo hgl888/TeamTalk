@@ -9,55 +9,55 @@ public class FilterTypeHelper {
 		switch (filterType) {
 			case MagicFilterType.NONE:
 				return R.color.filter_color_grey_light;
-			case MagicFilterType.WHITECAT:
-			case MagicFilterType.BLACKCAT:
-			case MagicFilterType.SUNRISE:
-			case MagicFilterType.SUNSET:
+			case MagicFilterType.FILTER_WHITECAT:
+			case MagicFilterType.FILTER_BLACKCAT:
+			case MagicFilterType.FILTER_SUNRISE:
+			case MagicFilterType.FILTER_SUNSET:
 				return R.color.filter_color_brown_light;
-			case MagicFilterType.COOL:
+			case MagicFilterType.FILTER_COOL:
 				return R.color.filter_color_blue_dark;
-			case MagicFilterType.EMERALD:
-			case MagicFilterType.EVERGREEN:
+			case MagicFilterType.FILTER_EMERALD:
+			case MagicFilterType.FILTER_EVERGREEN:
 				return R.color.filter_color_blue_dark_dark;
-			case MagicFilterType.FAIRYTALE:
+			case MagicFilterType.FILTER_FAIRYTALE:
 				return R.color.filter_color_blue;
-			case MagicFilterType.ROMANCE:
-			case MagicFilterType.SAKURA:
-			case MagicFilterType.WARM:
+			case MagicFilterType.FILTER_ROMANCE:
+			case MagicFilterType.FILTER_SAKURA:
+			case MagicFilterType.FILTER_WARM:
 				return R.color.filter_color_pink;
-			case MagicFilterType.AMARO:
-			case MagicFilterType.BRANNAN:
-			case MagicFilterType.BROOKLYN:
-			case MagicFilterType.EARLYBIRD:
-			case MagicFilterType.FREUD:
-			case MagicFilterType.HEFE:
-			case MagicFilterType.HUDSON:
-			case MagicFilterType.INKWELL:
-			case MagicFilterType.KEVIN:
-			case MagicFilterType.LOMO:
-			case MagicFilterType.N1977:
-			case MagicFilterType.NASHVILLE:
-			case MagicFilterType.PIXAR:
-			case MagicFilterType.RISE:
-			case MagicFilterType.SIERRA:
-			case MagicFilterType.SUTRO:
-			case MagicFilterType.TOASTER2:
-			case MagicFilterType.VALENCIA:
-			case MagicFilterType.WALDEN:
-			case MagicFilterType.XPROII:
+			case MagicFilterType.FILTER_AMARO:
+			case MagicFilterType.FILTER_BRANNAN:
+			case MagicFilterType.FILTER_BROOKLYN:
+			case MagicFilterType.FILTER_EARLYBIRD:
+			case MagicFilterType.FILTER_FREUD:
+			case MagicFilterType.FILTER_HEFE:
+			case MagicFilterType.FILTER_HUDSON:
+			case MagicFilterType.FILTER_INKWELL:
+			case MagicFilterType.FILTER_KEVIN:
+			case MagicFilterType.FILTER_LOMO:
+			case MagicFilterType.FILTER_N1977:
+			case MagicFilterType.FILTER_NASHVILLE:
+			case MagicFilterType.FILTER_PIXAR:
+			case MagicFilterType.FILTER_RISE:
+			case MagicFilterType.FILTER_SIERRA:
+			case MagicFilterType.FILTER_SUTRO:
+			case MagicFilterType.FILTER_TOASTER2:
+			case MagicFilterType.FILTER_VALENCIA:
+			case MagicFilterType.FILTER_WALDEN:
+			case MagicFilterType.FILTER_XPROII:
 				return R.color.filter_color_brown_dark;
-			case MagicFilterType.ANTIQUE:
-			case MagicFilterType.NOSTALGIA:
+			case MagicFilterType.FILTER_ANTIQUE:
+			case MagicFilterType.FILTER_NOSTALGIA:
 				return R.color.filter_color_green_dark;
-			case MagicFilterType.BEAUTY:
-			case MagicFilterType.SKINWHITEN:
-			case MagicFilterType.HEALTHY:
+			case MagicFilterType.WHITESKIN_BEAUTY:
+			case MagicFilterType.WHITESKIN_SKINWHITEN:
+			case MagicFilterType.WHITESKIN_HEALTHY:
 				return R.color.filter_color_red;
-			case MagicFilterType.SWEETS:
+			case MagicFilterType.FILTER_SWEETS:
 				return R.color.filter_color_red_dark;
-			case MagicFilterType.CALM:
-			case MagicFilterType.LATTE:
-			case MagicFilterType.TENDER:
+			case MagicFilterType.FILTER_CALM:
+			case MagicFilterType.FILTER_LATTE:
+			case MagicFilterType.FILTER_TENDER:
 				return R.color.filter_color_brown;
 			default:
 				return R.color.filter_color_grey_light;
@@ -68,88 +68,88 @@ public class FilterTypeHelper {
 		switch (filterType) {
 		case MagicFilterType.NONE:
 			return R.drawable.filter_thumb_original;
-		case MagicFilterType.WHITECAT:
+		case MagicFilterType.FILTER_WHITECAT:
 			return R.drawable.filter_thumb_whitecat;
-		case MagicFilterType.BLACKCAT:
+		case MagicFilterType.FILTER_BLACKCAT:
 			return R.drawable.filter_thumb_blackcat;
-		case MagicFilterType.ROMANCE:
+		case MagicFilterType.FILTER_ROMANCE:
 			return R.drawable.filter_thumb_romance;
-		case MagicFilterType.SAKURA:
+		case MagicFilterType.FILTER_SAKURA:
 			return R.drawable.filter_thumb_sakura;
-		case MagicFilterType.AMARO:
+		case MagicFilterType.FILTER_AMARO:
 			return R.drawable.filter_thumb_amoro;
-		case MagicFilterType.BRANNAN:
+		case MagicFilterType.FILTER_BRANNAN:
 			return R.drawable.filter_thumb_brannan;
-		case MagicFilterType.BROOKLYN:
+		case MagicFilterType.FILTER_BROOKLYN:
 			return R.drawable.filter_thumb_brooklyn;
-		case MagicFilterType.EARLYBIRD:
+		case MagicFilterType.FILTER_EARLYBIRD:
 			return R.drawable.filter_thumb_earlybird;
-		case MagicFilterType.FREUD:
+		case MagicFilterType.FILTER_FREUD:
 			return R.drawable.filter_thumb_freud;
-		case MagicFilterType.HEFE:
+		case MagicFilterType.FILTER_HEFE:
 			return R.drawable.filter_thumb_hefe;
-		case MagicFilterType.HUDSON:
+		case MagicFilterType.FILTER_HUDSON:
 			return R.drawable.filter_thumb_hudson;
-		case MagicFilterType.INKWELL:
+		case MagicFilterType.FILTER_INKWELL:
 			return R.drawable.filter_thumb_inkwell;
-		case MagicFilterType.KEVIN:
+		case MagicFilterType.FILTER_KEVIN:
 			return R.drawable.filter_thumb_kevin;
-		case MagicFilterType.LOMO:
+		case MagicFilterType.FILTER_LOMO:
 			return R.drawable.filter_thumb_lomo;
-		case MagicFilterType.N1977:
+		case MagicFilterType.FILTER_N1977:
 			return R.drawable.filter_thumb_1977;
-		case MagicFilterType.NASHVILLE:
+		case MagicFilterType.FILTER_NASHVILLE:
 			return R.drawable.filter_thumb_nashville;
-		case MagicFilterType.PIXAR:
+		case MagicFilterType.FILTER_PIXAR:
 			return R.drawable.filter_thumb_piaxr;
-		case MagicFilterType.RISE:
+		case MagicFilterType.FILTER_RISE:
 			return R.drawable.filter_thumb_rise;
-		case MagicFilterType.SIERRA:
+		case MagicFilterType.FILTER_SIERRA:
 			return R.drawable.filter_thumb_sierra;
-		case MagicFilterType.SUTRO:
+		case MagicFilterType.FILTER_SUTRO:
 			return R.drawable.filter_thumb_sutro;
-		case MagicFilterType.TOASTER2:
+		case MagicFilterType.FILTER_TOASTER2:
 			return R.drawable.filter_thumb_toastero;
-		case MagicFilterType.VALENCIA:
+		case MagicFilterType.FILTER_VALENCIA:
 			return R.drawable.filter_thumb_valencia;
-		case MagicFilterType.WALDEN:
+		case MagicFilterType.FILTER_WALDEN:
 			return R.drawable.filter_thumb_walden;
-		case MagicFilterType.XPROII:
+		case MagicFilterType.FILTER_XPROII:
 			return R.drawable.filter_thumb_xpro;
-		case MagicFilterType.ANTIQUE:
+		case MagicFilterType.FILTER_ANTIQUE:
 			return R.drawable.filter_thumb_antique;
-		case MagicFilterType.BEAUTY:
-		case MagicFilterType.SKINWHITEN:
+		case MagicFilterType.WHITESKIN_BEAUTY:
+		case MagicFilterType.WHITESKIN_SKINWHITEN:
 			return R.drawable.filter_thumb_beauty;
-		case MagicFilterType.CALM:
+		case MagicFilterType.FILTER_CALM:
 			return R.drawable.filter_thumb_calm;
-		case MagicFilterType.COOL:
+		case MagicFilterType.FILTER_COOL:
 			return R.drawable.filter_thumb_cool;
-		case MagicFilterType.EMERALD:
+		case MagicFilterType.FILTER_EMERALD:
 			return R.drawable.filter_thumb_emerald;
-		case MagicFilterType.EVERGREEN:
+		case MagicFilterType.FILTER_EVERGREEN:
 			return R.drawable.filter_thumb_evergreen;
-		case MagicFilterType.FAIRYTALE:
+		case MagicFilterType.FILTER_FAIRYTALE:
 			return R.drawable.filter_thumb_fairytale;
-		case MagicFilterType.HEALTHY:
+		case MagicFilterType.WHITESKIN_HEALTHY:
 			return R.drawable.filter_thumb_healthy;
-		case MagicFilterType.NOSTALGIA:
+		case MagicFilterType.FILTER_NOSTALGIA:
 			return R.drawable.filter_thumb_nostalgia;
-		case MagicFilterType.TENDER:
+		case MagicFilterType.FILTER_TENDER:
 			return R.drawable.filter_thumb_tender;
-		case MagicFilterType.SWEETS:
+		case MagicFilterType.FILTER_SWEETS:
 			return R.drawable.filter_thumb_sweets;
-		case MagicFilterType.LATTE:
+		case MagicFilterType.FILTER_LATTE:
 			return R.drawable.filter_thumb_latte;
-		case MagicFilterType.WARM:
+		case MagicFilterType.FILTER_WARM:
 			return R.drawable.filter_thumb_warm;
-		case MagicFilterType.SUNRISE:
+		case MagicFilterType.FILTER_SUNRISE:
 			return R.drawable.filter_thumb_sunrise;
-		case MagicFilterType.SUNSET:
+		case MagicFilterType.FILTER_SUNSET:
 			return R.drawable.filter_thumb_sunset;
-		case MagicFilterType.CRAYON:
+		case MagicFilterType.FILTER_CRAYON:
 			return R.drawable.filter_thumb_crayon;
-		case MagicFilterType.SKETCH:
+		case MagicFilterType.FILTER_SKETCH:
 			return R.drawable.filter_thumb_sketch;
 		default:
 			return R.drawable.filter_thumb_original;
@@ -160,89 +160,89 @@ public class FilterTypeHelper {
 		switch (filterType) {
 		case MagicFilterType.NONE:
 			return R.string.filter_none;
-		case MagicFilterType.WHITECAT:
+		case MagicFilterType.FILTER_WHITECAT:
 			return R.string.filter_whitecat;
-		case MagicFilterType.BLACKCAT:
+		case MagicFilterType.FILTER_BLACKCAT:
 			return R.string.filter_blackcat;
-		case MagicFilterType.ROMANCE:
+		case MagicFilterType.FILTER_ROMANCE:
 			return R.string.filter_romance;
-		case MagicFilterType.SAKURA:
+		case MagicFilterType.FILTER_SAKURA:
 			return R.string.filter_sakura;
-		case MagicFilterType.AMARO:
+		case MagicFilterType.FILTER_AMARO:
 			return R.string.filter_amaro;
-		case MagicFilterType.BRANNAN:
+		case MagicFilterType.FILTER_BRANNAN:
 			return R.string.filter_brannan;
-		case MagicFilterType.BROOKLYN:
+		case MagicFilterType.FILTER_BROOKLYN:
 			return R.string.filter_brooklyn;
-		case MagicFilterType.EARLYBIRD:
+		case MagicFilterType.FILTER_EARLYBIRD:
 			return R.string.filter_Earlybird;
-		case MagicFilterType.FREUD:
+		case MagicFilterType.FILTER_FREUD:
 			return R.string.filter_freud;
-		case MagicFilterType.HEFE:
+		case MagicFilterType.FILTER_HEFE:
 			return R.string.filter_hefe;
-		case MagicFilterType.HUDSON:
+		case MagicFilterType.FILTER_HUDSON:
 			return R.string.filter_hudson;
-		case MagicFilterType.INKWELL:
+		case MagicFilterType.FILTER_INKWELL:
 			return R.string.filter_inkwell;
-		case MagicFilterType.KEVIN:
+		case MagicFilterType.FILTER_KEVIN:
 			return R.string.filter_kevin;
-		case MagicFilterType.LOMO:
+		case MagicFilterType.FILTER_LOMO:
 			return R.string.filter_lomo;
-		case MagicFilterType.N1977:
+		case MagicFilterType.FILTER_N1977:
 			return R.string.filter_n1977;
-		case MagicFilterType.NASHVILLE:
+		case MagicFilterType.FILTER_NASHVILLE:
 			return R.string.filter_nashville;
-		case MagicFilterType.PIXAR:
+		case MagicFilterType.FILTER_PIXAR:
 			return R.string.filter_pixar;
-		case MagicFilterType.RISE:
+		case MagicFilterType.FILTER_RISE:
 			return R.string.filter_rise;
-		case MagicFilterType.SIERRA:
+		case MagicFilterType.FILTER_SIERRA:
 			return R.string.filter_sierra;
-		case MagicFilterType.SUTRO:
+		case MagicFilterType.FILTER_SUTRO:
 			return R.string.filter_sutro;
-		case MagicFilterType.TOASTER2:
+		case MagicFilterType.FILTER_TOASTER2:
 			return R.string.filter_toastero;
-		case MagicFilterType.VALENCIA:
+		case MagicFilterType.FILTER_VALENCIA:
 			return R.string.filter_valencia;
-		case MagicFilterType.WALDEN:
+		case MagicFilterType.FILTER_WALDEN:
 			return R.string.filter_walden;
-		case MagicFilterType.XPROII:
+		case MagicFilterType.FILTER_XPROII:
 			return R.string.filter_xproii;
-		case MagicFilterType.ANTIQUE:
+		case MagicFilterType.FILTER_ANTIQUE:
 			return R.string.filter_antique;
-		case MagicFilterType.BEAUTY:
+		case MagicFilterType.WHITESKIN_BEAUTY:
 			return R.string.filter_beauty;
-		case MagicFilterType.CALM:
+		case MagicFilterType.FILTER_CALM:
 			return R.string.filter_calm;
-		case MagicFilterType.COOL:
+		case MagicFilterType.FILTER_COOL:
 			return R.string.filter_cool;
-		case MagicFilterType.EMERALD:
+		case MagicFilterType.FILTER_EMERALD:
 			return R.string.filter_emerald;
-		case MagicFilterType.EVERGREEN:
+		case MagicFilterType.FILTER_EVERGREEN:
 			return R.string.filter_evergreen;
-		case MagicFilterType.FAIRYTALE:
+		case MagicFilterType.FILTER_FAIRYTALE:
 			return R.string.filter_fairytale;
-		case MagicFilterType.HEALTHY:
+		case MagicFilterType.WHITESKIN_HEALTHY:
 			return R.string.filter_healthy;
-		case MagicFilterType.NOSTALGIA:
+		case MagicFilterType.FILTER_NOSTALGIA:
 			return R.string.filter_nostalgia;
-		case MagicFilterType.TENDER:
+		case MagicFilterType.FILTER_TENDER:
 			return R.string.filter_tender;
-		case MagicFilterType.SWEETS:
+		case MagicFilterType.FILTER_SWEETS:
 			return R.string.filter_sweets;
-		case MagicFilterType.LATTE:
+		case MagicFilterType.FILTER_LATTE:
 			return R.string.filter_latte;
-		case MagicFilterType.WARM:
+		case MagicFilterType.FILTER_WARM:
 			return R.string.filter_warm;
-		case MagicFilterType.SUNRISE:
+		case MagicFilterType.FILTER_SUNRISE:
 			return R.string.filter_sunrise;
-		case MagicFilterType.SUNSET:
+		case MagicFilterType.FILTER_SUNSET:
 			return R.string.filter_sunset;
-		case MagicFilterType.SKINWHITEN:
+		case MagicFilterType.WHITESKIN_SKINWHITEN:
 			return R.string.filter_skinwhiten;
-		case MagicFilterType.CRAYON:
+		case MagicFilterType.FILTER_CRAYON:
 			return R.string.filter_crayon;
-		case MagicFilterType.SKETCH:
+		case MagicFilterType.FILTER_SKETCH:
 			return R.string.filter_sketch;
 		default:
 			return R.string.filter_none;

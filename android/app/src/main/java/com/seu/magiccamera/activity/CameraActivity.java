@@ -183,6 +183,7 @@ public class CameraActivity extends Activity{
 		@Override
 		public void onClick(View v) {
 			//todo
+			mFilterLayoutUtils.useWhiteSkin();
 		}
 	};
 
@@ -255,7 +256,7 @@ public class CameraActivity extends Activity{
 		
 		@Override
 		public void onClick(View v) {
-			onFilterClose();
+			mFilterLayoutUtils.useFilter();
 		}
 	};
 

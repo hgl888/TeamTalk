@@ -1,8 +1,5 @@
 package com.seu.magicfilter.filter.factory;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.Context;
 
 import com.seu.magicfilter.filter.advance.common.MagicAmaroFilter;
@@ -48,8 +45,6 @@ import com.seu.magicfilter.filter.advance.common.MagicWarmFilter;
 import com.seu.magicfilter.filter.advance.common.MagicWhiteCatFilter;
 import com.seu.magicfilter.filter.advance.common.MagicXproIIFilter;
 import com.seu.magicfilter.filter.advance.image.MagicImageAdjustFilter;
-import com.seu.magicfilter.filter.base.MagicBaseGroupFilter;
-import com.seu.magicfilter.filter.base.MagicBilateralFilter;
 import com.seu.magicfilter.filter.base.gpuimage.GPUImageBrightnessFilter;
 import com.seu.magicfilter.filter.base.gpuimage.GPUImageContrastFilter;
 import com.seu.magicfilter.filter.base.gpuimage.GPUImageExposureFilter;
@@ -61,98 +56,89 @@ import com.seu.magicfilter.filter.helper.MagicFilterType;
 
 public class MagicFilterFactory{
 	
-	private static int mFilterType = MagicFilterType.NONE;	
-	
+	private static int mFilterType = MagicFilterType.NONE;
+
 	public static GPUImageFilter getFilters(int type, Context mContext){
 		mFilterType = type;
 		switch (type) {
-		case MagicFilterType.WHITECAT:
+		case MagicFilterType.FILTER_WHITECAT:
 			return new MagicWhiteCatFilter(mContext);
-		case MagicFilterType.BLACKCAT:
+		case MagicFilterType.FILTER_BLACKCAT:
 			return new MagicBlackCatFilter(mContext);
-		case MagicFilterType.BEAUTY:
-			return new MagicBeautyFilter(mContext);
-		case MagicFilterType.SKINWHITEN:
-			//List<GPUImageFilter> filters = new ArrayList<GPUImageFilter>();	
-			//filters.add(new MagicBilateralFilter(mContext));
-			//filters.add(new MagicSkinWhitenFilter(mContext));
-			//return new MagicBaseGroupFilter(filters);
-			return new MagicSkinWhitenFilter(mContext);
-		case MagicFilterType.ROMANCE:
+
+		case MagicFilterType.FILTER_ROMANCE:
 			return new MagicRomanceFilter(mContext);
-		case MagicFilterType.SAKURA:
+		case MagicFilterType.FILTER_SAKURA:
 			return new MagicSakuraFilter(mContext);
-		case MagicFilterType.AMARO:
+		case MagicFilterType.FILTER_AMARO:
 			return new MagicAmaroFilter(mContext);
-		case MagicFilterType.WALDEN:
+		case MagicFilterType.FILTER_WALDEN:
 			return new MagicWaldenFilter(mContext);
-		case MagicFilterType.ANTIQUE:
+		case MagicFilterType.FILTER_ANTIQUE:
 			return new MagicAntiqueFilter(mContext);
-		case MagicFilterType.CALM:
+		case MagicFilterType.FILTER_CALM:
 			return new MagicCalmFilter(mContext);
-		case MagicFilterType.BRANNAN:
+		case MagicFilterType.FILTER_BRANNAN:
 			return new MagicBrannanFilter(mContext);
-		case MagicFilterType.BROOKLYN:
+		case MagicFilterType.FILTER_BROOKLYN:
 			return new MagicBrooklynFilter(mContext);
-		case MagicFilterType.EARLYBIRD:
+		case MagicFilterType.FILTER_EARLYBIRD:
 			return new MagicEarlyBirdFilter(mContext);
-		case MagicFilterType.FREUD:
+		case MagicFilterType.FILTER_FREUD:
 			return new MagicFreudFilter(mContext);
-		case MagicFilterType.HEFE:
+		case MagicFilterType.FILTER_HEFE:
 			return new MagicHefeFilter(mContext);
-		case MagicFilterType.HUDSON:
+		case MagicFilterType.FILTER_HUDSON:
 			return new MagicHudsonFilter(mContext);
-		case MagicFilterType.INKWELL:
+		case MagicFilterType.FILTER_INKWELL:
 			return new MagicInkwellFilter(mContext);
-		case MagicFilterType.KEVIN:
+		case MagicFilterType.FILTER_KEVIN:
 			return new MagicKevinFilter(mContext);
-		case MagicFilterType.LOMO:
+		case MagicFilterType.FILTER_LOMO:
 			return new MagicLomoFilter(mContext);
-		case MagicFilterType.N1977:
+		case MagicFilterType.FILTER_N1977:
 			return new MagicN1977Filter(mContext);
-		case MagicFilterType.NASHVILLE:
+		case MagicFilterType.FILTER_NASHVILLE:
 			return new MagicNashvilleFilter(mContext);
-		case MagicFilterType.PIXAR:
+		case MagicFilterType.FILTER_PIXAR:
 			return new MagicPixarFilter(mContext);
-		case MagicFilterType.RISE:
+		case MagicFilterType.FILTER_RISE:
 			return new MagicRiseFilter(mContext);
-		case MagicFilterType.SIERRA:
+		case MagicFilterType.FILTER_SIERRA:
 			return new MagicSierraFilter(mContext);
-		case MagicFilterType.SUTRO:
+		case MagicFilterType.FILTER_SUTRO:
 			return new MagicSutroFilter(mContext);
-		case MagicFilterType.TOASTER2:
+		case MagicFilterType.FILTER_TOASTER2:
 			return new MagicToasterFilter(mContext);
-		case MagicFilterType.VALENCIA:
+		case MagicFilterType.FILTER_VALENCIA:
 			return new MagicValenciaFilter(mContext);
-		case MagicFilterType.XPROII:
+		case MagicFilterType.FILTER_XPROII:
 			return new MagicXproIIFilter(mContext);
-		case MagicFilterType.EVERGREEN:
+		case MagicFilterType.FILTER_EVERGREEN:
 			return new MagicEvergreenFilter(mContext);
-		case MagicFilterType.HEALTHY:
-			return new MagicHealthyFilter(mContext);
-		case MagicFilterType.COOL:
+		case MagicFilterType.FILTER_COOL:
 			return new MagicCoolFilter(mContext);
-		case MagicFilterType.EMERALD:
+		case MagicFilterType.FILTER_EMERALD:
 			return new MagicEmeraldFilter(mContext);
-		case MagicFilterType.LATTE:
+		case MagicFilterType.FILTER_LATTE:
 			return new MagicLatteFilter(mContext);
-		case MagicFilterType.WARM:
+		case MagicFilterType.FILTER_WARM:
 			return new MagicWarmFilter(mContext);
-		case MagicFilterType.TENDER:
+		case MagicFilterType.FILTER_TENDER:
 			return new MagicTenderFilter(mContext);
-		case MagicFilterType.SWEETS:
+		case MagicFilterType.FILTER_SWEETS:
 			return new MagicSweetsFilter(mContext);
-		case MagicFilterType.NOSTALGIA:
+		case MagicFilterType.FILTER_NOSTALGIA:
 			return new MagicNostalgiaFilter(mContext);
-		case MagicFilterType.FAIRYTALE:
+		case MagicFilterType.FILTER_FAIRYTALE:
 			return new MagicFairytaleFilter(mContext);
-		case MagicFilterType.SUNRISE:
+		case MagicFilterType.FILTER_SUNRISE:
 			return new MagicSunriseFilter(mContext);
-		case MagicFilterType.SUNSET:
+		case MagicFilterType.FILTER_SUNSET:
 			return new MagicSunsetFilter(mContext);
-		case MagicFilterType.CRAYON:
+		case MagicFilterType.FILTER_CRAYON:
 			return new MagicCrayonFilter(mContext);
-		case MagicFilterType.SKETCH:
+		case MagicFilterType.FILTER_SKETCH:
 			return new MagicSketchFilter(mContext);
 			
 		case MagicFilterType.BRIGHTNESS:
@@ -169,6 +155,18 @@ public class MagicFilterFactory{
 			return new GPUImageSharpenFilter();
 		case MagicFilterType.IMAGE_ADJUST:
 			return new MagicImageAdjustFilter();
+
+		//whiteskin
+		case MagicFilterType.WHITESKIN_BEAUTY:
+			return new MagicBeautyFilter(mContext);
+		case MagicFilterType.WHITESKIN_SKINWHITEN:
+			//List<GPUImageFilter> filters = new ArrayList<GPUImageFilter>();
+			//filters.add(new MagicBilateralFilter(mContext));
+			//filters.add(new MagicSkinWhitenFilter(mContext));
+			//return new MagicBaseGroupFilter(filters);
+			return new MagicSkinWhitenFilter(mContext);
+		case MagicFilterType.WHITESKIN_HEALTHY:
+			return new MagicHealthyFilter(mContext);
 		default:
 			return null;
 		}
