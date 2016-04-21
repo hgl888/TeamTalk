@@ -52,7 +52,7 @@
 		    </ImageView>
 		    
 		    <ImageView
-				android:id="@+id/btn_camera_filter"
+				android:id="@+id/btn_camera_openfilter"
 		        android:layout_width="0dip"
 		        android:layout_height="match_parent"
 		      	android:layout_weight="1.0"

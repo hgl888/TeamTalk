@@ -11,7 +11,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.ImageView;
+
 import com.seu.magiccamera.common.adapter.FilterAdapter;
 import com.seu.magiccamera.common.bean.FilterInfo;
 import com.seu.magicfilter.display.MagicDisplay;
@@ -21,7 +21,8 @@ import com.show.tt.R;
 public class FilterLayoutUtils{
 	private Context mContext;
 	private MagicDisplay mMagicDisplay;
-	private FilterAdapter mAdapter;
+	private FilterAdapter mAdapterFilter;
+	private FilterAdapter mAdapterWhiteSkin;
 	//private ImageView btn_Favourite;
 
 	private int position;
@@ -44,11 +45,11 @@ public class FilterLayoutUtils{
         RecyclerView mFilterListView = (RecyclerView)((Activity) mContext).findViewById(R.id.filter_listView);
         mFilterListView.setLayoutManager(linearLayoutManager);       
         
-        mAdapter = new FilterAdapter(mContext);
-        mFilterListView.setAdapter(mAdapter);
+        mAdapterFilter = new FilterAdapter(mContext);
+        mFilterListView.setAdapter(mAdapterFilter);
         initFilterInfos();
-        mAdapter.setFilterInfos(filterInfos);
-        mAdapter.setOnFilterChangeListener(onFilterChangeListener);          
+        mAdapterFilter.setFilterInfos(filterInfos);
+        mAdapterFilter.setOnFilterChangeListener(onFilterChangeListener);
 	}
 	
 	public void init(View view){
@@ -60,13 +61,13 @@ public class FilterLayoutUtils{
         RecyclerView mFilterListView = (RecyclerView) view.findViewById(R.id.filter_listView);
         mFilterListView.setLayoutManager(linearLayoutManager);       
         
-        mAdapter = new FilterAdapter(mContext);
-        mFilterListView.setAdapter(mAdapter);
+        mAdapterFilter = new FilterAdapter(mContext);
+        mFilterListView.setAdapter(mAdapterFilter);
         initFilterInfos();
-        mAdapter.setFilterInfos(filterInfos);
-        mAdapter.setOnFilterChangeListener(onFilterChangeListener);
+        mAdapterFilter.setFilterInfos(filterInfos);
+        mAdapterFilter.setOnFilterChangeListener(onFilterChangeListener);
         
-        view.findViewById(R.id.btn_camera_closefilter).setVisibility(View.GONE);
+        view.findViewById(R.id.btn_camera_usefilter).setVisibility(View.GONE);
 	}
 	
 	private FilterAdapter.onFilterChangeListener onFilterChangeListener = new FilterAdapter.onFilterChangeListener(){
@@ -79,34 +80,7 @@ public class FilterLayoutUtils{
 			FilterLayoutUtils.this.position = position;
 			mMagicDisplay.setFilter(filterType);
 			mFilterType = filterType;
-			//if(position != 0)
-			//	btn_Favourite.setVisibility(View.VISIBLE);
-			//else
-			//	btn_Favourite.setVisibility(View.INVISIBLE);
-			//btn_Favourite.setSelected(filterInfos.get(position).isFavourite());
 
-//			if(position <= favouriteFilterInfos.size()){
-//				for(int i = favouriteFilterInfos.size() + 2; i < filterInfos.size(); i++){
-//					if(filterInfos.get(i).getFilterType() == Type){
-//						filterInfos.get(i).setSelected(true);
-//						mAdapter.setLastSelected(i);
-//						FilterLayoutUtils.this.position = i;
-//						mAdapter.notifyItemChanged(i);
-//					}else if(filterInfos.get(i).isSelected()){
-//						filterInfos.get(i).setSelected(false);
-//						mAdapter.notifyItemChanged(i);
-//					}
-//				}
-//			}
-//			for(int i = 1; i < favouriteFilterInfos.size() + 1; i++){
-//				if(filterInfos.get(i).getFilterType() == Type){
-//					filterInfos.get(i).setSelected(true);
-//					mAdapter.notifyItemChanged(i);
-//				}else if(filterInfos.get(i).isSelected()){
-//					filterInfos.get(i).setSelected(false);
-//					mAdapter.notifyItemChanged(i);
-//				}
-//			}
 		}
 		
 	};
@@ -119,14 +93,6 @@ public class FilterLayoutUtils{
 		filterInfo.setSelected(true);
 		filterInfos.add(filterInfo);
 		
-		//add Favourite
-//		loadFavourite();
-//		for(int i = 0;i < favouriteFilterInfos.size(); i++){
-//			filterInfo = new FilterInfo();
-//			filterInfo.setFilterType(favouriteFilterInfos.get(i).getFilterType());
-//			filterInfo.setFavourite(true);
-//			filterInfos.add(filterInfo);
-//		}
 		//add Divider
 		filterInfo = new FilterInfo();
 		filterInfo.setFilterType(-1);
@@ -136,14 +102,9 @@ public class FilterLayoutUtils{
 		for(int i = 1;i < MagicFilterType.FILTER_COUNT; i++){
 			filterInfo = new FilterInfo();
 			filterInfo.setFilterType(MagicFilterType.NONE + i);
-//			for(int j = 0;j < favouriteFilterInfos.size(); j++){
-//				if(MagicFilterType.NONE + i == favouriteFilterInfos.get(j).getFilterType()){
-//					filterInfo.setFavourite(true);
-//					break;
-//				}
-//			}
 			filterInfos.add(filterInfo);
 		}
+		return;
 	}
 	
 	private OnClickListener btn_Favourite_listener = new OnClickListener() {
@@ -155,27 +116,13 @@ public class FilterLayoutUtils{
 		}
 	};	
 	
-//	private void loadFavourite(){
-//		favouriteFilterInfos = new ArrayList<FilterInfo>();
-//		String[] typeList = ((Activity) mContext).getSharedPreferences("favourite_filter",Activity.MODE_PRIVATE)
-//				.getString("favourite_filter_list", "").split(",");
-//		for(int i = 0; i < typeList.length && typeList[i] != ""; i++){
-//			FilterInfo filterInfo = new FilterInfo();
-//			filterInfo.setFilterType(Integer.parseInt(typeList[i]));
-//			filterInfo.setFavourite(true);
-//			favouriteFilterInfos.add(filterInfo);
-//		}
-//	}
-	
+
 	private void saveFavourite(){
 		SharedPreferences shared = ((Activity) mContext).getSharedPreferences("favourite_filter",Activity.MODE_PRIVATE);
 		Editor editor = shared.edit();
 		editor.remove("favourite_filter_list");
 		editor.commit();
 		String str = "";
-//		for(int i = 0; i < favouriteFilterInfos.size(); i++){
-//			str += favouriteFilterInfos.get(i).getFilterType() + ",";
-//		}
 		editor.putString("favourite_filter_list", str);
 		editor.commit();
 	}

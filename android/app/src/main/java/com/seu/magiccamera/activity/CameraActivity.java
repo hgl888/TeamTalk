@@ -40,6 +40,7 @@ public class CameraActivity extends Activity{
 	private GoogleFaceDetect googleFaceDetect = null;
 	private MainHandler mMainHandler = null;
 	private FaceView faceView;
+	private FilterLayoutUtils mFilterLayoutUtils;
 
 	private class MainHandler extends Handler{
 		@Override
@@ -86,21 +87,40 @@ public class CameraActivity extends Activity{
 	    googleFaceDetect = new GoogleFaceDetect( this.getApplicationContext(), mMainHandler );
 	}
 	@Override
-	public boolean onTouchEvent( MotionEvent event )
-	{
+	public boolean onTouchEvent( MotionEvent event ) {
+		if( mFilterLayout.getVisibility() == View.VISIBLE )
+		{
+			onFilterClose();
+		}
 		return super.onTouchEvent( event );
 	}
 	
 	private void initFilterLayout(){
-		findViewById(R.id.btn_camera_filter).setOnClickListener(btn_camera_filter_listener);
-		findViewById(R.id.btn_camera_closefilter).setOnClickListener(btn_camera_filter_close_listener);
-		findViewById(R.id.btn_camera_favourite).setOnClickListener( btn_camera_filter_close_listener);
+		findViewById(R.id.btn_camera_openfilter).setOnClickListener(btn_camera_openfilter_listener);
+		findViewById(R.id.btn_camera_usefilter).setOnClickListener(btn_camera_usefilter_listener);
+		findViewById(R.id.btn_camera_closefilter).setOnClickListener(btn_camera_closefilter_listener);
 		findViewById(R.id.btn_camera_shutter).setOnClickListener(btn_camera_shutter_listener);
 		findViewById(R.id.btn_camera_album).setOnClickListener(btn_camera_album_listener);
+		findViewById(R.id.btn_camera_usewhiteskin).setOnClickListener( btn_camera_usewhiteskin_listener);
 		
 		mFilterLayout = (LinearLayout)findViewById(R.id.layout_filter);
-		FilterLayoutUtils mFilterLayoutUtils = new FilterLayoutUtils(this, mMagicCameraDisplay);
+		mFilterLayoutUtils = new FilterLayoutUtils(this, mMagicCameraDisplay);
 		mFilterLayoutUtils.init();
+	}
+
+	private void ShowTools()
+	{
+		findViewById(R.id.btn_camera_album).setVisibility(View.VISIBLE);
+		findViewById(R.id.btn_camera_shutter).setVisibility(View.VISIBLE);
+		findViewById(R.id.btn_camera_openfilter).setVisibility(View.VISIBLE);
+		return;
+	}
+
+	private void HideTools(){
+		findViewById(R.id.btn_camera_album).setVisibility(View.INVISIBLE);
+		findViewById(R.id.btn_camera_shutter).setVisibility(View.INVISIBLE);
+		findViewById(R.id.btn_camera_openfilter).setVisibility(View.INVISIBLE);
+		return;
 	}
 	
 	private void initMagicPreview(){
@@ -151,73 +171,98 @@ public class CameraActivity extends Activity{
 		}
 	};
 	
-	private OnClickListener btn_camera_filter_listener = new OnClickListener() {
+	private OnClickListener btn_camera_openfilter_listener = new OnClickListener() {
 		
 		@Override
 		public void onClick(View v) {
-			ObjectAnimator animator = ObjectAnimator.ofFloat(mFilterLayout, "translationY", mFilterLayout.getHeight(), 0);
-			animator.setDuration(200);
-			animator.addListener(new AnimatorListener() {
-				
-				@Override
-				public void onAnimationStart(Animator animation) {
-					findViewById(R.id.btn_camera_shutter).setClickable(false);
-					mFilterLayout.setVisibility(View.VISIBLE);
-				}
-				
-				@Override
-				public void onAnimationRepeat(Animator animation) {
-					
-				}
-				
-				@Override
-				public void onAnimationEnd(Animator animation) {
-					
-				}
-				
-				@Override
-				public void onAnimationCancel(Animator animation) {
-					
-				}
-			});
-			animator.start();
+			onFilterOpen();
 		}
 	};
+
+	private OnClickListener btn_camera_usewhiteskin_listener = new OnClickListener() {
+		@Override
+		public void onClick(View v) {
+			//todo
+		}
+	};
+
+	private void onFilterOpen() {
+		HideTools();
+		ObjectAnimator animator = ObjectAnimator.ofFloat(mFilterLayout, "translationY", mFilterLayout.getHeight(), 0);
+		animator.setDuration(200);
+		animator.addListener(new AnimatorListener() {
+
+			@Override
+			public void onAnimationStart(Animator animation) {
+				findViewById(R.id.btn_camera_shutter).setClickable(false);
+				mFilterLayout.setVisibility(View.VISIBLE);
+			}
+
+			@Override
+			public void onAnimationRepeat(Animator animation) {
+
+			}
+
+			@Override
+			public void onAnimationEnd(Animator animation) {
+
+			}
+
+			@Override
+			public void onAnimationCancel(Animator animation) {
+
+			}
+		});
+		animator.start();
+	}
+
+	private void onFilterClose()
+	{
+		ObjectAnimator animator = ObjectAnimator.ofFloat(mFilterLayout, "translationY", 0 ,  mFilterLayout.getHeight());
+		animator.setDuration(200);
+		animator.addListener(new AnimatorListener() {
+
+			@Override
+			public void onAnimationStart(Animator animation) {
+				// TODO Auto-generated method stub
+			}
+
+			@Override
+			public void onAnimationRepeat(Animator animation) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void onAnimationEnd(Animator animation) {
+				// TODO Auto-generated method stub
+				mFilterLayout.setVisibility(View.INVISIBLE);
+				findViewById(R.id.btn_camera_shutter).setClickable(true);
+				ShowTools();
+			}
+
+			@Override
+			public void onAnimationCancel(Animator animation) {
+				// TODO Auto-generated method stub
+				mFilterLayout.setVisibility(View.INVISIBLE);
+				findViewById(R.id.btn_camera_shutter).setClickable(true);
+			}
+		});
+		animator.start();
+	}
 	
-	private OnClickListener btn_camera_filter_close_listener = new OnClickListener() {
+	private OnClickListener btn_camera_usefilter_listener = new OnClickListener() {
 		
 		@Override
 		public void onClick(View v) {
-			ObjectAnimator animator = ObjectAnimator.ofFloat(mFilterLayout, "translationY", 0 ,  mFilterLayout.getHeight());
-			animator.setDuration(200);
-			animator.addListener(new AnimatorListener() {
-				
-				@Override
-				public void onAnimationStart(Animator animation) {
-					// TODO Auto-generated method stub
-				}
-				
-				@Override
-				public void onAnimationRepeat(Animator animation) {
-					// TODO Auto-generated method stub
-					
-				}
-				
-				@Override
-				public void onAnimationEnd(Animator animation) {
-					// TODO Auto-generated method stub
-					mFilterLayout.setVisibility(View.INVISIBLE);
-					findViewById(R.id.btn_camera_shutter).setClickable(true);
-				}
-				
-				@Override
-				public void onAnimationCancel(Animator animation) {
-					// TODO Auto-generated method stub
-					mFilterLayout.setVisibility(View.INVISIBLE);
-					findViewById(R.id.btn_camera_shutter).setClickable(true);
-				}
-			});
-			animator.start();
+			onFilterClose();
+		}
+	};
+
+	private OnClickListener btn_camera_closefilter_listener = new OnClickListener() {
+		@Override
+		public void onClick(View v) {
+			onFilterClose();
 		}
 	};
 
@@ -227,6 +272,7 @@ public class CameraActivity extends Activity{
 		Constants.mScreenWidth = outSize.x;
 		Constants.mScreenHeight = outSize.y;
 	}
+
 	public boolean onKeyDown( int keyCode, KeyEvent event ){
 		if( keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0 )
 		{
