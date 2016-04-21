@@ -11,7 +11,9 @@ import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.FrameLayout;
@@ -64,6 +66,10 @@ public class CameraActivity extends Activity{
 				.order(ByteOrder.nativeOrder())
 				.asFloatBuffer();
 		mGLCubeBuffer.put(TextureRotationUtil.CUBE).position(0);
+
+		String name = this.getClass().getName();
+		int hashcode = this.hashCode();
+
 		return;
 	}
 	@Override
@@ -76,15 +82,19 @@ public class CameraActivity extends Activity{
 		faceView = (FaceView)findViewById(R.id.face_view );
 		initMagicPreview();
 		initFilterLayout();
-		String name = this.getClass().getName();
-		int hashcode = this.hashCode();
 		mMainHandler = new MainHandler();
 	    googleFaceDetect = new GoogleFaceDetect( this.getApplicationContext(), mMainHandler );
+	}
+	@Override
+	public boolean onTouchEvent( MotionEvent event )
+	{
+		return super.onTouchEvent( event );
 	}
 	
 	private void initFilterLayout(){
 		findViewById(R.id.btn_camera_filter).setOnClickListener(btn_camera_filter_listener);
 		findViewById(R.id.btn_camera_closefilter).setOnClickListener(btn_camera_filter_close_listener);
+		findViewById(R.id.btn_camera_favourite).setOnClickListener( btn_camera_filter_close_listener);
 		findViewById(R.id.btn_camera_shutter).setOnClickListener(btn_camera_shutter_listener);
 		findViewById(R.id.btn_camera_album).setOnClickListener(btn_camera_album_listener);
 		
@@ -137,7 +147,7 @@ public class CameraActivity extends Activity{
 		
 		@Override
 		public void onClick(View v) {
-			
+			Log.e("test", "test");
 		}
 	};
 	

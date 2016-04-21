@@ -9,28 +9,47 @@
 		android:id="@+id/btn_camera_favourite"
       	android:layout_width="wrap_content"
       	android:layout_height="wrap_content"
-      	android:layout_marginLeft="10dp"
+      	android:layout_marginRight="10dp"
       	android:layout_marginBottom="10dp"
       	android:src="@drawable/take_filter_favorite_btn" 
-		android:visibility="invisible"/>
+		android:visibility="visible"
+        android:layout_gravity="right"
+        />
     <android.support.v7.widget.RecyclerView
         android:id="@+id/filter_listView"
         android:layout_width="match_parent"
         android:layout_height="94.0dip"
         android:padding="5.0dip"
         android:scrollbars="none"
-        android:background="@android:color/white"/>       
+        android:background="#7f000000"/>
     <View 
         android:layout_width="match_parent"
         android:layout_height="1px"
         android:background="@android:color/black"/>
 
-    <ImageView
-        android:background="@android:color/white"
-        android:id="@+id/btn_camera_closefilter" 
-        android:layout_width="match_parent" 
-        android:layout_height="40dip" 
-        android:scaleType="center"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/btn_layout_filters_bar_close" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:id="@+id/btn_camera_closefilter"
+            android:layout_width="wrap_content"
+            android:layout_height="40dip"
+            android:scaleType="center"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="100dp"
+            android:src="@drawable/btn_layout_filters_bar_close" />
+        <ImageView
+            android:id="@+id/btn_camera_face"
+            android:layout_width="wrap_content"
+            android:layout_height="40dip"
+            android:scaleType="center"
+            android:layout_alignParentRight= "true"
+            android:layout_marginRight="100dp"
+            android:src="@drawable/btn_layout_filters_bar_close"
+             />
+    </RelativeLayout>
+
+
 </LinearLayout>

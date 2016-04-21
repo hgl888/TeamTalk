@@ -22,11 +22,11 @@ public class FilterLayoutUtils{
 	private Context mContext;
 	private MagicDisplay mMagicDisplay;
 	private FilterAdapter mAdapter;
-	private ImageView btn_Favourite;
+	//private ImageView btn_Favourite;
 
 	private int position;
 	private List<FilterInfo> filterInfos;
-	private List<FilterInfo> favouriteFilterInfos;
+	//private List<FilterInfo> favouriteFilterInfos;
 	
 	private int mFilterType = MagicFilterType.NONE;
 	
@@ -36,8 +36,8 @@ public class FilterLayoutUtils{
 	}
 
 	public void init(){
-		btn_Favourite = (ImageView) ((Activity) mContext).findViewById(R.id.btn_camera_favourite);  
-		btn_Favourite.setOnClickListener(btn_Favourite_listener);
+		//btn_Favourite = (ImageView) ((Activity) mContext).findViewById(R.id.btn_camera_favourite);
+		//btn_Favourite.setOnClickListener(btn_Favourite_listener);
 		
 		LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mContext);  
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL); 
@@ -52,8 +52,8 @@ public class FilterLayoutUtils{
 	}
 	
 	public void init(View view){
-		btn_Favourite = (ImageView) view.findViewById(R.id.btn_camera_favourite);  
-		btn_Favourite.setOnClickListener(btn_Favourite_listener);
+		//btn_Favourite = (ImageView) view.findViewById(R.id.btn_camera_favourite);
+		//btn_Favourite.setOnClickListener(btn_Favourite_listener);
 		
 		LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mContext);  
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL); 
@@ -72,39 +72,41 @@ public class FilterLayoutUtils{
 	private FilterAdapter.onFilterChangeListener onFilterChangeListener = new FilterAdapter.onFilterChangeListener(){
 
 		@Override
-		public void onFilterChanged(int filterType, int position) {
+		public void onFilterChanged(int filterType, int position)
+		{
 			// TODO Auto-generated method stub
-			int Type = filterInfos.get(position).getFilterType();//��ȡ����
+			int Type = filterInfos.get(position).getFilterType();
 			FilterLayoutUtils.this.position = position;
 			mMagicDisplay.setFilter(filterType);
 			mFilterType = filterType;
-			if(position != 0)
-				btn_Favourite.setVisibility(View.VISIBLE);
-			else
-				btn_Favourite.setVisibility(View.INVISIBLE);
-			btn_Favourite.setSelected(filterInfos.get(position).isFavourite());
-			if(position <= favouriteFilterInfos.size()){
-				for(int i = favouriteFilterInfos.size() + 2; i < filterInfos.size(); i++){
-					if(filterInfos.get(i).getFilterType() == Type){
-						filterInfos.get(i).setSelected(true);
-						mAdapter.setLastSelected(i);
-						FilterLayoutUtils.this.position = i;
-						mAdapter.notifyItemChanged(i);
-					}else if(filterInfos.get(i).isSelected()){
-						filterInfos.get(i).setSelected(false);
-						mAdapter.notifyItemChanged(i);
-					}
-				}
-			}
-			for(int i = 1; i < favouriteFilterInfos.size() + 1; i++){
-				if(filterInfos.get(i).getFilterType() == Type){
-					filterInfos.get(i).setSelected(true);
-					mAdapter.notifyItemChanged(i);
-				}else if(filterInfos.get(i).isSelected()){
-					filterInfos.get(i).setSelected(false);
-					mAdapter.notifyItemChanged(i);
-				}
-			}
+			//if(position != 0)
+			//	btn_Favourite.setVisibility(View.VISIBLE);
+			//else
+			//	btn_Favourite.setVisibility(View.INVISIBLE);
+			//btn_Favourite.setSelected(filterInfos.get(position).isFavourite());
+
+//			if(position <= favouriteFilterInfos.size()){
+//				for(int i = favouriteFilterInfos.size() + 2; i < filterInfos.size(); i++){
+//					if(filterInfos.get(i).getFilterType() == Type){
+//						filterInfos.get(i).setSelected(true);
+//						mAdapter.setLastSelected(i);
+//						FilterLayoutUtils.this.position = i;
+//						mAdapter.notifyItemChanged(i);
+//					}else if(filterInfos.get(i).isSelected()){
+//						filterInfos.get(i).setSelected(false);
+//						mAdapter.notifyItemChanged(i);
+//					}
+//				}
+//			}
+//			for(int i = 1; i < favouriteFilterInfos.size() + 1; i++){
+//				if(filterInfos.get(i).getFilterType() == Type){
+//					filterInfos.get(i).setSelected(true);
+//					mAdapter.notifyItemChanged(i);
+//				}else if(filterInfos.get(i).isSelected()){
+//					filterInfos.get(i).setSelected(false);
+//					mAdapter.notifyItemChanged(i);
+//				}
+//			}
 		}
 		
 	};
@@ -118,13 +120,13 @@ public class FilterLayoutUtils{
 		filterInfos.add(filterInfo);
 		
 		//add Favourite
-		loadFavourite();
-		for(int i = 0;i < favouriteFilterInfos.size(); i++){
-			filterInfo = new FilterInfo();
-			filterInfo.setFilterType(favouriteFilterInfos.get(i).getFilterType());
-			filterInfo.setFavourite(true);
-			filterInfos.add(filterInfo);
-		}
+//		loadFavourite();
+//		for(int i = 0;i < favouriteFilterInfos.size(); i++){
+//			filterInfo = new FilterInfo();
+//			filterInfo.setFilterType(favouriteFilterInfos.get(i).getFilterType());
+//			filterInfo.setFavourite(true);
+//			filterInfos.add(filterInfo);
+//		}
 		//add Divider
 		filterInfo = new FilterInfo();
 		filterInfo.setFilterType(-1);
@@ -134,12 +136,12 @@ public class FilterLayoutUtils{
 		for(int i = 1;i < MagicFilterType.FILTER_COUNT; i++){
 			filterInfo = new FilterInfo();
 			filterInfo.setFilterType(MagicFilterType.NONE + i);
-			for(int j = 0;j < favouriteFilterInfos.size(); j++){
-				if(MagicFilterType.NONE + i == favouriteFilterInfos.get(j).getFilterType()){
-					filterInfo.setFavourite(true);
-					break;
-				}
-			}
+//			for(int j = 0;j < favouriteFilterInfos.size(); j++){
+//				if(MagicFilterType.NONE + i == favouriteFilterInfos.get(j).getFilterType()){
+//					filterInfo.setFavourite(true);
+//					break;
+//				}
+//			}
 			filterInfos.add(filterInfo);
 		}
 	}
@@ -148,57 +150,22 @@ public class FilterLayoutUtils{
 		
 		@Override
 		public void onClick(View v) {
-			if(position != 0 && filterInfos.get(position).getFilterType() != -1){
-				int Type = filterInfos.get(position).getFilterType();//��ȡ����
-				if(filterInfos.get(position).isFavourite()){
-					//ȡ��Favourite------------------------------------
-					btn_Favourite.setSelected(false);
-					filterInfos.get(position).setFavourite(false);
-						mAdapter.notifyItemChanged(position);
-						int i = 0;
-						for(i = 0; i < favouriteFilterInfos.size(); i++){
-							if(Type == favouriteFilterInfos.get(i).getFilterType()){//ȡ����ӦFavourite�б���Ԫ��
-								favouriteFilterInfos.remove(i);
-								filterInfos.remove(i+1);//��filterInfosȥ��
-								mAdapter.notifyItemRemoved(i+1);
-								mAdapter.setLastSelected(mAdapter.getLastSelected() - 1);
-								break;
-							}
-						}
-					position --;
-					mAdapter.notifyItemRangeChanged(i + 1, filterInfos.size() - i - 1);
-				}else{//����favourite
-					btn_Favourite.setSelected(true);//����״̬
-					filterInfos.get(position).setFavourite(true);
-					mAdapter.notifyItemChanged(position);
-					
-					FilterInfo filterInfo = new FilterInfo();
-					filterInfo.setFilterType(Type);
-					filterInfo.setSelected(true);
-					filterInfo.setFavourite(true);
-					filterInfos.add(favouriteFilterInfos.size()+1 ,filterInfo);
-					position ++;
-					mAdapter.notifyItemInserted(favouriteFilterInfos.size() + 1);
-					mAdapter.notifyItemRangeChanged(favouriteFilterInfos.size() + 1, filterInfos.size() - favouriteFilterInfos.size() - 1);
-					favouriteFilterInfos.add(filterInfo);
-					mAdapter.setLastSelected(mAdapter.getLastSelected() + 1);
-				}
-				saveFavourite();
-			}
+
+
 		}
 	};	
 	
-	private void loadFavourite(){
-		favouriteFilterInfos = new ArrayList<FilterInfo>();
-		String[] typeList = ((Activity) mContext).getSharedPreferences("favourite_filter",Activity.MODE_PRIVATE)
-				.getString("favourite_filter_list", "").split(",");
-		for(int i = 0; i < typeList.length && typeList[i] != ""; i++){
-			FilterInfo filterInfo = new FilterInfo();
-			filterInfo.setFilterType(Integer.parseInt(typeList[i]));
-			filterInfo.setFavourite(true);
-			favouriteFilterInfos.add(filterInfo);
-		}
-	}
+//	private void loadFavourite(){
+//		favouriteFilterInfos = new ArrayList<FilterInfo>();
+//		String[] typeList = ((Activity) mContext).getSharedPreferences("favourite_filter",Activity.MODE_PRIVATE)
+//				.getString("favourite_filter_list", "").split(",");
+//		for(int i = 0; i < typeList.length && typeList[i] != ""; i++){
+//			FilterInfo filterInfo = new FilterInfo();
+//			filterInfo.setFilterType(Integer.parseInt(typeList[i]));
+//			filterInfo.setFavourite(true);
+//			favouriteFilterInfos.add(filterInfo);
+//		}
+//	}
 	
 	private void saveFavourite(){
 		SharedPreferences shared = ((Activity) mContext).getSharedPreferences("favourite_filter",Activity.MODE_PRIVATE);
@@ -206,9 +173,9 @@ public class FilterLayoutUtils{
 		editor.remove("favourite_filter_list");
 		editor.commit();
 		String str = "";
-		for(int i = 0; i < favouriteFilterInfos.size(); i++){
-			str += favouriteFilterInfos.get(i).getFilterType() + ",";
-		}
+//		for(int i = 0; i < favouriteFilterInfos.size(); i++){
+//			str += favouriteFilterInfos.get(i).getFilterType() + ",";
+//		}
 		editor.putString("favourite_filter_list", str);
 		editor.commit();
 	}

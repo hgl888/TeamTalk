@@ -56,6 +56,7 @@ public class ImageLoaderUtil {
                     .diskCache(new UnlimitedDiscCache(cacheDir,reserveCacheDir,new Md5FileNameGenerator()))
                     .diskCacheSize(1024 * 1024 * 1024)
                     .diskCacheFileCount(1000)
+                    .writeDebugLogs()
                     .build();
 
             IMImageLoadInstance = ImageLoader.getInstance();
