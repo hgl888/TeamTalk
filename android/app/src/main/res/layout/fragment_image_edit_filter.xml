@@ -27,7 +27,16 @@
         android:layout_height="1px"
         android:background="@android:color/black"/>
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/type_filter_listView"
+        android:layout_width="match_parent"
+        android:layout_height="40.0dip"
+        android:padding="5.0dip"
+        android:scrollbars="none"
+        android:background="#7f000000"/>
+
     <RelativeLayout
+        android:id="@+id/layout_filter_chose"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="horizontal"

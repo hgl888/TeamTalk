@@ -2,6 +2,7 @@ package com.seu.magiccamera.common.view;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Filter;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,6 +12,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.RelativeLayout;
 
 import com.seu.magiccamera.common.adapter.FilterAdapter;
 import com.seu.magiccamera.common.bean.FilterInfo;
@@ -23,12 +25,16 @@ public class FilterLayoutUtils{
 	private MagicDisplay mMagicDisplay;
 	private FilterAdapter mAdapterFilter;
 	private FilterAdapter mAdapterWhiteSkin;
+	private FilterAdapter mAdapterTypeFilter;
 	private RecyclerView mFilterListView;
+	private RecyclerView mTypeFilterListView;
+	private RelativeLayout mLayoutFilterChose;
 	//private ImageView btn_Favourite;
 
 	private int position;
 	private List<FilterInfo> filterInfos;
 	private List<FilterInfo> whiteSkinInfos;
+	private List<FilterInfo> typeFilterInfos;
 	
 	private int mFilterType = MagicFilterType.NONE;
 	
@@ -45,6 +51,13 @@ public class FilterLayoutUtils{
 		mAdapterFilter.setOnFilterChangeListener(onFilterChangeListener);
 	}
 
+	private void initTypeFilter(){
+		mAdapterTypeFilter = new FilterAdapter(mContext);
+		initTypeFilterInfos();
+		mAdapterTypeFilter.setFilterInfos( typeFilterInfos );
+		mAdapterTypeFilter.setOnFilterChangeListener(onTypeFilterChangeListener);
+	}
+
 	private void initWhiteSkin()
 	{
 		mAdapterWhiteSkin = new FilterAdapter(mContext);
@@ -55,41 +68,50 @@ public class FilterLayoutUtils{
 	}
 
 	public void useFilter() {
+		mTypeFilterListView.clearFocus();
+		mTypeFilterListView.setVisibility(View.GONE);
+		mLayoutFilterChose.setVisibility(View.VISIBLE);
 		mFilterListView.setAdapter(mAdapterFilter);
 	}
 
 	public void useWhiteSkin(){
+		mTypeFilterListView.clearFocus();
+		mTypeFilterListView.setVisibility(View.GONE);
+		mLayoutFilterChose.setVisibility(View.VISIBLE);
 		mFilterListView.setAdapter(mAdapterWhiteSkin);
 	}
 
+	public void userTypeFilter()
+	{
+		mTypeFilterListView.setVisibility(View.VISIBLE);
+		mLayoutFilterChose.setVisibility(View.GONE);
+		mFilterListView.setAdapter( mAdapterFilter);
+		mTypeFilterListView.setAdapter( mAdapterTypeFilter);
+	}
+
 	public void init(){
-		//btn_Favourite = (ImageView) ((Activity) mContext).findViewById(R.id.btn_camera_favourite);
-		//btn_Favourite.setOnClickListener(btn_Favourite_listener);
 
 		LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mContext);
 		linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
 		mFilterListView = (RecyclerView)((Activity) mContext).findViewById(R.id.filter_listView);
 		mFilterListView.setLayoutManager(linearLayoutManager);
 
+		LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(mContext);
+		linearLayoutManager1.setOrientation(LinearLayoutManager.HORIZONTAL);
+		mTypeFilterListView = (RecyclerView)((Activity)mContext).findViewById(R.id.type_filter_listView );
+		mTypeFilterListView.setLayoutManager(linearLayoutManager1 );
+
+		mLayoutFilterChose = (RelativeLayout)((Activity)mContext).findViewById(R.id.layout_filter_chose);
+
 		initFilter();
 		initWhiteSkin();
-		useFilter();
+		initTypeFilter();
+		//useFilter();
 		return;
 	}
 
 	public void init(View view){
-		//btn_Favourite = (ImageView) view.findViewById(R.id.btn_camera_favourite);
-		//btn_Favourite.setOnClickListener(btn_Favourite_listener);
-		
-		LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mContext);  
-        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL); 
-        mFilterListView = (RecyclerView) view.findViewById(R.id.filter_listView);
-        mFilterListView.setLayoutManager(linearLayoutManager);
-
-		initFilter();
-		initWhiteSkin();
-		useFilter();
-
+		init();
         view.findViewById(R.id.btn_camera_usefilter).setVisibility(View.GONE);
 	}
 	
@@ -118,22 +140,49 @@ public class FilterLayoutUtils{
 		}
 	};
 
-	private void initWhiteSkinInfos(){
-		whiteSkinInfos = new ArrayList<FilterInfo>();
-		FilterInfo filterInof = new FilterInfo();
-		filterInof.setFilterType(MagicFilterType.NONE);
-		filterInof.setSelected(true);
-		whiteSkinInfos.add(filterInof);
+	private FilterAdapter.onFilterChangeListener onTypeFilterChangeListener = new FilterAdapter.onFilterChangeListener() {
+		@Override
+		public void onFilterChanged(int filterType, int position) {
+
+		}
+	};
+
+	private void initTypeFilterInfos(){
+		typeFilterInfos = new ArrayList<FilterInfo>();
+		FilterInfo filterInfo = new FilterInfo();
+		filterInfo.setFilterType( MagicFilterType.NONE);
+		filterInfo.setSelected(true);
+		typeFilterInfos.add( filterInfo );
 
 		//Divider
-		filterInof = new FilterInfo();
-		filterInof.setFilterType(-1);
-		whiteSkinInfos.add( filterInof );
+		filterInfo = new FilterInfo();
+		filterInfo.setFilterType( -1 );
+		typeFilterInfos.add(filterInfo );
 
 		for ( int i = MagicFilterType.WHITESKIN_BEAUTY; i <= MagicFilterType.WHITESKIN_END; i++ ){
-			filterInof = new FilterInfo();
-			filterInof.setFilterType( i );
-			whiteSkinInfos.add( filterInof );
+			filterInfo = new FilterInfo();
+			filterInfo.setFilterType( i );
+			typeFilterInfos.add( filterInfo );
+		}
+
+	}
+
+	private void initWhiteSkinInfos(){
+		whiteSkinInfos = new ArrayList<FilterInfo>();
+		FilterInfo filterInfo = new FilterInfo();
+		filterInfo.setFilterType(MagicFilterType.NONE);
+		filterInfo.setSelected(true);
+		whiteSkinInfos.add(filterInfo);
+
+		//Divider
+		filterInfo = new FilterInfo();
+		filterInfo.setFilterType(-1);
+		whiteSkinInfos.add( filterInfo );
+
+		for ( int i = MagicFilterType.WHITESKIN_BEAUTY; i <= MagicFilterType.WHITESKIN_END; i++ ){
+			filterInfo = new FilterInfo();
+			filterInfo.setFilterType(i);
+			whiteSkinInfos.add( filterInfo );
 		}
 		return;
 	}

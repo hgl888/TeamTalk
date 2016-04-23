@@ -168,6 +168,8 @@ public class CameraActivity extends Activity{
 		@Override
 		public void onClick(View v) {
 			Log.e("test", "test");
+			mFilterLayoutUtils.userTypeFilter();
+			onFilterOpen();
 		}
 	};
 	
@@ -175,6 +177,7 @@ public class CameraActivity extends Activity{
 		
 		@Override
 		public void onClick(View v) {
+			mFilterLayoutUtils.useFilter();
 			onFilterOpen();
 		}
 	};
