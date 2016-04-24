@@ -71,5 +71,3 @@ void FileClientConnCallback(void* callback_data, uint8_t msg, uint32_t handle, v
 
 
 #endif /* defined(FILE_SERVER_FILE_CLIENT_CONN_H_) */
-
-

@@ -45,4 +45,3 @@ CPduAttachData::CPduAttachData(uchar_t* attach_data, uint32_t attach_len) // 反
     is >> m_service_type;
     m_pdu = is.ReadData(m_pduLength);
 }
-

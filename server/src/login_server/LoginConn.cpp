@@ -82,11 +82,9 @@ void CLoginConn::OnConnect2(net_handle_t handle, int conn_type)
 	ConnMap_t* conn_map = &g_msg_serv_conn_map;
 	if (conn_type == LOGIN_CONN_TYPE_CLIENT) {
 		conn_map = &g_client_conn_map;
-	}
-	else
-	{
-		conn_map->insert(make_pair(handle, this));
-	}
+	}else
+
+	conn_map->insert(make_pair(handle, this));
 
 	netlib_option(handle, NETLIB_OPT_SET_CALLBACK, (void*)imconn_callback);
 	netlib_option(handle, NETLIB_OPT_SET_CALLBACK_DATA, (void*)conn_map);
