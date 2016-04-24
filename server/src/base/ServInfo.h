@@ -72,4 +72,3 @@ serv_info_t* read_server_config(CConfigFileReader* config_file, const char* serv
 
 
 #endif /* SERVINFO_H_ */
-
