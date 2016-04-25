@@ -1,0 +1,18 @@
+<!DOCTYPE Workspace SYSTEM "http://www.slickedit.com/dtd/vse/10.0/vpw.dtd">
+<Workspace Version="10.0" VendorName="SlickEdit">
+	<Projects>
+		<Project File="base.vpj"/>
+		<Project File="db_proxy_server.vpj"/>
+		<Project File="file_server.vpj"/>
+		<Project File="http_msg_server.vpj"/>
+		<Project File="libsecurity.vpj"/>
+		<Project File="log4cxx.vpj"/>
+		<Project File="login_server.vpj"/>
+		<Project File="msfs.vpj"/>
+		<Project File="msg_server.vpj"/>
+		<Project File="push_server.vpj"/>
+		<Project File="route_server.vpj"/>
+		<Project File="slog.vpj"/>
+		<Project File="test.vpj"/>
+	</Projects>
+</Workspace>

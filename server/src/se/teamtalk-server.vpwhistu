@@ -1,0 +1,76 @@
+[Global]
+CurrentProject=slog.vpj
+[ProjectDates]
+base.vpj=20160424002314000
+db_proxy_server.vpj=20160424002314000
+file_server.vpj=20160424002314000
+http_msg_server.vpj=20160424002314000
+libsecurity.vpj=20160424002314000
+log4cxx.vpj=20160424002314000
+login_server.vpj=20160424002314000
+msfs.vpj=20160425232242000
+msg_server.vpj=20160424002314000
+push_server.vpj=20160424002314000
+route_server.vpj=20160424002314000
+slog.vpj=20160424002314000
+test.vpj=20160424002314000
+[ActiveConfig]
+teamtalk-server.vpj=Debug
+test.vpj=Debug
+base.vpj=Debug
+file_server.vpj=Debug
+db_proxy_server.vpj=Debug
+http_msg_server.vpj=Debug
+libsecurity.vpj=Debug
+log4cxx.vpj=Debug
+login_server.vpj=Debug
+msfs.vpj=Debug
+msg_server.vpj=Debug
+push_server.vpj=Debug
+route_server.vpj=Debug
+slog.vpj=Debug
+[TreeExpansion2]
++@ base.vpj
+-@ db_proxy_server.vpj
+  - Source Files
+    + business
++@ file_server.vpj
++@ http_msg_server.vpj
++@ libsecurity.vpj
++@ log4cxx.vpj
++@ login_server.vpj
++@ msfs.vpj
++@ msg_server.vpj
++@ push_server.vpj
++@ route_server.vpj
+-@ slog.vpj
+  + Source Files
++@ test.vpj
+scroll:0
+[State]
+SCREEN: 1280 768 594 229 1104 622 0 0 M 0 0 0 0 992 378 0
+CWD: ../se
+BUFFER: BN="../db_proxy_server/dbproxyserver.conf"
+BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=1 ST=8 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Config	HM=0 MF=50331648 TL=0 MLL=0 ASE=0 LNL=1 LCF=6 CAPS=0 E=0 ESBU2=1 CL="" SC="" SCE= SCU=
+VIEW: LN=.0 CL=1 LE=0 CX=1 CY=0 WI=5 BI=14 HT=0 HN=0 HF=0 HC=4
+WINDOW: 1 22 990 355 0 0 N  WF=0 WT=2 ",,," DID=0
+BUFFER: BN="../db_proxy_server/dbproxyserver.conf"
+VIEW: LN=.1233 CL=1 LE=0 CX=4 CY=10 WI=150 BI=14 HT=0 HN=0 HF=0 HC=4
+MDISTATE: 1
+AAAAAAAAAAHaAAAAAAAAADcAAAT/AAACmuoAAAAC+gAAAAEAAAABAAAAAPoAAAABAAAAAQAAAAD8AAAAsgAyADoAOgA6AC8AaABvAG0AZQAvAGgAbwB1AGcAbAAvAE0AeQBXAG8AcgBrAC8AVABlAGEAbQBUAGEAbABrAC8AVABlAGEAbQBUAGEAbABrAFMAcgBjAC8AcwBlAHIAdgBlAHIALwBzAHIAYwAvAGQAYgBfAHAAcgBvAHgAeQBfAHMAZQByAHYAZQByAC8AZABiAHAAcgBvAHgAeQBzAGUAcgB2AGUAcgAuAGMAbwBuAGYBAP////8AAQ==
+FILEHIST: 9
+../base/Base64.h
+../slog/slog_api.cpp
+../test/Client.cpp
+../test/Client.h
+../login_server/loginserver.conf
+../route_server/routeserver.conf
+../http_msg_server/httpmsgserver.conf
+../msg_server/msgserver.conf
+../db_proxy_server/dbproxyserver.conf
+TBCLASS: 0 0
+DEBUG: 0 0 0 0 3 0 gdb
+printf
+strcpy
+std::*
+DEBUG2: 0

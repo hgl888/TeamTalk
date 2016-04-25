@@ -1,0 +1,285 @@
+<!DOCTYPE Project SYSTEM "http://www.slickedit.com/dtd/vse/10.0/vpj.dtd">
+<Project
+	Version="10.0"
+	VendorName="SlickEdit"
+	TemplateName="GNU C/C++"
+	WorkingDir="."
+	BuildSystem="vsbuild">
+	<Config
+		Name="Debug"
+		Type="gnuc"
+		DebugCallbackName="gdb"
+		Version="1"
+		OutputFile="%bdpush_server"
+		CompilerConfigName="Latest Version">
+		<Menu>
+			<Target
+				Name="Compile"
+				MenuCaption="&amp;Compile"
+				Dialog="_gnuc_options_form Compile"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				OutputExts="*.o"
+				SaveOption="SaveCurrent"
+				RunFromDir="%rw">
+				<Exec CmdLine='g++ -c %xup  %defd -g -o "%bd%n%oe" %i "%f"'/>
+			</Target>
+			<Target
+				Name="Link"
+				MenuCaption="&amp;Link"
+				ShowOnMenu="Never"
+				Dialog="_gnuc_options_form Link"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveCurrent"
+				RunFromDir="%rw">
+				<Exec CmdLine='g++ %xup -g -o "%o" %f %libs'/>
+			</Target>
+			<Target
+				Name="Build"
+				MenuCaption="&amp;Build"
+				Dialog="_gnuc_options_form Compile"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%(VSLICKBIN1)vsbuild" "%w" "%r" -t build'/>
+			</Target>
+			<Target
+				Name="Rebuild"
+				MenuCaption="&amp;Rebuild"
+				Dialog="_gnuc_options_form Compile"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%(VSLICKBIN1)vsbuild" "%w" "%r" -t rebuild'/>
+			</Target>
+			<Target
+				Name="Debug"
+				MenuCaption="&amp;Debug"
+				Dialog="_gnuc_options_form Run/Debug"
+				BuildFirst="1"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveNone"
+				RunFromDir="%rw">
+				<Exec CmdLine='vsdebugio -prog "%o"'/>
+			</Target>
+			<Target
+				Name="Execute"
+				MenuCaption="E&amp;xecute"
+				Dialog="_gnuc_options_form Run/Debug"
+				BuildFirst="1"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%o"'/>
+			</Target>
+			<Target
+				Name="dash"
+				MenuCaption="-"
+				Deletable="0">
+				<Exec/>
+			</Target>
+			<Target
+				Name="GNU C Options"
+				MenuCaption="GNU C &amp;Options..."
+				ShowOnMenu="HideIfNoCmdLine"
+				Deletable="0"
+				SaveOption="SaveNone">
+				<Exec
+					CmdLine="gnucoptions"
+					Type="Slick-C"/>
+			</Target>
+		</Menu>
+		<List Name="GNUC Options">
+			<Item
+				Name="LinkerOutputType"
+				Value="Executable"/>
+		</List>
+	</Config>
+	<Config
+		Name="Release"
+		Type="gnuc"
+		DebugCallbackName="gdb"
+		Version="1"
+		OutputFile="%bdpush_server"
+		CompilerConfigName="Latest Version">
+		<Menu>
+			<Target
+				Name="Compile"
+				MenuCaption="&amp;Compile"
+				Dialog="_gnuc_options_form Compile"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				OutputExts="*.o"
+				SaveOption="SaveCurrent"
+				RunFromDir="%rw">
+				<Exec CmdLine='g++ -c %xup %defd -o "%bd%n%oe" %i "%f"'/>
+			</Target>
+			<Target
+				Name="Link"
+				MenuCaption="&amp;Link"
+				ShowOnMenu="Never"
+				Dialog="_gnuc_options_form Link"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveCurrent"
+				RunFromDir="%rw">
+				<Exec CmdLine='g++ %xup -o "%o" %f %libs'/>
+			</Target>
+			<Target
+				Name="Build"
+				MenuCaption="&amp;Build"
+				Dialog="_gnuc_options_form Compile"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%(VSLICKBIN1)vsbuild" "%w" "%r" -t build'/>
+			</Target>
+			<Target
+				Name="Rebuild"
+				MenuCaption="&amp;Rebuild"
+				Dialog="_gnuc_options_form Compile"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%(VSLICKBIN1)vsbuild" "%w" "%r" -t rebuild'/>
+			</Target>
+			<Target
+				Name="Debug"
+				MenuCaption="&amp;Debug"
+				Dialog="_gnuc_options_form Run/Debug"
+				BuildFirst="1"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveNone"
+				RunFromDir="%rw">
+				<Exec CmdLine='vsdebugio -prog "%o"'/>
+			</Target>
+			<Target
+				Name="Execute"
+				MenuCaption="E&amp;xecute"
+				Dialog="_gnuc_options_form Run/Debug"
+				BuildFirst="1"
+				CaptureOutputWith="ProcessBuffer"
+				Deletable="0"
+				SaveOption="SaveWorkspaceFiles"
+				RunFromDir="%rw">
+				<Exec CmdLine='"%o"'/>
+			</Target>
+			<Target
+				Name="dash"
+				MenuCaption="-"
+				Deletable="0">
+				<Exec/>
+			</Target>
+			<Target
+				Name="GNU C Options"
+				MenuCaption="GNU C &amp;Options..."
+				ShowOnMenu="HideIfNoCmdLine"
+				Deletable="0"
+				SaveOption="SaveNone">
+				<Exec
+					CmdLine="gnucoptions"
+					Type="Slick-C"/>
+			</Target>
+		</Menu>
+		<List Name="GNUC Options">
+			<Item
+				Name="LinkerOutputType"
+				Value="Executable"/>
+		</List>
+	</Config>
+	<Files>
+		<Folder
+			Name="Source Files"
+			Filters="*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.c++;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.cs;*.sc;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl;*.d;*.m;*.mm;*.go">
+			<Folder
+				Name="bufferloop"
+				Filters="">
+				<F N="../push_server/bufferloop/buffer_loop.hpp"/>
+			</Folder>
+			<Folder
+				Name="sigslot"
+				Filters="">
+				<F N="../push_server/sigslot/sigslot.h"/>
+			</Folder>
+			<Folder
+				Name="socket"
+				Filters="">
+				<F N="../push_server/socket/base_handler.hpp"/>
+				<F N="../push_server/socket/base_io_stream.cpp"/>
+				<F N="../push_server/socket/base_io_stream.h"/>
+				<F N="../push_server/socket/base_msg.h"/>
+				<F N="../push_server/socket/base_socket.hpp"/>
+				<F N="../push_server/socket/base_thread.hpp"/>
+				<F N="../push_server/socket/epoll_io_loop.cpp"/>
+				<F N="../push_server/socket/epoll_io_loop.h"/>
+				<F N="../push_server/socket/io_loop.cpp"/>
+				<F N="../push_server/socket/io_loop.h"/>
+				<F N="../push_server/socket/socket_io.h"/>
+				<F N="../push_server/socket/socket_io_define.h"/>
+				<F N="../push_server/socket/ssl_client_async.cpp"/>
+				<F N="../push_server/socket/ssl_client_async.h"/>
+				<F N="../push_server/socket/tcp_client_async.cpp"/>
+				<F N="../push_server/socket/tcp_client_async.h"/>
+				<F N="../push_server/socket/tcp_server.cpp"/>
+				<F N="../push_server/socket/tcp_server.h"/>
+				<F N="../push_server/socket/tcp_session_async.cpp"/>
+				<F N="../push_server/socket/tcp_session_async.h"/>
+			</Folder>
+			<Folder
+				Name="thread"
+				Filters="">
+				<F N="../push_server/thread/base_thread.hpp"/>
+			</Folder>
+			<Folder
+				Name="timer"
+				Filters="">
+				<F N="../push_server/timer/Timer.hpp"/>
+			</Folder>
+			<Folder
+				Name="type"
+				Filters="">
+				<F N="../push_server/type/base_type.h"/>
+			</Folder>
+			<F N="../push_server/apns_client.cpp"/>
+			<F N="../push_server/apns_client.h"/>
+			<F N="../push_server/apns_client_handler.cpp"/>
+			<F N="../push_server/apns_client_handler.h"/>
+			<F N="../push_server/apns_feedback_handler.cpp"/>
+			<F N="../push_server/apns_feedback_handler.h"/>
+			<F N="../push_server/apns_msg.cpp"/>
+			<F N="../push_server/apns_msg.h"/>
+			<F N="../push_server/byte_stream.cpp"/>
+			<F N="../push_server/byte_stream.h"/>
+			<F N="../push_server/ConfigFileReader.cpp"/>
+			<F N="../push_server/ConfigFileReader.h"/>
+			<F N="../push_server/jsonxx.cpp"/>
+			<F N="../push_server/jsonxx.h"/>
+			<F N="../push_server/main.cpp"/>
+			<F N="../push_server/pdu_msg.cpp"/>
+			<F N="../push_server/pdu_msg.h"/>
+			<F N="../push_server/push_app.cpp"/>
+			<F N="../push_server/push_app.h"/>
+			<F N="../push_server/push_app_define.h"/>
+			<F N="../push_server/push_define.h"/>
+			<F N="../push_server/push_server.cpp"/>
+			<F N="../push_server/push_server.h"/>
+			<F N="../push_server/push_server_handler.cpp"/>
+			<F N="../push_server/push_server_handler.h"/>
+			<F N="../push_server/push_session.cpp"/>
+			<F N="../push_server/push_session.h"/>
+			<F N="../push_server/push_session_handler.cpp"/>
+			<F N="../push_server/push_session_handler.h"/>
+			<F N="../push_server/pushserver.conf"/>
+			<F N="../push_server/session_manager.cpp"/>
+			<F N="../push_server/session_manager.h"/>
+		</Folder>
+	</Files>
+</Project>
