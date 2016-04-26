@@ -106,7 +106,6 @@ public class FilterLayoutUtils{
 		initFilter();
 		initWhiteSkin();
 		initTypeFilter();
-		//useFilter();
 		return;
 	}
 

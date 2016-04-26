@@ -46,17 +46,15 @@ public class FilterAdapter extends RecyclerView.Adapter<FilterAdapter.FilterHold
 		if(filterInfos.get(arg1).getFilterType() != -1){
 			filterHolder.thumbImage.setImageResource(FilterTypeHelper.FilterType2Thumb(filterInfos.get(arg1).getFilterType()));  
 			filterHolder.filterName.setText(FilterTypeHelper.FilterType2Name(filterInfos.get(arg1).getFilterType())); 
-			filterHolder.filterName.setBackgroundColor(context.getResources().getColor(
-					FilterTypeHelper.FilterType2Color(filterInfos.get(arg1).getFilterType())));
+			filterHolder.filterName.setBackgroundColor(context.getResources().getColor(FilterTypeHelper.FilterType2Color(filterInfos.get(arg1).getFilterType())));
 			if(filterInfos.get(arg1).isSelected()){
 				filterHolder.thumbSelected.setVisibility(View.VISIBLE);
 				filterHolder.thumbSelected_bg.setBackgroundColor(context.getResources().getColor(
 						FilterTypeHelper.FilterType2Color(filterInfos.get(arg1).getFilterType())));
 				filterHolder.thumbSelected_bg.setAlpha(0.7f);
-			}
-			else
+			} else {
 				filterHolder.thumbSelected.setVisibility(View.GONE);
-			
+			}
 			if(!filterInfos.get(arg1).isFavourite() || arg1 == 0)
 				filterHolder.filterFavourite.setVisibility(View.GONE);
 			else
@@ -86,25 +84,17 @@ public class FilterAdapter extends RecyclerView.Adapter<FilterAdapter.FilterHold
 	@Override
 	public FilterHolder onCreateViewHolder(ViewGroup arg0, int arg1) {
 		if(arg1 != -1){
-			View view = mInflater.inflate(R.layout.filter_item_layout,  
-					arg0, false);  
+			View view = mInflater.inflate(R.layout.filter_item_layout, arg0, false);
 			FilterHolder viewHolder = new FilterHolder(view);
-			viewHolder.thumbImage = (ImageView) view  
-	                .findViewById(R.id.filter_thumb_image);  
-			viewHolder.filterName = (TextView) view  
-	                .findViewById(R.id.filter_thumb_name);   
-			viewHolder.filterRoot = (FrameLayout)view
-					.findViewById(R.id.filter_root);
-			viewHolder.thumbSelected = (FrameLayout) view  
-	                .findViewById(R.id.filter_thumb_selected); 
-			viewHolder.filterFavourite = (FrameLayout)view.
-					findViewById(R.id.filter_thumb_favorite_layout);
-			viewHolder.thumbSelected_bg = (View)view.
-					findViewById(R.id.filter_thumb_selected_bg);
+			viewHolder.thumbImage = (ImageView) view.findViewById(R.id.filter_thumb_image);
+			viewHolder.filterName = (TextView) view.findViewById(R.id.filter_thumb_name);
+			viewHolder.filterRoot = (FrameLayout)view.findViewById(R.id.filter_root);
+			viewHolder.thumbSelected = (FrameLayout) view.findViewById(R.id.filter_thumb_selected);
+			viewHolder.filterFavourite = (FrameLayout)view.findViewById(R.id.filter_thumb_favorite_layout);
+			viewHolder.thumbSelected_bg = (View)view.findViewById(R.id.filter_thumb_selected_bg);
 			return viewHolder;
 		}else{
-			View view = mInflater.inflate(R.layout.filter_division_layout,  
-					arg0, false);  
+			View view = mInflater.inflate(R.layout.filter_division_layout, arg0, false);
 			FilterHolder viewHolder = new FilterHolder(view);
 			return viewHolder;
 		}
