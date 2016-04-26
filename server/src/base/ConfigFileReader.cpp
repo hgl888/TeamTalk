@@ -46,6 +46,7 @@ int CConfigFileReader::SetConfigValue(const char* name, const char* value)
     }
     return _WriteFIle();
 }
+
 void CConfigFileReader::_LoadFile(const char* filename)
 {
     m_config_file.clear();

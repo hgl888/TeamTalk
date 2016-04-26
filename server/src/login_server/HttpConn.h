@@ -16,9 +16,9 @@
 
 #define READ_BUF_SIZE	2048
 #define HTTP_RESPONSE_HTML          "HTTP/1.1 200 OK\r\n"\
-                                    "Connection:close\r\n"\
-                                    "Content-Length:%d\r\n"\
-                                    "Content-Type:text/html;charset=utf-8\r\n\r\n%s"
+                                                       "Connection:close\r\n"\
+                                                       "Content-Length:%d\r\n"\
+                                                       "Content-Type:text/html;charset=utf-8\r\n\r\n%s"
 #define HTTP_RESPONSE_HTML_MAX      1024
 
 enum {

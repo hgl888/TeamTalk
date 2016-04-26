@@ -7,8 +7,7 @@ LOCAL_MODULE    := MagicSDK
 LOCAL_SRC_FILES := MagicSDK.cpp \
 				bitmap/BitmapOperation.cpp \
 				bitmap/Conversion.cpp \
-				skinsmooth/MagicBeauty.cpp \
-				skinsmooth/test.cpp
+				skinsmooth/MagicBeauty.cpp 
 				
 LOCAL_LDLIBS := -llog 
 

@@ -206,11 +206,10 @@
 			<F N="../msfs/FileManager.h"/>
 			<F N="../msfs/HttpConn.cpp"/>
 			<F N="../msfs/HttpConn.h"/>
+			<F N="../msfs/main.cpp"/>
 			<F N="../msfs/Portable.h"/>
 			<F N="../msfs/StringUtils.cpp"/>
 			<F N="../msfs/StringUtils.h"/>
-			<F N="../msfs/main.cpp"/>
-			<F N="../msfs/msfs.conf"/>
 		</Folder>
 	</Files>
 </Project>

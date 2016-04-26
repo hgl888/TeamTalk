@@ -1,0 +1,10 @@
+.DS_Store
+ios_client/
+mac/
+ios/
+*.so
+win-client/
+server/src/libsecurity/android/obj/
+server/src/se/Debug/
+*.a
+protobuf-objc/

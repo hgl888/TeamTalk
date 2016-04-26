@@ -5,8 +5,8 @@ repositories {
 }
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion '23.0.1'
+    compileSdkVersion 19
+    buildToolsVersion '23.0.3'
 
     defaultConfig {
         applicationId "com.show.tt"
@@ -47,7 +47,7 @@ android {
 dependencies {
     compile project(':mgimlibs')
     compile project(':magicfilter')
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.google.protobuf:protobuf-java:2.6.1'
     compile 'de.greenrobot:eventbus:2.4.0'
     compile 'de.greenrobot:greendao:1.3.7'
