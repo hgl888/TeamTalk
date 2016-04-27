@@ -10,8 +10,9 @@
 		Type="gnuc"
 		DebugCallbackName="gdb"
 		Version="1"
-		OutputFile="%bdslog"
-		CompilerConfigName="Latest Version">
+		OutputFile="%bdslog.a"
+		CompilerConfigName="Latest Version"
+		Defines="">
 		<Menu>
 			<Target
 				Name="Compile"
@@ -22,7 +23,7 @@
 				OutputExts="*.o"
 				SaveOption="SaveCurrent"
 				RunFromDir="%rw">
-				<Exec CmdLine='g++ -c %xup  %defd -g -o "%bd%n%oe" %i "%f"'/>
+				<Exec CmdLine='g++ -c %xup %defd -g -o "%bd%n%oe" %i %f'/>
 			</Target>
 			<Target
 				Name="Link"
@@ -33,7 +34,7 @@
 				Deletable="0"
 				SaveOption="SaveCurrent"
 				RunFromDir="%rw">
-				<Exec CmdLine='g++ %xup -g -o "%o" %f %libs'/>
+				<Exec CmdLine='ar -rs %xup "%o" %f'/>
 			</Target>
 			<Target
 				Name="Build"
@@ -97,16 +98,23 @@
 		<List Name="GNUC Options">
 			<Item
 				Name="LinkerOutputType"
-				Value="Executable"/>
+				Value="StaticLibrary"/>
 		</List>
+		<Includes>
+			<Include Dir="../log4cxx/include"/>
+		</Includes>
+		<Libs PreObjects="0">
+			<Lib File="../slog/lib/liblog4cxx.so"/>
+		</Libs>
 	</Config>
 	<Config
 		Name="Release"
 		Type="gnuc"
 		DebugCallbackName="gdb"
 		Version="1"
-		OutputFile="%bdslog"
-		CompilerConfigName="Latest Version">
+		OutputFile="%bdslog.a"
+		CompilerConfigName="Latest Version"
+		Defines="">
 		<Menu>
 			<Target
 				Name="Compile"
@@ -117,7 +125,7 @@
 				OutputExts="*.o"
 				SaveOption="SaveCurrent"
 				RunFromDir="%rw">
-				<Exec CmdLine='g++ -c %xup %defd -o "%bd%n%oe" %i "%f"'/>
+				<Exec CmdLine='g++ -c %xup %defd -o "%bd%n%oe" %i %f'/>
 			</Target>
 			<Target
 				Name="Link"
@@ -128,7 +136,7 @@
 				Deletable="0"
 				SaveOption="SaveCurrent"
 				RunFromDir="%rw">
-				<Exec CmdLine='g++ %xup -o "%o" %f %libs'/>
+				<Exec CmdLine='ar -rs %xup "%o" %f'/>
 			</Target>
 			<Target
 				Name="Build"
@@ -192,8 +200,14 @@
 		<List Name="GNUC Options">
 			<Item
 				Name="LinkerOutputType"
-				Value="Executable"/>
+				Value="StaticLibrary"/>
 		</List>
+		<Includes>
+			<Include Dir="../log4cxx/include"/>
+		</Includes>
+		<Libs PreObjects="0">
+			<Lib File="../slog/lib/liblog4cxx.so"/>
+		</Libs>
 	</Config>
 	<Files>
 		<Folder
