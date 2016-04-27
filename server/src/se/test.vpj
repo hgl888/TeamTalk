@@ -10,8 +10,9 @@
 		Type="gnuc"
 		DebugCallbackName="gdb"
 		Version="1"
-		OutputFile="%bdteamtalk-server"
-		CompilerConfigName="Latest Version">
+		OutputFile="%bdtest"
+		CompilerConfigName="Latest Version"
+		Defines="">
 		<Menu>
 			<Target
 				Name="Compile"
@@ -22,7 +23,7 @@
 				OutputExts="*.o"
 				SaveOption="SaveCurrent"
 				RunFromDir="%rw">
-				<Exec CmdLine='g++ -c %xup  %defd -g -o "%bd%n%oe" %i "%f"'/>
+				<Exec CmdLine='g++ -c %xup %defd -g -o "%bd%n%oe" %i %f'/>
 			</Target>
 			<Target
 				Name="Link"
@@ -33,7 +34,7 @@
 				Deletable="0"
 				SaveOption="SaveCurrent"
 				RunFromDir="%rw">
-				<Exec CmdLine='g++ %xup -g -o "%o" %f %libs'/>
+				<Exec CmdLine='g++ %xup -g -o "%o" %objs'/>
 			</Target>
 			<Target
 				Name="Build"
@@ -99,14 +100,17 @@
 				Name="LinkerOutputType"
 				Value="Executable"/>
 		</List>
+		<Includes/>
+		<Libs PreObjects="0"/>
 	</Config>
 	<Config
 		Name="Release"
 		Type="gnuc"
 		DebugCallbackName="gdb"
 		Version="1"
-		OutputFile="%bdteamtalk-server"
-		CompilerConfigName="Latest Version">
+		OutputFile="%bdtest"
+		CompilerConfigName="Latest Version"
+		Defines="">
 		<Menu>
 			<Target
 				Name="Compile"
@@ -117,7 +121,7 @@
 				OutputExts="*.o"
 				SaveOption="SaveCurrent"
 				RunFromDir="%rw">
-				<Exec CmdLine='g++ -c %xup %defd -o "%bd%n%oe" %i "%f"'/>
+				<Exec CmdLine='g++ -c %xup %defd -o "%bd%n%oe" %i %f'/>
 			</Target>
 			<Target
 				Name="Link"
@@ -128,7 +132,7 @@
 				Deletable="0"
 				SaveOption="SaveCurrent"
 				RunFromDir="%rw">
-				<Exec CmdLine='g++ %xup -o "%o" %f %libs'/>
+				<Exec CmdLine='g++ %xup -o "%o" %objs'/>
 			</Target>
 			<Target
 				Name="Build"
@@ -194,21 +198,14 @@
 				Name="LinkerOutputType"
 				Value="Executable"/>
 		</List>
+		<Includes/>
+		<Libs PreObjects="0"/>
 	</Config>
 	<Files>
 		<Folder
 			Name="Source Files"
 			Filters="*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.c++;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.cs;*.sc;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl;*.d;*.m;*.mm;*.go">
-			<F N="../test/Client.cpp"/>
-			<F N="../test/Client.h"/>
-			<F N="../test/ClientConn.cpp"/>
-			<F N="../test/ClientConn.h"/>
-			<F N="../test/Common.h"/>
-			<F N="../test/IPacketCallback.h"/>
-			<F N="../test/playsound.h"/>
-			<F N="../test/SeqAlloctor.cpp"/>
-			<F N="../test/SeqAlloctor.h"/>
-			<F N="../test/test_client.cpp"/>
+			<F N="test/test.cpp"/>
 		</Folder>
 	</Files>
 </Project>

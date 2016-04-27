@@ -2,12 +2,6 @@
 #include <string.h>
 #include <stdio.h>
 
-typedef struct {
-    unsigned int state[4];     
-    unsigned int count[2];     
-    unsigned char buffer[64];     
-} MD5Context;
-
 #define S11 7
 #define S12 12
 #define S13 17
@@ -167,6 +161,7 @@ void MD5_Init(MD5Context * context)
     context->state[2] = 0x98badcfe;
     context->state[3] = 0x10325476;
 }
+
 void MD5_Update(MD5Context * context, unsigned char * buf, unsigned int len)
 {
     unsigned int i, index, partLen;

@@ -3,15 +3,16 @@
 	Version="10.0"
 	VendorName="SlickEdit"
 	TemplateName="GNU C/C++"
-	WorkingDir="."
+	WorkingDir="bin"
 	BuildSystem="vsbuild">
 	<Config
 		Name="Debug"
 		Type="gnuc"
 		DebugCallbackName="gdb"
 		Version="1"
-		OutputFile="%bdmsg_server"
-		CompilerConfigName="Latest Version">
+		OutputFile="../bin/msg_server"
+		CompilerConfigName="Latest Version"
+		Defines="">
 		<Menu>
 			<Target
 				Name="Compile"
@@ -22,7 +23,7 @@
 				OutputExts="*.o"
 				SaveOption="SaveCurrent"
 				RunFromDir="%rw">
-				<Exec CmdLine='g++ -c %xup  %defd -g -o "%bd%n%oe" %i "%f"'/>
+				<Exec CmdLine='g++ -c %xup %defd -g -o "%bd%n%oe" %i %f'/>
 			</Target>
 			<Target
 				Name="Link"
@@ -33,7 +34,7 @@
 				Deletable="0"
 				SaveOption="SaveCurrent"
 				RunFromDir="%rw">
-				<Exec CmdLine='g++ %xup -g -o "%o" %f %libs'/>
+				<Exec CmdLine='g++ %xup -g -o "%o" %objs'/>
 			</Target>
 			<Target
 				Name="Build"
@@ -99,14 +100,29 @@
 				Name="LinkerOutputType"
 				Value="Executable"/>
 		</List>
+		<Includes>
+			<Include Dir="../base"/>
+			<Include Dir="../base/pb"/>
+			<Include Dir="../base/pb/protocol"/>
+			<Include Dir="../libsecurity/include"/>
+		</Includes>
+		<Libs PreObjects="0">
+			<Lib File="-lpthread"/>
+			<Lib File="./liblog4cxx.so"/>
+			<Lib File="./base.a"/>
+			<Lib File="./libprotobuf-lite.a"/>
+			<Lib File="./slog.a"/>
+			<Lib File="./libsecurity.a"/>
+		</Libs>
 	</Config>
 	<Config
 		Name="Release"
 		Type="gnuc"
 		DebugCallbackName="gdb"
 		Version="1"
-		OutputFile="%bdmsg_server"
-		CompilerConfigName="Latest Version">
+		OutputFile="../bin/msg_server"
+		CompilerConfigName="Latest Version"
+		Defines="">
 		<Menu>
 			<Target
 				Name="Compile"
@@ -117,7 +133,7 @@
 				OutputExts="*.o"
 				SaveOption="SaveCurrent"
 				RunFromDir="%rw">
-				<Exec CmdLine='g++ -c %xup %defd -o "%bd%n%oe" %i "%f"'/>
+				<Exec CmdLine='g++ -c %xup %defd -o "%bd%n%oe" %i %f'/>
 			</Target>
 			<Target
 				Name="Link"
@@ -128,7 +144,7 @@
 				Deletable="0"
 				SaveOption="SaveCurrent"
 				RunFromDir="%rw">
-				<Exec CmdLine='g++ %xup -o "%o" %f %libs'/>
+				<Exec CmdLine='g++ %xup -o "%o" %objs'/>
 			</Target>
 			<Target
 				Name="Build"
@@ -194,6 +210,20 @@
 				Name="LinkerOutputType"
 				Value="Executable"/>
 		</List>
+		<Includes>
+			<Include Dir="../base"/>
+			<Include Dir="../base/pb"/>
+			<Include Dir="../base/pb/protocol"/>
+			<Include Dir="../libsecurity/include"/>
+		</Includes>
+		<Libs PreObjects="0">
+			<Lib File="-lpthread"/>
+			<Lib File="./liblog4cxx.so"/>
+			<Lib File="./base.a"/>
+			<Lib File="./libprotobuf-lite.a"/>
+			<Lib File="./slog.a"/>
+			<Lib File="./libsecurity.a"/>
+		</Libs>
 	</Config>
 	<Files>
 		<Folder
