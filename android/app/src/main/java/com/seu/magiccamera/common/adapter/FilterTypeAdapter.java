@@ -2,6 +2,7 @@ package com.seu.magiccamera.common.adapter;
 
 import java.util.List;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.support.v7.widget.RecyclerView;
@@ -59,7 +60,7 @@ public class FilterTypeAdapter extends   RecyclerView.Adapter<FilterTypeAdapter.
             filterHolder.filtTypeRoot.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    Log.e("test", "test");
                 }
             });
         }
@@ -78,5 +79,15 @@ public class FilterTypeAdapter extends   RecyclerView.Adapter<FilterTypeAdapter.
                 FilterTypeHolder viewHolder = new FilterTypeHolder(view);
                 return viewHolder;
             }
+    }
+
+    public interface OnFilterTypeChangeListener{
+        void onFilterTypeChanged(int filterType,int position);
+    }
+
+    private OnFilterTypeChangeListener onFilterTypeChangeListener;
+
+    public void setOnFilterChangeListener(OnFilterTypeChangeListener onFilterChangeListener){
+        this.onFilterTypeChangeListener = onFilterChangeListener;
     }
 }
