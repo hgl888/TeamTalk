@@ -1,18 +1,18 @@
 [Global]
-CurrentProject=test.vpj
+CurrentProject=route_server.vpj
 [ProjectDates]
-base.vpj=20160427075450000
-db_proxy_server.vpj=20160426035730000
+base.vpj=20160427080932000
+db_proxy_server.vpj=20160427091023000
 file_server.vpj=20160427060038000
 http_msg_server.vpj=20160426035730000
 libsecurity.vpj=20160427070719000
 log4cxx.vpj=20160427065336000
-login_server.vpj=20160426035730000
+login_server.vpj=20160427085549000
 msfs.vpj=20160427055837000
 msg_server.vpj=20160426035730000
 push_server.vpj=20160426035730000
-route_server.vpj=20160426035730000
-slog.vpj=20160427070447000
+route_server.vpj=20160427084659000
+slog.vpj=20160427081559000
 test.vpj=20160427071024000
 [ActiveConfig]
 teamtalk-server.vpj=Debug
@@ -30,106 +30,76 @@ push_server.vpj=Debug
 route_server.vpj=Debug
 slog.vpj=Debug
 [TreeExpansion2]
--@ base.vpj
++@ base.vpj
   - Source Files
-  - jsoncpp
-    + json
-  + slog
-  - pb
-  - security
-+@ db_proxy_server.vpj
+    + jsoncpp
+      + json
+    + pb
+      + protocol
+    + security
+    + slog
+-@ db_proxy_server.vpj
+  - Source Files
+    + business
 +@ file_server.vpj
 +@ http_msg_server.vpj
 +@ libsecurity.vpj
 +@ log4cxx.vpj
 +@ login_server.vpj
+  - Source Files
 +@ msfs.vpj
+  + Source Files
 +@ msg_server.vpj
 +@ push_server.vpj
+  + Source Files
+    + bufferloop
+    + sigslot
+    + socket
+    + thread
+    + timer
+    + type
 +@ route_server.vpj
-+@ slog.vpj
   - Source Files
++@ slog.vpj
 -@ test.vpj
   - Source Files
 scroll:0
 [State]
-SCREEN: 1280 768 662 65 1214 926 0 0 M 0 0 0 0 1632 624 0
-CWD: ../se
-BUFFER: BN="../slog/slog_api.h"
-BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=8 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=C/C++	HM=0 MF=119603296 TL=0 MLL=0 ASE=0 LNL=1 LCF=6 CAPS=0 E=0 ESBU2=1 CL="" SC="" SCE= SCU=
-VIEW: LN=.258 CL=1 LE=0 CX=1 CY=14 WI=5 BI=15 HT=0 HN=0 HF=0 HC=4
-BUFFER: BN="../slog/slog_api.cpp"
-BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=8 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=C/C++	HM=0 MF=117441120 TL=0 MLL=0 ASE=0 LNL=1 LCF=6 CAPS=0 E=0 ESBU2=1 CL="" SC="" SCE= SCU=
-VIEW: LN=.32 CL=15 LE=0 CX=15 CY=4 WI=5 BI=25 HT=0 HN=0 HF=0 HC=4
-BUFFER: BN="../route_server/UserInfo.h"
-BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=8 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=C/C++	HM=0 MF=119603808 TL=0 MLL=0 ASE=0 LNL=1 LCF=6 CAPS=0 E=0 ESBU2=1 CL="" SC="" SCE= SCU=
-VIEW: LN=.255 CL=20 LE=0 CX=20 CY=14 WI=5 BI=26 HT=0 HN=0 HF=0 HC=4
-BUFFER: BN="../log4cxx/inputstreamreader.cpp"
-BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=8 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=C/C++	HM=0 MF=119603808 TL=0 MLL=0 ASE=0 LNL=1 LCF=6 CAPS=0 E=0 ESBU2=1 CL="" SC="" SCE= SCU=
-VIEW: LN=.0 CL=1 LE=0 CX=1 CY=0 WI=5 BI=4 HT=0 HN=0 HF=0 HC=4
-BUFFER: BN="test/test.cpp"
-BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=8 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=C/C++	HM=0 MF=121439072 TL=0 MLL=0 ASE=0 LNL=1 LCF=6 CAPS=0 E=71 ESBU2=1 CL="" SC="" SCE= SCU=
-VIEW: LN=.60 CL=2 LE=0 CX=2 CY=5 WI=5 BI=29 HT=0 HN=0 HF=0 HC=4
-BUFFER: BN="/usr/include/sys/cdefs.h"
-BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=8 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=C/C++	HM=0 MF=119603808 TL=0 MLL=0 ASE=0 LNL=1 LCF=6 CAPS=0 E=0 ESBU2=1 CL="" SC="" SCE= SCU=
-VIEW: LN=.1927 CL=44 LE=0 CX=44 CY=11 WI=5 BI=60 HT=0 HN=0 HF=0 HC=4
-BUFFER: BN="/usr/include/arpa/inet.h"
-BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=8 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=C/C++	HM=0 MF=119603296 TL=0 MLL=0 ASE=0 LNL=1 LCF=6 CAPS=0 E=0 ESBU2=1 CL="" SC="" SCE= SCU=
-VIEW: LN=.1926 CL=1 LE=0 CX=1 CY=23 WI=5 BI=58 HT=0 HN=0 HF=0 HC=4
-BUFFER: BN="../base/Base64.cpp"
-BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=8 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=C/C++	HM=0 MF=52494432 TL=0 MLL=0 ASE=0 LNL=1 LCF=6 CAPS=0 E=0 ESBU2=1 CL="" SC="" SCE= SCU=
-VIEW: LN=.131 CL=1 LE=0 CX=1 CY=8 WI=5 BI=61 HT=0 HN=0 HF=0 HC=4
-BUFFER: BN="/usr/include/stdio.h"
-BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=8 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=C/C++	HM=0 MF=119603808 TL=0 MLL=0 ASE=0 LNL=1 LCF=6 CAPS=0 E=0 ESBU2=1 CL="" SC="" SCE= SCU=
-VIEW: LN=.26560 CL=8 LE=0 CX=8 CY=9 WI=5 BI=62 HT=0 HN=0 HF=0 HC=4
-BUFFER: BN="../db_proxy_server/dbproxyserver.conf"
-BI: MA=1 74 1  TABS=1 5  WWS=1 IWT=1 ST=8 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=Config	HM=0 MF=50331648 TL=0 MLL=0 ASE=0 LNL=1 LCF=6 CAPS=0 E=0 ESBU2=1 CL="" SC="" SCE= SCU=
-VIEW: LN=.262 CL=32 LE=0 CX=32 CY=7 WI=5 BI=14 HT=0 HN=0 HF=0 HC=4
-WINDOW: 1 22 1630 601 0 0 N  WF=0 WT=10 ",,," DID=0
-BUFFER: BN="../base/Base64.cpp"
-VIEW: LN=.131 CL=1 LE=0 CX=4 CY=8 WI=199 BI=61 HT=0 HN=0 HF=0 HC=4
-WINDOW: 1 22 1630 601 0 0 N  WF=0 WT=8 ",,," DID=0
-BUFFER: BN="/usr/include/arpa/inet.h"
-VIEW: LN=.1926 CL=1 LE=0 CX=5 CY=23 WI=78 BI=58 HT=0 HN=0 HF=0 HC=4
-WINDOW: 1 22 1630 601 0 0 N  WF=0 WT=7 ",,," DID=0
-BUFFER: BN="/usr/include/sys/cdefs.h"
-VIEW: LN=.1927 CL=44 LE=0 CX=48 CY=11 WI=348 BI=60 HT=0 HN=0 HF=0 HC=4
-WINDOW: 1 22 1630 601 0 0 N  WF=0 WT=5 "Century Schoolbook L,16,0,1" DID=0
-BUFFER: BN="test/test.cpp"
-VIEW: LN=.60 CL=2 LE=0 CX=5 CY=5 WI=205 BI=29 HT=0 HN=0 HF=0 HC=4
-WINDOW: 1 22 923 522 0 0 N  WF=0 WT=2 ",,," DID=0
-BUFFER: BN="../db_proxy_server/dbproxyserver.conf"
-VIEW: LN=.262 CL=32 LE=0 CX=35 CY=7 WI=152 BI=14 HT=0 HN=0 HF=0 HC=4
-WINDOW: 1 22 1630 601 0 0 N  WF=0 WT=4 ",,," DID=0
-BUFFER: BN="../log4cxx/inputstreamreader.cpp"
-VIEW: LN=.0 CL=1 LE=0 CX=4 CY=0 WI=167 BI=4 HT=0 HN=0 HF=0 HC=4
-WINDOW: 1 22 1630 601 0 0 N  WF=0 WT=3 ",,," DID=0
-BUFFER: BN="../slog/slog_api.h"
-VIEW: LN=.258 CL=1 LE=0 CX=4 CY=14 WI=150 BI=15 HT=0 HN=0 HF=0 HC=4
-WINDOW: 1 22 1630 601 0 0 N  WF=0 WT=9 ",,," DID=0
-BUFFER: BN="../slog/slog_api.cpp"
-VIEW: LN=.32 CL=15 LE=0 CX=19 CY=4 WI=187 BI=25 HT=0 HN=0 HF=0 HC=4
-WINDOW: 1 22 1630 601 0 0 N  WF=0 WT=6 ",,," DID=0
-BUFFER: BN="../route_server/UserInfo.h"
-VIEW: LN=.255 CL=20 LE=0 CX=23 CY=14 WI=213 BI=26 HT=0 HN=0 HF=0 HC=4
-WINDOW: 1 22 1630 601 0 0 N  WF=0 WT=11 ",,," DID=0
-BUFFER: BN="/usr/include/stdio.h"
-VIEW: LN=.26560 CL=8 LE=0 CX=12 CY=9 WI=200 BI=62 HT=0 HN=0 HF=0 HC=4
+SCREEN: 1920 1080 360 98 1202 885 0 0 M 0 0 0 0 1606 668 0
+CWD: bin
+BUFFER: BN="../login_server/HttpConn.cpp"
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=8 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=C/C++	HM=0 MF=119603808 TL=0 MLL=0 ASE=0 LNL=1 LCF=6 CAPS=0 E=70 ESBU2=71 CL="" SC="" SCE= SCU=
+VIEW: LN=.0 CL=1 LE=0 CX=1 CY=0 WI=5 BI=16 HT=0 HN=0 HF=0 HC=4
+WINDOW: 1 23 1604 644 0 0 N  WF=0 WT=2 "Century Schoolbook L,16,0,1" DID=0
+BUFFER: BN="../login_server/HttpConn.cpp"
+VIEW: LN=.0 CL=1 LE=0 CX=5 CY=0 WI=170 BI=16 HT=0 HN=0 HF=0 HC=4
 MDISTATE: 1
-AAAAAAAAAAHaAAAAAAAAADcAAAd/AAAD0uoAAAAC+gAAAAoAAAAKAAAACAAAAAAAAAAEAAAAAgAAAAkAAAABAAAABgAAAAcAAAAFAAAAA/oAAAAKAAAACgAAAAgAAAAAAAAABAAAAAIAAAABAAAACQAAAAUAAAAGAAAABwAAAAP8AAAAXAAxADAAOgA6ADoALwByAG8AbwB0AC8AVABlAGEAbQBUAGEAbABrAC8AcwBlAHIAdgBlAHIALwBzAHIAYwAvAGIAYQBzAGUALwBCAGEAcwBlADYANAAuAGMAcABwAAD/////AAD8AAAAagA2ADoAOgA6AC8AcgBvAG8AdAAvAFQAZQBhAG0AVABhAGwAawAvAHMAZQByAHYAZQByAC8AcwByAGMALwByAG8AdQB0AGUAXwBzAGUAcgB2AGUAcgAvAFUAcwBlAHIASQBuAGYAbwAuAGgAAP////8AAPwAAAA4ADcAOgA6ADoALwB1AHMAcgAvAGkAbgBjAGwAdQBkAGUALwBzAHkAcwAvAGMAZABlAGYAcwAuAGgAAP////8AAPwAAACAADIAOgA6ADoALwByAG8AbwB0AC8AVABlAGEAbQBUAGEAbABrAC8AcwBlAHIAdgBlAHIALwBzAHIAYwAvAGQAYgBfAHAAcgBvAHgAeQBfAHMAZQByAHYAZQByAC8AZABiAHAAcgBvAHgAeQBzAGUAcgB2AGUAcgAuAGMAbwBuAGYAAP////8AAPwAAAA4ADgAOgA6ADoALwB1AHMAcgAvAGkAbgBjAGwAdQBkAGUALwBhAHIAcABhAC8AaQBuAGUAdAAuAGgAAP////8AAPwAAAB2ADQAOgA6ADoALwByAG8AbwB0AC8AVABlAGEAbQBUAGEAbABrAC8AcwBlAHIAdgBlAHIALwBzAHIAYwAvAGwAbwBnADQAYwB4AHgALwBpAG4AcAB1AHQAcwB0AHIAZQBhAG0AcgBlAGEAZABlAHIALgBjAHAAcAAA/////wAA/AAAAF4AOQA6ADoAOgAvAHIAbwBvAHQALwBUAGUAYQBtAFQAYQBsAGsALwBzAGUAcgB2AGUAcgAvAHMAcgBjAC8AcwBsAG8AZwAvAHMAbABvAGcAXwBhAHAAaQAuAGMAcABwAAD/////AAD8AAAAWgAzADoAOgA6AC8AcgBvAG8AdAAvAFQAZQBhAG0AVABhAGwAawAvAHMAZQByAHYAZQByAC8AcwByAGMALwBzAGwAbwBnAC8AcwBsAG8AZwBfAGEAcABpAC4AaAAA/////wAA/AAAADIAMQAxADoAOgA6AC8AdQBzAHIALwBpAG4AYwBsAHUAZABlAC8AcwB0AGQAaQBvAC4AaAEA/////wAB/AAAAFwANQA6ADoAOgAvAHIAbwBvAHQALwBUAGUAYQBtAFQAYQBsAGsALwBzAGUAcgB2AGUAcgAvAHMAcgBjAC8AcwBlAC8AdABlAHMAdAAvAHQAZQBzAHQALgBjAHAAcAAA/////wAA
+AAAAAAAAAAHaAAAAAAAAADcAAAd/AAAD0OoAAAAC+gAAAAEAAAABAAAAAPoAAAABAAAAAQAAAAD8AAAAbgAyADoAOgA6AC8AcgBvAG8AdAAvAFQAZQBhAG0AVABhAGwAawAvAHMAZQByAHYAZQByAC8AcwByAGMALwBsAG8AZwBpAG4AXwBzAGUAcgB2AGUAcgAvAEgAdAB0AHAAQwBvAG4AbgAuAGMAcABwAQD/////AAE=
 FILEHIST: 9
-../log4cxx/inputstreamreader.cpp
-../slog/slog_api.h
-../slog/slog_api.cpp
-../route_server/UserInfo.h
-test/test.cpp
-/usr/include/sys/cdefs.h
-/usr/include/arpa/inet.h
-../base/Base64.cpp
-/usr/include/stdio.h
+../base/pb/protocol/IM.BaseDefine.pb.cc
+../base/pb/protocol/IM.BaseDefine.pb.h
+../base/public_define.h
+../base/im_conn_util.cpp
+../base/pb/protocol/IM.Buddy.pb.h
+../base/BaseSocket.cpp
+../route_server/route_server.cpp
+../login_server/LoginConn.h
+../login_server/HttpConn.cpp
 TBCLASS: 0 0
-DEBUG: 0 0 0 0 3 0 gdb
+DEBUG: 0 0 1 0 3 0 gdb
+00main../route_server/route_server.cpp3510x00000000004041800
 printf
 strcpy
 std::*
-DEBUG2: 0
+DEBUG2: 1
+00main../route_server/route_server.cpp3510x0000000000404180045
+printf("ServerVersion:RouteServer/%s\n",VERSION);
+printf("ServerBuild:%s%s\n",__DATE__,__TIME__);
+return0;
+}
+signal(SIGPIPE,SIG_IGN);
+srand(time(NULL));
+
+CConfigFileReaderconfig_file("routeserver.conf");
+
+char*listen_ip=config_file.GetConfigName("ListenIP");

@@ -10,7 +10,7 @@
 		Type="gnuc"
 		DebugCallbackName="gdb"
 		Version="1"
-		OutputFile="%bdslog.a"
+		OutputFile="../bin/slog.a"
 		CompilerConfigName="Latest Version"
 		Defines="">
 		<Menu>
@@ -23,7 +23,9 @@
 				OutputExts="*.o"
 				SaveOption="SaveCurrent"
 				RunFromDir="%rw">
-				<Exec CmdLine='g++ -c %xup %defd -g -o "%bd%n%oe" %i %f'/>
+				<Exec
+					CmdLine='g++ -c %xup %defd -g %~other -o "%bd%n%oe" %i %f'
+					OtherOptions="-std=c++11"/>
 			</Target>
 			<Target
 				Name="Link"
@@ -112,7 +114,7 @@
 		Type="gnuc"
 		DebugCallbackName="gdb"
 		Version="1"
-		OutputFile="%bdslog.a"
+		OutputFile="../bin/slog.a"
 		CompilerConfigName="Latest Version"
 		Defines="">
 		<Menu>
@@ -125,7 +127,9 @@
 				OutputExts="*.o"
 				SaveOption="SaveCurrent"
 				RunFromDir="%rw">
-				<Exec CmdLine='g++ -c %xup %defd -o "%bd%n%oe" %i %f'/>
+				<Exec
+					CmdLine='g++ -c %xup %defd %~other -o "%bd%n%oe" %i %f'
+					OtherOptions="-std=c++11"/>
 			</Target>
 			<Target
 				Name="Link"

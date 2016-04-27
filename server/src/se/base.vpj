@@ -10,7 +10,7 @@
 		Type="gnuc"
 		DebugCallbackName="gdb"
 		Version="1"
-		OutputFile="%bdbase"
+		OutputFile="../bin/base.a"
 		CompilerConfigName="Latest Version"
 		Defines="">
 		<Menu>
@@ -114,7 +114,7 @@
 		Type="gnuc"
 		DebugCallbackName="gdb"
 		Version="1"
-		OutputFile="%bdbase"
+		OutputFile="../bin/base.a"
 		CompilerConfigName="Latest Version"
 		Defines="">
 		<Menu>
