@@ -3,14 +3,14 @@
 	Version="10.0"
 	VendorName="SlickEdit"
 	TemplateName="GNU C/C++"
-	WorkingDir="."
+	WorkingDir="./bin"
 	BuildSystem="vsbuild">
 	<Config
 		Name="Debug"
 		Type="gnuc"
 		DebugCallbackName="gdb"
 		Version="1"
-		OutputFile="%bdlibsecurity.a"
+		OutputFile="../bin/libsecurity.a"
 		CompilerConfigName="Latest Version"
 		Defines="">
 		<Menu>
@@ -110,7 +110,7 @@
 		Type="gnuc"
 		DebugCallbackName="gdb"
 		Version="1"
-		OutputFile="%bdlibsecurity.a"
+		OutputFile="../bin/libsecurity.a"
 		CompilerConfigName="Latest Version"
 		Defines="">
 		<Menu>

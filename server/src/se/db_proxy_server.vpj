@@ -10,7 +10,7 @@
 		Type="gnuc"
 		DebugCallbackName="gdb"
 		Version="1"
-		OutputFile="%bddb_proxy_server"
+		OutputFile="../bin/db_proxy_server"
 		CompilerConfigName="Latest Version"
 		Defines="">
 		<Menu>
@@ -118,7 +118,7 @@
 			<Lib File="./slog.a"/>
 			<Lib File="-lcurl"/>
 			<Lib File="./libhiredis.a"/>
-			<Lib File="-lmysqld"/>
+			<Lib File="/usr/local/mysql/lib/libmysqld.a"/>
 		</Libs>
 	</Config>
 	<Config
@@ -126,7 +126,7 @@
 		Type="gnuc"
 		DebugCallbackName="gdb"
 		Version="1"
-		OutputFile="%bddb_proxy_server"
+		OutputFile="../bin/db_proxy_server"
 		CompilerConfigName="Latest Version"
 		Defines="">
 		<Menu>
@@ -234,7 +234,7 @@
 			<Lib File="./slog.a"/>
 			<Lib File="-lcurl"/>
 			<Lib File="./libhiredis.a"/>
-			<Lib File="-lmysqld"/>
+			<Lib File="/usr/local/mysql/lib/libmysqld.a"/>
 		</Libs>
 	</Config>
 	<Files>
