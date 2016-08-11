@@ -19,6 +19,7 @@ public class GreenDaoGenerator {
         addMessage(schema);
         addSessionInfo(schema);
 
+
         // todo 绝对路径,根据自己的路径设定， 例子如下
         String path = "/Users/yingmu/software/IM/TT/ttandroidclientnew/app/src/main/java";
         new DaoGenerator().generateAll(schema, path);
