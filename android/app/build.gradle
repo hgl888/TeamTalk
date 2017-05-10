@@ -2,12 +2,12 @@ apply plugin: 'com.android.application'
 
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion '22.0.0'
+    compileSdkVersion 24
+    buildToolsVersion "25.0.0"
     defaultConfig {
         applicationId "com.show.tt"
-        minSdkVersion 17
-        targetSdkVersion 19
+        minSdkVersion 19
+        targetSdkVersion 25
         versionCode 5
         versionName "2.0.0"
     }

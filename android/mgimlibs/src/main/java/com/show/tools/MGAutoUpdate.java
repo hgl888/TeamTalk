@@ -72,13 +72,13 @@ public class MGAutoUpdate {
     public void startDown(final String url) {  
         new Thread() {  
             public void run() {  
-                HttpClient client = new DefaultHttpClient();  
+                HttpClient client = new DefaultHttpClient();
                 // params[0]代表连接的url  
-                HttpGet get = new HttpGet(url);  
-                HttpResponse response;  
+                HttpGet get = new HttpGet(url);
+                HttpResponse response;
                 try {  
                     response = client.execute(get);  
-                    HttpEntity entity = response.getEntity();  
+                    HttpEntity entity = response.getEntity();
                     long length = entity.getContentLength();  
                     mProgressDialog.setMax((int)(length / 1000));
                     InputStream is = entity.getContent();  
@@ -109,7 +109,7 @@ public class MGAutoUpdate {
                         fileOutputStream.close();  
                     }  
                     down();  
-                } catch (ClientProtocolException e) {  
+                } catch (ClientProtocolException e) {
                     e.printStackTrace();
                 } catch (IOException e) {  
                     e.printStackTrace();
