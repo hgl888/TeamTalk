@@ -128,3 +128,4 @@ CAutoLock::~CAutoLock()
     if(NULL != m_pLock)
         m_pLock->unlock();
 }
+

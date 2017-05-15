@@ -34,7 +34,9 @@
 				Deletable="0"
 				SaveOption="SaveCurrent"
 				RunFromDir="%rw">
-				<Exec CmdLine='g++ %xup -g -o "%o" %objs'/>
+				<Exec
+					CmdLine='g++ %xup -g %~other -o "%o" %objs'
+					OtherOptions="-std=c++11"/>
 			</Target>
 			<Target
 				Name="Build"
@@ -100,8 +102,12 @@
 				Name="LinkerOutputType"
 				Value="Executable"/>
 		</List>
-		<Includes/>
-		<Libs PreObjects="0"/>
+		<Includes>
+			<Include Dir="test"/>
+		</Includes>
+		<Libs PreObjects="0">
+			<Lib File="test/libhiredis.a"/>
+		</Libs>
 	</Config>
 	<Config
 		Name="Release"
@@ -132,7 +138,9 @@
 				Deletable="0"
 				SaveOption="SaveCurrent"
 				RunFromDir="%rw">
-				<Exec CmdLine='g++ %xup -o "%o" %objs'/>
+				<Exec
+					CmdLine='g++ %xup %~other -o "%o" %objs'
+					OtherOptions="-std=c++11"/>
 			</Target>
 			<Target
 				Name="Build"
@@ -198,14 +206,19 @@
 				Name="LinkerOutputType"
 				Value="Executable"/>
 		</List>
-		<Includes/>
-		<Libs PreObjects="0"/>
+		<Includes>
+			<Include Dir="test"/>
+		</Includes>
+		<Libs PreObjects="0">
+			<Lib File="test/libhiredis.a"/>
+		</Libs>
 	</Config>
 	<Files>
 		<Folder
 			Name="Source Files"
 			Filters="*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.c++;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.cs;*.sc;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl;*.d;*.m;*.mm;*.go">
-			<F N="test/test.cpp"/>
+			<F N="test/epolltestserver.c"/>
+			<F N="test/my_err.h"/>
 		</Folder>
 	</Files>
 </Project>

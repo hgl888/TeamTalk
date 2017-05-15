@@ -40,7 +40,7 @@ private:
  * 以后可以把全部接口用这个来实现替换
  */
 class CPrepareStatement {
-public:
+public: 
 	CPrepareStatement();
 	virtual ~CPrepareStatement();
 
