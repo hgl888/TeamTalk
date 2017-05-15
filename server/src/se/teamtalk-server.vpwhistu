@@ -1,5 +1,5 @@
 [Global]
-CurrentProject=msg_server.vpj
+CurrentProject=db_proxy_server.vpj
 [ProjectDates]
 base.vpj=20160427111615000
 db_proxy_server.vpj=20160427111615000
@@ -31,28 +31,22 @@ route_server.vpj=Debug
 slog.vpj=Debug
 [TreeExpansion2]
 +@ base.vpj
-+@ db_proxy_server.vpj
+-@ db_proxy_server.vpj
+  - Source Files
+    + business
 +@ file_server.vpj
 +@ http_msg_server.vpj
 +@ libsecurity.vpj
 +@ log4cxx.vpj
 +@ login_server.vpj
 +@ msfs.vpj
--@ msg_server.vpj
-  + Source Files
--@ push_server.vpj
-  - Source Files
-    + bufferloop
-    + sigslot
-    + socket
-    + thread
-    + timer
-    + type
++@ msg_server.vpj
++@ push_server.vpj
 +@ route_server.vpj
 -@ slog.vpj
   + Source Files
 +@ test.vpj
-scroll:8
+scroll:0
 [State]
 SCREEN: 1920 1080 0 25 1280 692 0 0 M 0 0 0 0 971 242 0
 CWD: bin

@@ -10,12 +10,15 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.RelativeLayout;
 
 import com.seu.magiccamera.common.adapter.FilterAdapter;
+import com.seu.magiccamera.common.adapter.FilterTypeAdapter;
 import com.seu.magiccamera.common.bean.FilterInfo;
+import com.seu.magiccamera.common.bean.FilterTypeInfo;
 import com.seu.magicfilter.display.MagicDisplay;
 import com.seu.magicfilter.filter.helper.MagicFilterType;
 import com.show.tt.R;
@@ -25,7 +28,7 @@ public class FilterLayoutUtils{
 	private MagicDisplay mMagicDisplay;
 	private FilterAdapter mAdapterFilter;
 	private FilterAdapter mAdapterWhiteSkin;
-	private FilterAdapter mAdapterTypeFilter;
+	private FilterTypeAdapter mAdapterTypeFilter;
 	private RecyclerView mFilterListView;
 	private RecyclerView mTypeFilterListView;
 	private RelativeLayout mLayoutFilterChose;
@@ -34,7 +37,7 @@ public class FilterLayoutUtils{
 	private int position;
 	private List<FilterInfo> filterInfos;
 	private List<FilterInfo> whiteSkinInfos;
-	private List<FilterInfo> typeFilterInfos;
+	private List<FilterTypeInfo> typeFilterInfos;
 	
 	private int mFilterType = MagicFilterType.NONE;
 	
@@ -52,10 +55,10 @@ public class FilterLayoutUtils{
 	}
 
 	private void initTypeFilter(){
-		mAdapterTypeFilter = new FilterAdapter(mContext);
+		mAdapterTypeFilter = new FilterTypeAdapter(mContext);
 		initTypeFilterInfos();
-		mAdapterTypeFilter.setFilterInfos( typeFilterInfos );
-		mAdapterTypeFilter.setOnFilterChangeListener(onTypeFilterChangeListener);
+		mAdapterTypeFilter.setFilterTypeInfo( typeFilterInfos );
+		mAdapterTypeFilter.setOnFilterChangeListener(onFilterTypeChangeListener);
 	}
 
 	private void initWhiteSkin()
@@ -106,7 +109,6 @@ public class FilterLayoutUtils{
 		initFilter();
 		initWhiteSkin();
 		initTypeFilter();
-		//useFilter();
 		return;
 	}
 
@@ -140,27 +142,27 @@ public class FilterLayoutUtils{
 		}
 	};
 
-	private FilterAdapter.onFilterChangeListener onTypeFilterChangeListener = new FilterAdapter.onFilterChangeListener() {
+	private FilterTypeAdapter.OnFilterTypeChangeListener onFilterTypeChangeListener = new FilterTypeAdapter.OnFilterTypeChangeListener() {
 		@Override
-		public void onFilterChanged(int filterType, int position) {
-
+		public void onFilterTypeChanged(int filterType, int position) {
+			Log.e("test", "test");
 		}
 	};
 
 	private void initTypeFilterInfos(){
-		typeFilterInfos = new ArrayList<FilterInfo>();
-		FilterInfo filterInfo = new FilterInfo();
+		typeFilterInfos = new ArrayList<FilterTypeInfo>();
+		FilterTypeInfo filterInfo = new FilterTypeInfo();
 		filterInfo.setFilterType( MagicFilterType.NONE);
 		filterInfo.setSelected(true);
 		typeFilterInfos.add( filterInfo );
 
 		//Divider
-		filterInfo = new FilterInfo();
+		filterInfo = new FilterTypeInfo();
 		filterInfo.setFilterType( -1 );
 		typeFilterInfos.add(filterInfo );
 
 		for ( int i = MagicFilterType.WHITESKIN_BEAUTY; i <= MagicFilterType.WHITESKIN_END; i++ ){
-			filterInfo = new FilterInfo();
+			filterInfo = new FilterTypeInfo();
 			filterInfo.setFilterType( i );
 			typeFilterInfos.add( filterInfo );
 		}

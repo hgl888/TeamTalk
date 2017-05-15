@@ -5,16 +5,6 @@ import de.greenrobot.daogenerator.Index;
 import de.greenrobot.daogenerator.Property;
 import de.greenrobot.daogenerator.Schema;
 
-/**
- * @author : yingmu on 14-12-31.
- * @email : yingmu@mogujie.com.
- *
- * 其中UserEntity、 GroupEntity 继承PeerEntity
- * 由于 UserEntity、 GroupEntity是自动生成，PeerEntity会有重复字段，所以每次生成之后要处理下成员变量。
- * PeerEntity成员变量名与子类统一。
- *
- * 【备注】session表中的create与update字段没有特别的区分，主要是之前服务端的习惯。。。
- */
 public class GreenDaoGenerator {
     private static String entityPath = "com.show.tt.DB.entity";
 
@@ -28,6 +18,7 @@ public class GreenDaoGenerator {
         addGroupInfo(schema);
         addMessage(schema);
         addSessionInfo(schema);
+
 
         // todo 绝对路径,根据自己的路径设定， 例子如下
         String path = "/Users/yingmu/software/IM/TT/ttandroidclientnew/app/src/main/java";
@@ -76,10 +67,7 @@ public class GreenDaoGenerator {
 
         userInfo.setHasKeepSections(true);
 
-        //todo 索引还没有设定
-        // 一对一 addToOne 的使用
-        // 支持protobuf
-        // schema.addProtobufEntity();
+
     }
 
     private static void addGroupInfo(Schema schema) {
@@ -116,7 +104,7 @@ public class GreenDaoGenerator {
         Property msgProId = message.addIntProperty("msgId").notNull().getProperty();
         message.addIntProperty("fromId").notNull();
         message.addIntProperty("toId").notNull();
-        // 是不是需要添加一个sessionkey标示一下，登陆的用户在前面
+
         Property sessionPro  = message.addStringProperty("sessionKey").notNull().getProperty();
         message.addStringProperty("content").notNull();
         message.addIntProperty("msgType").notNull();

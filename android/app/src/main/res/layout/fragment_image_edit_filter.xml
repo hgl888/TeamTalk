@@ -19,7 +19,7 @@
         android:id="@+id/filter_listView"
         android:layout_width="match_parent"
         android:layout_height="94.0dip"
-        android:padding="5.0dip"
+        android:padding="2.0dip"
         android:scrollbars="none"
         android:background="#7f000000"/>
     <View 
@@ -31,7 +31,7 @@
         android:id="@+id/type_filter_listView"
         android:layout_width="match_parent"
         android:layout_height="40.0dip"
-        android:padding="5.0dip"
+        android:padding="2.0dip"
         android:scrollbars="none"
         android:background="#7f000000"/>
 

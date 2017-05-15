@@ -28,4 +28,5 @@ public class FilterInfo {
 	public void setFavourite(boolean bFavourite){
 		this.bFavourite = bFavourite;
 	}
+
 }
