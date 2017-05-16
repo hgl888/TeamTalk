@@ -5,11 +5,13 @@ AUX_SOURCE_DIRECTORY(./ SRC_LIST1)
 AUX_SOURCE_DIRECTORY(./pb/protocol SRC_LIST2)
 AUX_SOURCE_DIRECTORY(./jsoncpp SRC_LIST3)
 
-if(APPLE)
-    SET(PB_LIB_DIR ./pb/lib/mac)
-elseif(UNIX)
-    SET(PB_LIB_DIR ./pb/lib/linux)
-endif()
+#if(APPLE)
+#    SET(PB_LIB_DIR ./pb/lib/mac)
+#elseif(UNIX)
+#    SET(PB_LIB_DIR ./pb/lib/linux)
+#endif()
+
+SET(PB_LIB_DIR ./pb/lib/linux)
 
 SET(LIBRARY_OUTPUT_PATH ./)
 #SET(EXECUTABLE_OUTPUT_PATH  ./bin)

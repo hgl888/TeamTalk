@@ -1,5 +1,5 @@
 [Global]
-CurrentProject=db_proxy_server.vpj
+CurrentProject=login_server.vpj
 [ProjectDates]
 base.vpj=20160427111615000
 db_proxy_server.vpj=20160427111615000
@@ -31,125 +31,59 @@ route_server.vpj=Debug
 slog.vpj=Debug
 [TreeExpansion2]
 +@ base.vpj
--@ db_proxy_server.vpj
-  - Source Files
-    + business
-+@ file_server.vpj
++@ db_proxy_server.vpj
+-@ file_server.vpj
+  + Source Files
 +@ http_msg_server.vpj
 +@ libsecurity.vpj
 +@ log4cxx.vpj
 +@ login_server.vpj
+  - Source Files
 +@ msfs.vpj
 +@ msg_server.vpj
 +@ push_server.vpj
 +@ route_server.vpj
--@ slog.vpj
-  + Source Files
++@ slog.vpj
 +@ test.vpj
 scroll:0
 [State]
-SCREEN: 1920 1080 0 25 1280 692 0 0 M 0 0 0 0 971 242 0
+SCREEN: 1280 900 91 85 1098 729 0 0 N 0 0 0 0 814 437 0
 CWD: bin
-BUFFER: BN="../base/UtilPdu.h"
+BUFFER: BN="../login_server/login_server.cpp"
 BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=8 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=C/C++	HM=0 MF=33554432 TL=0 MLL=0 ASE=0 LNL=1 LCF=6 CAPS=0 E=70 ESBU2=71 CL="" SC="" SCE= SCU=
-VIEW: LN=.1349 CL=1 LE=0 CX=1 CY=2 WI=5 BI=26 HT=0 HN=0 HF=0 HC=4
-BUFFER: BN="../login_server/HttpConn.h"
-BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=8 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=C/C++	HM=0 MF=33554432 TL=0 MLL=0 ASE=0 LNL=1 LCF=6 CAPS=0 E=70 ESBU2=71 CL="" SC="" SCE= SCU=
-VIEW: LN=.1390 CL=14 LE=0 CX=12 CY=9 WI=5 BI=25 HT=0 HN=0 HF=0 HC=4
-BUFFER: BN="../http_msg_server/HttpConn.cpp"
-BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=8 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=C/C++	HM=0 MF=33554432 TL=0 MLL=0 ASE=0 LNL=1 LCF=6 CAPS=0 E=70 ESBU2=71 CL="" SC="" SCE= SCU=
-VIEW: LN=.4423 CL=49 LE=0 CX=45 CY=9 WI=5 BI=24 HT=0 HN=0 HF=0 HC=4
+VIEW: LN=.3757 CL=15 LE=0 CX=11 CY=10 WI=5 BI=16 HT=0 HN=0 HF=0 HC=4
 BUFFER: BN="../base/netlib.cpp"
-BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=8 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=C/C++	HM=0 MF=33554432 TL=0 MLL=0 ASE=0 LNL=1 LCF=6 CAPS=0 E=70 ESBU2=71 CL="" SC="" SCE= SCU=
-VIEW: LN=.1166 CL=5 LE=0 CX=4 CY=11 WI=5 BI=23 HT=0 HN=0 HF=0 HC=4
-BUFFER: BN="../slog/slog_api.cpp"
-BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=8 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=C/C++	HM=0 MF=33554432 TL=0 MLL=0 ASE=0 LNL=1 LCF=6 CAPS=0 E=0 ESBU2=1 CL="" SC="" SCE= SCU=
-VIEW: LN=.32 CL=15 LE=0 CX=14 CY=4 WI=5 BI=22 HT=0 HN=0 HF=0 HC=4
-BUFFER: BN="../file_server/file_msg_server_conn.cpp"
-BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=8 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=C/C++	HM=0 MF=33554432 TL=0 MLL=0 ASE=0 LNL=1 LCF=6 CAPS=0 E=70 ESBU2=71 CL="" SC="" SCE= SCU=
-VIEW: LN=.5807 CL=59 LE=0 CX=53 CY=12 WI=5 BI=21 HT=0 HN=0 HF=0 HC=4
-BUFFER: BN="../file_server/file_server.cpp"
-BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=8 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=C/C++	HM=0 MF=33554432 TL=0 MLL=0 ASE=0 LNL=1 LCF=6 CAPS=0 E=70 ESBU2=71 CL="" SC="" SCE= SCU=
-VIEW: LN=.0 CL=1 LE=0 CX=1 CY=0 WI=5 BI=20 HT=0 HN=0 HF=0 HC=4
-BUFFER: BN="../base/EncDec.cpp"
-BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=8 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=C/C++	HM=0 MF=33554432 TL=0 MLL=0 ASE=0 LNL=1 LCF=6 CAPS=0 E=70 ESBU2=71 CL="" SC="" SCE= SCU=
-VIEW: LN=.2880 CL=2 LE=0 CX=2 CY=11 WI=5 BI=19 HT=0 HN=0 HF=0 HC=4
-BUFFER: BN="../libsecurity/src/security.cpp"
-BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=8 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=C/C++	HM=0 MF=33554432 TL=0 MLL=0 ASE=0 LNL=1 LCF=6 CAPS=0 E=70 ESBU2=71 CL="" SC="" SCE= SCU=
-VIEW: LN=.826 CL=19 LE=0 CX=18 CY=10 WI=5 BI=18 HT=0 HN=0 HF=0 HC=4
-BUFFER: BN="../libsecurity/include/security.h"
-BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=8 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=C/C++	HM=0 MF=119603552 TL=0 MLL=0 ASE=0 LNL=1 LCF=6 CAPS=0 E=70 ESBU2=71 CL="" SC="" SCE= SCU=
-VIEW: LN=.1173 CL=1 LE=0 CX=1 CY=10 WI=5 BI=17 HT=0 HN=0 HF=0 HC=4
-BUFFER: BN="../msfs/main.cpp"
-BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=8 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=C/C++	HM=0 MF=119603296 TL=0 MLL=0 ASE=0 LNL=1 LCF=6 CAPS=0 E=70 ESBU2=71 CL="" SC="" SCE= SCU=
-VIEW: LN=.2722 CL=13 LE=0 CX=8 CY=12 WI=5 BI=16 HT=0 HN=0 HF=0 HC=4
-BUFFER: BN="../base/UtilPdu.cpp"
-BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=8 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=C/C++	HM=0 MF=119603552 TL=0 MLL=0 ASE=0 LNL=1 LCF=6 CAPS=0 E=70 ESBU2=71 CL="" SC="" SCE= SCU=
-VIEW: LN=.5812 CL=2 LE=0 CX=2 CY=7 WI=5 BI=27 HT=0 HN=0 HF=0 HC=4
-BUFFER: BN="../libsecurity/src/aes.h"
-BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=8 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=C/C++	HM=0 MF=117441376 TL=0 MLL=0 ASE=0 LNL=1 LCF=6 CAPS=0 E=70 ESBU2=71 CL="" SC="" SCE= SCU=
-VIEW: LN=.3357 CL=6 LE=0 CX=6 CY=8 WI=5 BI=28 HT=0 HN=0 HF=0 HC=4
-WINDOW: 1 23 1609 530 0 0 N  WF=0 WT=13 "Century Schoolbook L,16,0,1" DID=0
-BUFFER: BN="../base/UtilPdu.cpp"
-VIEW: LN=.5812 CL=2 LE=0 CX=6 CY=7 WI=173 BI=27 HT=0 HN=0 HF=0 HC=4
-WINDOW: 1 23 1609 530 0 0 N  WF=0 WT=8 "Century Schoolbook L,16,0,1" DID=0
-BUFFER: BN="../msfs/main.cpp"
-VIEW: LN=.2722 CL=13 LE=0 CX=12 CY=12 WI=171 BI=16 HT=0 HN=0 HF=0 HC=4
-WINDOW: 1 22 1634 717 0 0 N  WF=0 WT=6 "Century Schoolbook L,16,0,1" DID=0
-BUFFER: BN="../libsecurity/src/security.cpp"
-VIEW: LN=.826 CL=19 LE=0 CX=22 CY=10 WI=167 BI=18 HT=0 HN=0 HF=0 HC=4
-WINDOW: 1 22 1634 717 0 0 N  WF=0 WT=2 "Century Schoolbook L,16,0,1" DID=0
-BUFFER: BN="../base/EncDec.cpp"
-VIEW: LN=.2880 CL=2 LE=0 CX=6 CY=11 WI=165 BI=19 HT=0 HN=0 HF=0 HC=4
-WINDOW: 1 22 1634 717 0 0 N  WF=0 WT=3 "Century Schoolbook L,16,0,1" DID=0
-BUFFER: BN="../file_server/file_server.cpp"
-VIEW: LN=.0 CL=1 LE=0 CX=5 CY=0 WI=163 BI=20 HT=0 HN=0 HF=0 HC=4
-WINDOW: 1 22 1634 717 0 0 N  WF=0 WT=4 "Century Schoolbook L,16,0,1" DID=0
-BUFFER: BN="../file_server/file_msg_server_conn.cpp"
-VIEW: LN=.5807 CL=59 LE=0 CX=58 CY=12 WI=161 BI=21 HT=0 HN=0 HF=0 HC=4
-WINDOW: 1 22 1634 717 0 0 N  WF=0 WT=7 ",,," DID=0
-BUFFER: BN="../slog/slog_api.cpp"
-VIEW: LN=.32 CL=15 LE=0 CX=19 CY=4 WI=159 BI=22 HT=0 HN=0 HF=0 HC=4
-WINDOW: 1 22 1634 593 0 0 N  WF=0 WT=9 "Century Schoolbook L,16,0,1" DID=0
+BI: MA=1 74 1  TABS=1 9  WWS=1 IWT=0 ST=8 IN=2 BW=0 US=32000 RO=0 SE=1 SN=0 BIN=0 MN=C/C++	HM=0 MF=117441120 TL=0 MLL=0 ASE=0 LNL=1 LCF=6 CAPS=0 E=70 ESBU2=71 CL="" SC="" SCE= SCU=
+VIEW: LN=.76 CL=1 LE=0 CX=1 CY=2 WI=5 BI=17 HT=0 HN=0 HF=0 HC=4
+WINDOW: 1 22 958 497 0 0 N  WF=0 WT=8 "Century Schoolbook L,16,0,1" DID=0
+BUFFER: BN="../login_server/login_server.cpp"
+VIEW: LN=.3757 CL=15 LE=0 CX=15 CY=10 WI=151 BI=16 HT=0 HN=0 HF=0 HC=4
+WINDOW: 1 22 812 414 0 0 N  WF=0 WT=2 "Century Schoolbook L,16,0,1" DID=0
 BUFFER: BN="../base/netlib.cpp"
-VIEW: LN=.1166 CL=5 LE=0 CX=9 CY=11 WI=157 BI=23 HT=0 HN=0 HF=0 HC=4
-WINDOW: 1 22 1634 593 0 0 N  WF=0 WT=10 "Century Schoolbook L,16,0,1" DID=0
-BUFFER: BN="../http_msg_server/HttpConn.cpp"
-VIEW: LN=.4423 CL=49 LE=0 CX=49 CY=9 WI=155 BI=24 HT=0 HN=0 HF=0 HC=4
-WINDOW: 1 22 1634 593 0 0 N  WF=0 WT=11 "Century Schoolbook L,16,0,1" DID=0
-BUFFER: BN="../login_server/HttpConn.h"
-VIEW: LN=.1390 CL=14 LE=0 CX=15 CY=9 WI=153 BI=25 HT=0 HN=0 HF=0 HC=4
-WINDOW: 1 22 1634 593 0 0 N  WF=0 WT=12 "Century Schoolbook L,16,0,1" DID=0
-BUFFER: BN="../base/UtilPdu.h"
-VIEW: LN=.1349 CL=1 LE=0 CX=5 CY=2 WI=151 BI=26 HT=0 HN=0 HF=0 HC=4
-WINDOW: 1 23 1609 530 0 0 N  WF=0 WT=5 "Century Schoolbook L,16,0,1" DID=0
-BUFFER: BN="../libsecurity/include/security.h"
-VIEW: LN=.1173 CL=1 LE=0 CX=4 CY=10 WI=169 BI=17 HT=0 HN=0 HF=0 HC=4
-WINDOW: 1 23 969 218 0 0 N  WF=0 WT=14 "Century Schoolbook L,16,0,1" DID=0
-BUFFER: BN="../libsecurity/src/aes.h"
-VIEW: LN=.3526 CL=20 LE=0 CX=22 CY=6 WI=11 BI=28 HT=0 HN=0 HF=0 HC=4
+VIEW: LN=.3339 CL=1 LE=0 CX=5 CY=5 WI=153 BI=17 HT=0 HN=0 HF=0 HC=4
 MDISTATE: 1
-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
+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
 FILEHIST: 9
-../base/EncDec.cpp
-../file_server/file_server.cpp
-../file_server/file_msg_server_conn.cpp
-../slog/slog_api.cpp
+../db_proxy_server/db_proxy_server.cpp
+../db_proxy_server/CachePool.cpp
+../msg_server/msgserver.conf
+../db_proxy_server/dbproxyserver.conf
+../http_msg_server/httpmsgserver.conf
+../http_msg_server/http_msg_server.cpp
+../login_server/loginserver.conf
 ../base/netlib.cpp
-../http_msg_server/HttpConn.cpp
-../login_server/HttpConn.h
-../base/UtilPdu.cpp
-../libsecurity/src/aes.h
+../login_server/login_server.cpp
 TBCLASS: 0 0
-DEBUG: 0 0 4 0 3 0 gdb
+DEBUG: 0 0 5 0 3 0 gdb
 00main../route_server/route_server.cpp351<PENDING>0
-00main../msfs/main.cpp11910x000000000040f81f0
-00main../msfs/main.cpp17510x000000000040fbe30
-00main../msfs/main.cpp17210x000000000040fbbb0
+00main../msfs/main.cpp1191<PENDING>0
+00main../msfs/main.cpp1751<PENDING>0
+00main../msfs/main.cpp1721<PENDING>0
+00main../login_server/login_server.cpp7310x0000000000409c4e0
 printf
 strcpy
 std::*
-DEBUG2: 4
+DEBUG2: 5
 00main../route_server/route_server.cpp351<PENDING>045
 printf("ServerVersion:RouteServer/%s\n",VERSION);
 printf("ServerBuild:%s%s\n",__DATE__,__TIME__);
@@ -161,7 +95,7 @@ DEBUG2: 4
 CConfigFileReaderconfig_file("routeserver.conf");
 
 char*listen_ip=config_file.GetConfigName("ListenIP");
-00main../msfs/main.cpp11910x000000000040f81f055
+00main../msfs/main.cpp1191<PENDING>055
 _exit(0);
 }
 }
@@ -173,7 +107,7 @@ DEBUG2: 4
 {
 if(daemon(1,0,1)<0)
 {
-00main../msfs/main.cpp17510x000000000040fbe3054
+00main../msfs/main.cpp1751<PENDING>054
 returnret;
 
 CStrExplodelisten_ip_list(listen_ip,';');
@@ -184,7 +118,7 @@ DEBUG2: 4
 if(ret==NETLIB_ERROR)
 returnret;
 }
-00main../msfs/main.cpp17210x000000000040fbbb045
+00main../msfs/main.cpp1721<PENDING>045
 }
 ret=netlib_init();
 if(ret==NETLIB_ERROR)
@@ -195,3 +129,13 @@ DEBUG2: 4
 ret=netlib_listen(listen_ip_list.GetItem(i),listen_port,
 http_callback,NULL);
 if(ret==NETLIB_ERROR)
+00main../login_server/login_server.cpp7310x0000000000409c4e035
+signal(SIGPIPE,SIG_IGN);
+
+CConfigFileReaderconfig_file("loginserver.conf");
+char*client_listen_ip=config_file.GetConfigName("ClientListenIP");
+char*str_client_port=config_file.GetConfigName("ClientPort");
+char*http_listen_ip=config_file.GetConfigName("HttpListenIP");
+char*str_http_port=config_file.GetConfigName("HttpPort");
+char*msg_server_listen_ip=config_file.GetConfigName("MsgServerListenIP");
+char*str_msg_server_port=config_file.GetConfigName("MsgServerPort");
