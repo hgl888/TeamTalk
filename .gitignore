@@ -8,3 +8,5 @@ server/src/libsecurity/android/obj/
 server/src/se/Debug/
 *.a
 protobuf-objc/
+server/src/.idea/
+server/src/cmake-build-debug/

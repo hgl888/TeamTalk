@@ -1,15 +1,3 @@
-/*================================================================
-*   Copyright (C) 2015 All rights reserved.
-*   
-*   文件名称：security.h
-*   创 建 者：Zhang Yuanhao
-*   邮    箱：bluefoxah@gmail.com
-*   创建日期：2015年01月29日
-*   描    述：
-*
-#pragma once
-================================================================*/
-
 #ifndef __SECURITY_H__
 #define __SECURITY_H__
 
@@ -41,9 +29,9 @@ extern "C" {
 #endif
     
 #ifdef __ANDROID__
-    jstring Java_com_show_tt_Security_EncryptMsg(JNIEnv* env, jobject obj, jstring jstr);
-    jstring Java_com_show_tt_Security_DecryptMsg(JNIEnv* env, jobject obj, jstring jstr);
-    jstring Java_com_show_tt_Security_EncryptPass(JNIEnv* env, jobject obj, jstring jstr, jstring jkey);
+    jbyteArray Java_com_show_tt_Security_EncryptMsg(JNIEnv* env, jobject obj, jstring jstr);
+    jbyteArray Java_com_show_tt_Security_DecryptMsg(JNIEnv* env, jobject obj, jstring jstr);
+    jbyteArray Java_com_show_tt_Security_EncryptPass(JNIEnv* env, jobject obj, jstring jstr);
 
 #else
     /**
@@ -81,9 +69,7 @@ extern "C" {
      *
      *  @return 返回 0-成功; 其他-失败
      */
-    DLL_MODIFIER int EncryptPass(const char* pInData, uint32_t nInLen, char** pOutData, uint32_t& nOutLen, const char* pKey);
-    
-    DLL_MODIFIER int DecryptPass(const char* pInData, uint32_t nInLen, char** ppOutData, uint32_t& nOutLen, const char* pKey);
+    DLL_MODIFIER int EncryptPass(const char* pInData, uint32_t nInLen, char** pOutData, uint32_t& nOutLen);
     /**
      *  释放资源
      *

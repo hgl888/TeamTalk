@@ -33,6 +33,7 @@
         android:name="com.show.tt.app.IMApplication"
         android:icon="@drawable/tt_logo"
         android:largeHeap="true"
+        android:debuggable="true"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.NoTitleBar" >
         <activity

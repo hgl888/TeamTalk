@@ -12,6 +12,6 @@ public class UrlConstant {
 
     // access 地址
     //public final static String ACCESS_MSG_ADDRESS = "http://61.153.100.221:8080/msg_server";
-    public final static String ACCESS_MSG_ADDRESS = "http://192.168.0.108:8080/msg_server";
+    public final static String ACCESS_MSG_ADDRESS = "http://192.168.110.132:8080/msg_server";
 
 }
