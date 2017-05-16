@@ -25,6 +25,7 @@ import android.widget.Toast;
 import com.show.tt.DB.sp.LoginSp;
 import com.show.tt.DB.sp.SystemConfigSp;
 import com.show.tt.R;
+import com.show.tt.Security;
 import com.show.tt.config.IntentConstant;
 import com.show.tt.config.UrlConstant;
 import com.show.tt.utils.IMUIHelper;
@@ -36,6 +37,7 @@ import com.show.tt.ui.base.TTBaseActivity;
 import com.show.tt.imservice.support.IMServiceConnector;
 import com.show.tt.utils.Logger;
 import com.seu.magiccamera.common.utils.Constants;
+import com.show.tt.utils.Loggvc;
 
 import de.greenrobot.event.EventBus;
 
@@ -302,6 +304,10 @@ public class LoginActivity extends TTBaseActivity {
         String mPassword = mPasswordView.getText().toString();
         boolean cancel = false;
         View focusView = null;
+
+        byte []tmp = Security.getInstance().DecryptMsg(loginName);
+        String desMessage = new String(tmp);
+        Loggvc.i(desMessage);
 
         if (TextUtils.isEmpty(mPassword)) {
             Toast.makeText(this, getString(R.string.error_pwd_required), Toast.LENGTH_SHORT).show();

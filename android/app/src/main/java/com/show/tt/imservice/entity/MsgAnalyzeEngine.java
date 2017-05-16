@@ -3,6 +3,7 @@ package com.show.tt.imservice.entity;
 import android.text.TextUtils;
 
 import com.show.tt.DB.entity.MessageEntity;
+import com.show.tt.Security;
 import com.show.tt.config.DBConstant;
 import com.show.tt.config.MessageConstant;
 import com.show.tt.protobuf.helper.ProtoBuf2JavaBean;
@@ -66,7 +67,7 @@ public class MsgAnalyzeEngine {
         /**
          * 解密文本信息
          */
-       String desMessage = new String(com.show.tt.Security.getInstance().DecryptMsg(msgInfo.getMsgData().toStringUtf8()));
+       String desMessage = new String(Security.getInstance().DecryptMsg(msgInfo.getMsgData().toStringUtf8()));
        messageEntity.setContent(desMessage);
 
        // 文本信息不为空
