@@ -41,9 +41,9 @@ extern "C" {
 #endif
     
 #ifdef __ANDROID__
-    jstring Java_com_mogujie_im_security_EncryptMsg(JNIEnv* env, jobject obj, jstring jstr);
-    jstring Java_com_mogujie_im_security_DecryptMsg(JNIEnv* env, jobject obj, jstring jstr);
-    jstring Java_com_mogujie_im_security_EncryptPass(JNIEnv* env, jobject obj, jstring jstr, jstring jkey);
+    jstring Java_com_show_tt_Security_EncryptMsg(JNIEnv* env, jobject obj, jstring jstr);
+    jstring Java_com_show_tt_Security_DecryptMsg(JNIEnv* env, jobject obj, jstring jstr);
+    jstring Java_com_show_tt_Security_EncryptPass(JNIEnv* env, jobject obj, jstring jstr, jstring jkey);
 
 #else
     /**
