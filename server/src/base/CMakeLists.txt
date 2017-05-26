@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 2.6)
 PROJECT(Base)
 
+if(WIN32)
+add_definitions(-D_WIN32)
+ENDIF (WIN32)
+
 AUX_SOURCE_DIRECTORY(./ SRC_LIST1)
 AUX_SOURCE_DIRECTORY(./pb/protocol SRC_LIST2)
 AUX_SOURCE_DIRECTORY(./jsoncpp SRC_LIST3)

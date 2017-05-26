@@ -37,6 +37,7 @@ void CRefObject::ReleaseRef()
 		m_refCount--;
 		if (m_refCount == 0)
 		{
+            m_lock->unlock();
 			delete this;
 			return;
 		}
