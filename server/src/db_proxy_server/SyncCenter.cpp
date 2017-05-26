@@ -127,7 +127,7 @@ void CSyncCenter::init()
 
         string strLastUpdateGroup = pCacheConn->get("last_update_group");
         pCacheManager->RelCacheConn(pCacheConn);
-	if(strTotalUpdate != "")
+	    if(strTotalUpdate != "")
         {
             m_nLastUpdate = string2int(strTotalUpdate);
         }

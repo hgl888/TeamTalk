@@ -70,7 +70,8 @@ CGroupMessageModel* CGroupMessageModel::getInstance()
  *
  *  @return 成功返回true 失败返回false
  */
-bool CGroupMessageModel::sendMessage(uint32_t nFromId, uint32_t nGroupId, IM::BaseDefine::MsgType nMsgType, uint32_t nCreateTime,uint32_t nMsgId, const string& strMsgContent)
+bool CGroupMessageModel::sendMessage(uint32_t nFromId, uint32_t nGroupId, IM::BaseDefine::MsgType nMsgType, uint32_t nCreateTime,
+                                     uint32_t nMsgId, const string& strMsgContent)
 {
     bool bRet = false;
     if(CGroupModel::getInstance()->isInGroup(nFromId, nGroupId))
@@ -138,7 +139,8 @@ bool CGroupMessageModel::sendMessage(uint32_t nFromId, uint32_t nGroupId, IM::Ba
  *
  *  @return 成功返回true，失败返回false
  */
-bool CGroupMessageModel::sendAudioMessage(uint32_t nFromId, uint32_t nGroupId, IM::BaseDefine::MsgType nMsgType, uint32_t nCreateTime, uint32_t nMsgId, const char* pMsgContent, uint32_t nMsgLen)
+bool CGroupMessageModel::sendAudioMessage(uint32_t nFromId, uint32_t nGroupId, IM::BaseDefine::MsgType nMsgType,
+                                          uint32_t nCreateTime, uint32_t nMsgId, const char* pMsgContent, uint32_t nMsgLen)
 {
 	if (nMsgLen <= 4) {
 		return false;

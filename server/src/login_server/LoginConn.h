@@ -1,8 +1,6 @@
 /*
  * LoginConn.h
  *
- *  Created on: 2013-6-21
- *      Author: jianqingdu
  */
 
 #ifndef LOGINCONN_H_
@@ -30,6 +28,7 @@ class CLoginConn : public CImConn
 public:
 	CLoginConn();
 	virtual ~CLoginConn();
+
 
 	virtual void Close();
 
