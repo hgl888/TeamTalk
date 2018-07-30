@@ -63,6 +63,8 @@ target_link_libraries(speex log)
 
  MESSAGE(STATUS “end compile speex”)
 
+#############
+
  MESSAGE(STATUS “security compile begin”)
  add_library(security SHARED
               libsecurity/aes_core.cpp
@@ -75,3 +77,19 @@ target_include_directories(security PRIVATE
 
 target_link_libraries(security log)
  MESSAGE(STATUS “security compile end”)
+
+ ##########
+
+MESSAGE(STATUS “MagicSDK compile begin”)
+add_library(MagicSDK SHARED
+         MagicSDK.cpp
+        bitmap/BitmapOperation.cpp
+        bitmap/Conversion.cpp
+        skinsmooth/MagicBeauty.cpp )
+
+target_include_directories(MagicSDK PRIVATE
+                        ${CMAKE_SOURCE_DIR})
+
+target_link_libraries(MagicSDK log jnigraphics)
+MESSAGE(STATUS “security compile end”)
+

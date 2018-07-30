@@ -5,6 +5,7 @@ import de.greenrobot.daogenerator.Index;
 import de.greenrobot.daogenerator.Property;
 import de.greenrobot.daogenerator.Schema;
 
+
 public class GreenDaoGenerator {
     private static String entityPath = "com.show.tt.DB.entity";
 

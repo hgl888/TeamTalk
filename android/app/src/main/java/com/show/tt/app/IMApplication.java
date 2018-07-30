@@ -9,6 +9,13 @@ import com.show.tt.utils.Logger;
 
 public class IMApplication extends Application {
 
+	static{
+		System.loadLibrary("security");
+		System.loadLibrary("speex");
+		System.loadLibrary("MagicSDK");
+	}
+
+
 	private Logger logger = Logger.getLogger(IMApplication.class);
 
 	/**
