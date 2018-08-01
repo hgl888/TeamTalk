@@ -2,7 +2,6 @@ package com.seu.magiccamera.common.view;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Filter;
 
 import android.app.Activity;
 import android.content.Context;
@@ -37,7 +36,7 @@ public class FilterLayoutUtils{
 	private int position;
 	private List<FilterInfo> filterInfos;
 	private List<FilterInfo> whiteSkinInfos;
-	private List<FilterTypeInfo> typeFilterInfos;
+	private List<FilterTypeInfo> filterTypeInfos;
 	
 	private int mFilterType = MagicFilterType.NONE;
 	
@@ -57,7 +56,7 @@ public class FilterLayoutUtils{
 	private void initTypeFilter(){
 		mAdapterTypeFilter = new FilterTypeAdapter(mContext);
 		initTypeFilterInfos();
-		mAdapterTypeFilter.setFilterTypeInfo( typeFilterInfos );
+		mAdapterTypeFilter.setFilterTypeInfo(filterTypeInfos);
 		mAdapterTypeFilter.setOnFilterChangeListener(onFilterTypeChangeListener);
 	}
 
@@ -145,28 +144,32 @@ public class FilterLayoutUtils{
 	private FilterTypeAdapter.OnFilterTypeChangeListener onFilterTypeChangeListener = new FilterTypeAdapter.OnFilterTypeChangeListener() {
 		@Override
 		public void onFilterTypeChanged(int filterType, int position) {
-			Log.e("test", "test");
+			Log.e("FilterLayoutUtils", "test");
+			int Type = filterTypeInfos.get(position).getFilterType();
+			FilterLayoutUtils.this.position = position;
+			mMagicDisplay.setFilter( filterType);
+			mFilterType = filterType;
 		}
 	};
 
 	private void initTypeFilterInfos(){
-		typeFilterInfos = new ArrayList<FilterTypeInfo>();
+		filterTypeInfos = new ArrayList<FilterTypeInfo>();
 		FilterTypeInfo filterInfo = new FilterTypeInfo();
 		filterInfo.setFilterType( MagicFilterType.NONE);
 		filterInfo.setSelected(true);
-		typeFilterInfos.add( filterInfo );
+		filterTypeInfos.add( filterInfo );
 
 		//Divider
 		filterInfo = new FilterTypeInfo();
 		filterInfo.setFilterType( -1 );
-		typeFilterInfos.add(filterInfo );
+		filterTypeInfos.add(filterInfo );
 
 		for ( int i = MagicFilterType.WHITESKIN_BEAUTY; i <= MagicFilterType.WHITESKIN_END; i++ ){
 			filterInfo = new FilterTypeInfo();
 			filterInfo.setFilterType( i );
-			typeFilterInfos.add( filterInfo );
+			filterTypeInfos.add( filterInfo );
 		}
-
+		return;
 	}
 
 	private void initWhiteSkinInfos(){
